@@ -1,0 +1,698 @@
+html, body {
+	height: 100%;
+	overflow: auto;
+	position: relative;
+	background-color: #fffeff;
+	font-family: 'Poppins';
+}
+
+header {
+	height: 20%;
+	position: absolute;
+	width: 85%;
+	right: 0;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+header div.menu-hamburguer {
+	display: none;
+}
+
+header div:nth-child(2) {
+	margin-right: 3%;
+}
+
+header img {
+	width: 100px;
+	height: 100px;
+}
+
+header h1 {
+	font-size: 2rem;
+	color: #000000;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+header h5 {
+	font-size: 1.6rem;
+	color: #000000;
+	opacity: 0.8;
+	font-weight: 400;
+	margin-bottom: 4px;
+}
+
+header p {
+	font-size: 1.2rem;
+	color: #000000;
+	font-weight: 400;
+	opacity: 0.6;
+}
+
+nav.desktop {
+	height: 100%;
+	width: 15%;
+	background-color: #034589;
+
+	border-top-right-radius: 24px;
+	border-bottom-right-radius: 24px;
+
+	padding: 20px 8px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+nav.mobile {
+	display: none;
+}
+
+nav.desktop img.logo {
+display: none;
+}
+
+nav.desktop div {
+	width: 90%;
+}
+
+nav.desktop h3 {
+	color: #fcf6fa;
+	font-weight: 700;
+	font-size: 1.8rem;
+	text-align: center;
+	margin: 1.6rem 0;
+}
+
+nav.desktop div + div {
+  margin-top: 200px;
+}
+
+nav.desktop ul {
+	width: 100%;
+	height: 100%;
+}
+
+nav.desktop ul li {
+	width: 100%;
+	height: 100%;
+	height: 32px;
+
+	display: flex;
+	align-items: center;
+}
+
+nav.desktop ul li + li {
+	margin-top: 8px;
+}
+
+nav.desktop ul li a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+nav.desktop ul li a:hover {
+	cursor: pointer;
+	border: 1px solid #fcf6fa;
+	border-radius: 6px;
+}
+
+nav.desktop ul li a img {
+	display: none;
+}
+
+nav.desktop ul li a p {
+	color: #fff;
+	font-weight: 500;
+	font-size: 1.2rem;
+	margin-left: 0.8rem;
+}
+
+section {
+	overflow: auto;
+	width: 85%;
+	height: 75%;
+	position: absolute;
+	top: 20%;
+	left: 15%;
+	background: #fcf6fa;
+	border-radius: 8px;
+	flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section article {
+	width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section article h2 {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+section article p{
+	font-size: 1.4rem;
+	margin-bottom: 0.8rem;
+	text-align: center;
+}
+
+section article p.last-child  {
+	font-size: 1rem;
+	margin-bottom: 2.4rem;
+	width: 80%;
+	text-align: center;
+	opacity: 0.8;
+}
+
+section article form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #fffeff;
+	width: 80%;
+	border-radius: 4px;
+	box-shadow: 0 0 10px rgb(173, 173, 173);
+	max-height: 328px;
+	overflow: hidden;
+	padding: 0;
+}
+
+section article form:hover {
+	overflow: auto;
+}
+
+section article form div {
+	background: transparent;
+	border-bottom: 0;
+}
+
+section article form div:first-child {
+	display: flex;
+	margin: 0;
+	width: 100%;
+}
+
+section article form div:first-child div {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+section article form div:first-child div:first-child {
+	margin-right: 1.2rem;
+}
+
+section article form label {
+	color: #034589;
+	font-weight: 600;
+	font-family: 'Poppins' sans-serif;
+	font-size: 1.4rem;
+}
+
+section article form input[type=text], input[type=email] {
+	border: 0;
+	border-radius: 4px;
+	background: #fcf6fa;
+	padding: 0 0.8rem;
+	height: 40px;
+	margin-bottom: 1.6rem;
+}
+
+section article form textarea {
+	border: 0;
+	background: #fcf6fa;
+	padding: 1rem 0.8rem;
+	height: 160px;
+	resize: none;
+	border-radius: 4px;
+}
+
+section article div.prefere {
+	align-items: flex-start;
+}
+
+section article div.prefere p label {
+	margin: 0 0 0.8rem -1.6rem;
+}
+
+section article div.prefere input {
+	margin: 0 0.3rem 0 0;
+}
+
+section article div.prefere input + input {
+	margin-left: 0.6rem;
+}
+
+section article div.last-child p {
+	margin-bottom: 1.6rem;
+}
+
+section article div.last-child select {
+	border: 0;
+	border-radius: 4px;
+	background: #fcf6fa;
+	padding: 0 0.8rem;
+	height: 40px;
+}
+
+section article div.button {
+	width: 100%;
+	margin: 1.2rem 0;
+	padding: 0;
+}
+
+section article div.button input {
+	display: block;
+	width: 40%;
+	height: 40px;
+	border: 0;
+	border-radius: 4px;
+	background: #034589;
+	color: #fcf6fa;
+	font-size: 1.4rem;
+	font-weight: 600;
+	letter-spacing: 0.15rem;
+	margin: 0 auto;
+
+	transition: filter 0.3s;
+}
+
+section article div.button input:hover {
+	cursor: pointer;
+	filter: opacity(0.8);
+}
+
+footer {
+	width: 80%;
+	height: 5%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background-color:transparent;
+}
+
+footer p {
+	font-size: 1.4rem;
+	color: #000000;
+	font-weight: 400;
+	opacity: 0.4;
+}
+
+@media (max-width: 425px) {
+	html, body {
+		width: 100%;
+		max-width: 425px;
+	}
+	
+	header {
+		width: 100%;
+		max-width: 425px;
+		height: 15%;
+		padding: 0;
+		position: relative;
+	}
+
+	header div.menu-hamburguer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 48px;
+		height: 48px;
+		border-radius: 4px;
+		background-color: #034589;
+		font-size: 3rem;
+		font-weight: bold;
+		color: #fcf6fa;
+		position: absolute;	
+		left: 2.4rem;
+	}
+
+	header div.menu-hamburguer:hover {
+		cursor: pointer;
+	}
+
+	header div.menu-hamburguer div.burg-icon {
+		display: block;
+		width: 80%;
+		height: 6px;
+		background: #fcf6fa;
+		border-radius: 4px;
+		margin-right: 0;
+	}
+
+	header div.menu-hamburguer div.burg-icon + div {
+		margin-top: 6px;
+	}
+	
+	header div:nth-child(2) {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 0;
+	}
+	
+	header img {
+		width: 110px;
+		height: 40px;
+	}
+
+	header div:last-child {
+		display: none;
+	}
+
+	nav.desktop {
+		display: none;
+	}
+	
+	nav.mobile {
+		height: 375px;
+    width: 60%;
+    background-color: #034589;
+    position: absolute;
+    left: 24px;
+    top: 75px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+		box-shadow: 0px 0px 8px 0px #034589;
+		z-index: 2;
+	}
+
+	nav.mobile div {
+		width: 100%;
+	}
+
+	nav.mobile div:first-child {
+		margin-bottom: 48px;
+	}
+	
+	nav.mobile div h3 {
+		text-align: center;
+		font: bold 1.8rem/3rem 'Poppins';
+		letter-spacing: 1.5px;
+		color: #fcf6fa
+	}
+	
+	nav.mobile ul {
+		width: 100%;
+		height: 100%;
+	}
+	
+	nav.mobile ul li {
+		width: 64%;
+		height: 32px;
+		margin-top: 6px;
+	}
+	
+	nav.mobile ul li a {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		color: #fff;
+		font-weight: 500;
+		font-size: 1.4rem;
+	}
+	
+	nav.mobile ul li a:hover {
+		cursor: pointer;
+		border: 1px solid #fcf6fa;
+		border-radius: 6px;
+	}
+
+	section {
+		min-width: 0;
+		width: 100%;
+		height: 85%;
+		position: absolute;
+		top: 15%;
+		left: 0;
+		border-radius: 0;
+	}
+	
+	section article h2 {
+		font-size: 2rem;
+		margin-bottom: 0.8rem;
+	}
+	
+	section article p {
+		font-size: 1.4rem;
+		margin-bottom: 0.6rem;
+		
+	}
+	
+	section article p.last-child  {
+		font-size: 1.2rem;
+		margin-bottom: 1.8rem;
+		width: 90%;
+	}
+	
+	section article form {
+		width: 90%;
+		padding: 0;
+		max-height: 398px;
+	}
+	
+	section article form div:first-child {
+		flex-direction: column;
+	}
+	
+	section article form div:first-child div:first-child {
+		margin-right: 1.2rem;
+	}
+
+	section article form div.last-child div {
+		margin-top: 1.2rem;
+	}
+
+	section article div.prefere {
+		align-items: flex-start;
+	}
+	
+	section article div.prefere p label {
+		margin: 0 0 1rem -0.6rem;
+	}
+
+	section article div.prefere input {
+		margin: 0 0.3rem 0 0;
+	}
+
+	section article div.prefere input + input {
+		margin-left: 0.6rem;
+	}
+
+	footer {
+		width: 100%;
+	}
+}
+
+@media (min-width: 425.1px) and (max-width: 768px) {
+	html, body {
+		width: 100%;
+		max-width: 768px;
+	}
+	
+	header {
+		width: 85%;
+		max-width: 700px;
+		padding: 0;
+		height: 15%;
+	}
+
+	header h1 {
+		font-size: 2.2rem;
+	}
+
+	header h5 {
+		font-size: 1.8rem;
+	}
+
+	header p {
+		font-size: 1.4rem;
+	}
+	header div.menu-hamburguer {
+		display: none;
+	}
+	
+	header div:nth-child(2) {
+		display: none;
+	}
+
+	header img {
+		display: none;
+	}
+
+	header div:last-child {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	
+	nav.desktop {
+		display: block;
+		width: 15%;
+		border-top-right-radius: 12px;
+		border-bottom-right-radius: 12px;
+
+		padding: 20px 8px;
+	}
+
+	nav.desktop img.logo {
+		width: 72%;
+		max-width: 54px;
+		height: 10%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+
+		margin-bottom: 40px;
+	}
+
+	nav.desktop div {
+		width: 100%;
+	}
+
+	nav.desktop div h3 {
+		display: none;
+	}
+
+	nav.desktop div ul {
+		width: 100%;
+	}
+
+	nav.desktop div ul li {
+		width: 100%;
+		height: 40px;
+		margin-top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	nav.desktop div ul li + li {
+		margin-top: 12px;
+	}
+
+	nav.desktop div ul li a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 0;
+		width: 40px;
+		height: 40px;
+		min-width: 40px;
+		min-height: 40px;
+		position: relative;
+	}
+	
+	nav.desktop div ul li a img {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 24px;
+		height: 24px;
+
+	}
+
+	nav.desktop div ul li a:hover {
+		cursor: pointer;
+		border: 1px solid #000000;
+	}
+
+	nav.desktop div ul li a:hover p {
+		display: block;
+		position: absolute;
+		top: 108%;
+		font-size: 1rem;
+	}
+
+	nav.desktop div ul li a p {
+		display: none;
+	}
+
+	nav.desktop div + div {
+		margin-top: 168px;
+	}
+
+	nav.mobile {
+		display: none;
+	}
+
+	section {
+		width: 85%;
+		max-width: 700px;
+		top: 15%;
+		left: 15%;
+		min-width: 0;
+		height: 80%;
+	}
+
+	section article h2 {
+		font-size: 2rem;
+	}
+	
+	section article p{
+		font-size: 1.4rem;
+	}
+	
+	section article p.last-child  {
+		width: 90%;
+		font-size: 1.2rem;
+	}
+	
+	section article form {
+		width: 96%;
+	}
+	
+	section article form div:first-child {
+		flex-direction: column;
+	}
+	
+	section article form div:first-child div:first-child {
+		margin-right: 1.2rem;
+	}
+
+	section article form div.last-child div {
+		margin-top: 1.2rem;
+	}
+
+	section article div.prefere {
+		align-items: flex-start;
+	}
+	
+	section article div.prefere p label {
+		margin: 0 0 1rem -0.6rem;
+	}
+
+	section article div.prefere input {
+		margin: 0 0.3rem 0 0;
+	}
+
+	section article div.prefere input + input {
+		margin-left: 0.6rem;
+	}
+	
+	footer {
+		width: 85%;
+	}
+}
