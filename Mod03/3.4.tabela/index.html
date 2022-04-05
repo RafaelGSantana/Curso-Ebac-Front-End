@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <title>HTML - Tabelas & Layouts tabelados</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p>
+            <a href="./exercicio/index.html">Voltar para Perfil</a>
+        </p>
+        <h1>HTML - Tabelas & Layouts tabelados</h1>
+
+                <h3>Tabelas</h3>
+
+        <table border="1" width='100%'>
+            <thead>
+                <tr>
+                    <th>Coluna 1</th>
+                    <th>Coluna 2</th>
+                    <th>Coluna 3</th>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center">
+                        Uma breve descrição do conteúdo da tabela
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1A</td>
+                    <td>1B</td>
+                    <td>1C</td>
+                </tr>
+                <tr>
+                    <td>2A</td>
+                    <td>2B</td>
+                    <td>2C</td>
+                </tr>
+                <tr>
+                    <td>3A</td>
+                    <td colspan="2">3BC</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" align="center">
+                        Exemplo, colocar um resumo do conteúdo da tabela
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <h3>Layout tabelado</h3>
+
+        <table width="600">
+            <tr bgcolor="#00ff80" align="center" height="50">
+                <td width="20%"></td>
+                <td colspan="2">Cabeçalho</td>
+                <td width="20%"></td>
+            </tr>
+
+            <tr bgcolor="#d6ffff" align="center" height="150">
+                <td></td>
+                <td>Coluna 1</td>
+                <td>Coluna 2</td>
+                <td></td>
+            </tr>
+
+            <tr bgcolor="#56735e" align="center" height="50">
+                <td colspan="4">Rodapé</td>
+            </tr>
+        </table>
+    </body>
+</html>
