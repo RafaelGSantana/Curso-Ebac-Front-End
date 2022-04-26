@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html {
     font-size: 62.5%;
@@ -10,36 +15,84 @@ body {
 
 .main-container {
     display: block;
-    width: 100vw;
+    width: 100%;
+    max-width: 425px;
     margin: 0 auto;
 }
 
 .container {
     display: block;
-    float: left;
-    padding: 20px;
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
-    max-width: 1198px;
+    max-width: 425px;
 }
 
 header {
     background: #fff;
     display: block;
-    float: left;
     padding: 20px;
     width: 100%;
     border-bottom: 1px solid #254159;
 }
 
+section {
+    background-color: #fff;
+    display: block;
+    float: left;
+    font-size: 1.5rem; /* equivalente a 15px */ 
+    padding: 20px;
+    width: 100%;
+}
+
+section nav {
+    display: block;
+    width: 100%;
+}
+
+nav li {
+    background-color: #efefef;
+    margin: 1px 20px 1px 0;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+}
+
+nav li + li {
+    margin-top: 4px;
+}
+
+nav li:hover {
+    background-color: #dfdfdf;
+}
+
+nav a {
+    text-decoration: none;
+    color: #254159;
+}
+
+nav a:hover {
+    color: #385874;
+}
+
+section article {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+
+section article img {
+    margin-bottom: 16px;
+}
+
 h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: #254159;
     margin-bottom: 20px;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #254159;
     margin-bottom: 20px;
 }
@@ -59,8 +112,9 @@ h4 {
 }
 
 p {
-    margin-bottom: 10px;
-    line-height: 1.4;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    line-height: 1.8rem;
     color: #333;
 }
 
@@ -69,14 +123,28 @@ img {
     height: auto;
 }
 
+ol {
+    margin-left: 20px;
+}
+
+ol li {
+    font-size: 1.4rem;
+    color: #454545;
+    margin-bottom: 4px;
+}
+
+ol li:last-child {
+    margin-bottom: 10px;
+}
+
 #tenho-interesse {
     background-color: #b8c8d6;
     width: 100%;
+    padding: 20px 20px 0;
 }
 
-#tenho-interesse form,
-.cognito.c-med .c-forms-form,
-.cognito.c-med .c-forms-form div {
+.cognito .c-forms-form {
+    margin-bottom: 10px;
     background-color: #b8c8d6 !important;
 }
 
@@ -85,53 +153,21 @@ img {
     color: #385874;
 }
 
-ol {
-    margin-left: 30px;
+#tenho-interesse .container article h1 {
+    text-align: center;
+    margin-bottom: 16px;
 }
 
-ol li {
-    font-size: 1.4rem;
-    color: #454545;
+#tenho-interesse .container article p {
+    text-align: center;
 }
 
-section {
-    background-color: #fff;
-    display: block;
-    float: left;
-    font-size: 1.5rem; /* equivalente a 15px */ 
-    padding: 20px;
-    width: 100%;
+#tenho-interesse .cognito .c-forms-form .c-forms-form-title h2 {
+    font-size: 1.8rem;
 }
 
-section nav {
-    display: block;
-    float: left;
-    width: 30%;
-}
-
-nav li {
-    background-color: #efefef;
-    margin: 1px 20px 1px 0;
-    padding: 10px;
-}
-
-nav li:hover {
-    background-color: #dfdfdf;
-}
-
-nav a {
-    text-decoration: none;
-    color: #254159;
-}
-
-nav a:hover {
-    color: #385874;
-}
-
-section article {
-    display: block;
-    float: left;
-    width: 70%;
+.YIBe3kJWakGtxgECDLWAlQ {
+    visibility: hidden !important;
 }
 
 footer {
@@ -144,12 +180,15 @@ footer {
 
 footer p {
     color: #ffffff;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    text-align: center;
 }
 
 footer small {
     font-size: 80%;
     display: block;
+    margin-top: 4px;
+    text-align: center;
 }
 
 .cognito {
@@ -157,14 +196,369 @@ footer small {
     overflow: hidden !important;
 }
 
-@media (max-width: 425px) {
-    section nav,
-    section article {
-        width: 100%;
-    }  
-
+@media (min-width: 426px) {
+    .main-container {
+        max-width: 768px;
+    }
+    
     .container {
-        padding-left: 1%;
-        padding-right: 1%;
+        max-width: 768px;
+    }
+
+    header {
+        padding: 20px 30px;
+    }
+
+    section {
+        padding: 30px;
+    }
+
+    nav ul li {
+        padding: 6px 10px;
+    }
+
+
+    section {
+        padding: 20px 30px;
+    }
+    
+    section article {
+        margin-top: 24px;
+    }
+    
+    section article img {
+        margin-bottom: 20px;
+    }
+    
+    h1 {
+        text-align: center;
+        font-size: 2.4rem;
+    }
+    
+    h2 {
+        font-size: 2.1rem;
+    }
+    
+    h3 {
+        font-size: 1.9rem;
+    }
+    
+    h4 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        padding-top: 12px;
+    }
+    
+    p {
+        font-size: 1.5rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.9rem;
+    }
+
+    ol li:last-child {
+        margin-bottom: 14px;
+    }
+
+    #tenho-interesse{
+        padding: 20px;
+    }
+
+    #tenho-interesse .container {
+        max-width: 640px;
+    }
+
+    #tenho-interesse .container article h1 {
+        margin-bottom: 16px;
+    }
+
+    #tenho-interesse .container article p {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+    }
+
+    #tenho-interesse .cognito .c-forms-form {
+        padding: 0 20px;
+    }
+
+    .cognito .c-forms-heading .c-forms-form-title {
+        padding: 20px 0 0 0 !important;
+    }
+
+    #tenho-interesse .cognito .c-forms-form .c-forms-form-title h2 {
+        font-size: 2.4rem;
+    }
+
+    #tenho-interesse .cognito label[for] {
+        font-size: 1.8rem;
+        margin-bottom: 4px;
+    }
+
+    .cognito .c-editor {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        padding: 4px 8px!important;
+    }
+
+    .cognito .c-forms-form .c-button-section button:not(.c-icon-button) {
+        width: 240px;
+        height: 40px;
+        font-size: 2rem;
+        padding: 0 !important;
+    }
+
+    footer {
+        padding: 20px 30px;
+    }
+    
+    footer p {
+        font-size: 1.4rem;
+    }
+    
+    footer small {
+        margin-top: 6px;
+    }
+}
+
+@media (min-width: 587px) {
+    section {
+        padding: 30px;
+        position: relative;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        top: -64px;
+        right: max(3%, 20px);
+    }
+
+    nav li + li {
+        margin-top: 0;
+        margin-left: 6px;
+    }
+}
+
+@media (min-width: 769px) {
+    .main-container {
+        max-width: 1024px;
+    }
+    
+    .container {
+        max-width: 1024px;
+    }
+
+    header {
+        padding: 30px;
+    }
+    
+    section {
+        padding: 30px;
+    }
+
+    nav ul {
+        top: -80px;
+    }
+
+    nav ul li {
+        font-size: 1.6rem;
+        padding: 10px 12px;
+    }
+    
+    nav li + li {
+        margin-left: 8px;
+    }
+
+    section article {
+        margin-top: 0;
+    }
+
+    section article h1 {
+        font-size: 2.8rem;
+        margin-bottom: 24px;
+    }
+
+    section article img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 24px;
+    }
+   
+    h2 {
+        font-size: 2.4rem;
+    }
+    
+    h3 {
+        font-size: 2.2rem;
+    }
+    
+    h4 {
+        font-size: 2rem;
+        margin-bottom: 14px;
+        padding-top: 14px;
+    }
+    
+    p {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+    }
+
+    ol li {
+        font-size: 1.7rem;
+    }
+
+    ol li:last-child {
+        margin-bottom: 18px;
+    }
+
+    #tenho-interesse .container article h1 {
+        margin-bottom: 18px;
+    }
+
+    #tenho-interesse .container article p {
+        font-size: 1.6rem;
+        margin-bottom: 24px;
+    }
+
+    footer {
+        padding: 30px;
+    }
+    
+    footer p {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .main-container {
+        max-width: 100%;
+    }
+    
+    .container {
+        max-width: 1440px;
+    }
+
+    header {
+        padding: 40px 50px;
+    }
+    
+    section {
+        padding: 50px;
+    }
+
+    nav ul {
+        top: -92px;
+        right: max(3%, 50px);
+    }
+
+    nav ul li {
+        font-size: 1.8rem;
+        padding: 12px 14px;
+    }
+    
+    nav li + li {
+        margin-left: 10px;
+    }
+
+
+    section article h1 {
+        font-size: 3rem;
+        margin-bottom: 32px;
+    }
+
+    section article img {
+        margin-bottom: 32px;
+    }
+
+    h2 {
+        font-size: 2.8rem;
+    }
+    
+    h3 {
+        font-size: 2.6rem;
+    }
+    
+    h4 {
+        font-size: 2.4rem;
+        margin-bottom: 18px;
+        padding-top: 18px;
+    }
+    
+    p {
+        font-size: 2rem;
+        line-height: 2.4rem;
+    }
+
+    ol li {
+        font-size: 1.9rem;
+    }
+
+    ol li:last-child {
+        margin-bottom: 20px;
+    }
+
+    #tenho-interesse {
+        padding: 50px;
+        height: 700px;
+    }
+
+    #tenho-interesse .container {
+        max-width: 800px;
+    }
+
+    .cognito:not(.c-forms-actionBar) {
+        height: 420px !important;
+    }
+
+    #tenho-interesse .container article h1 {
+        margin-bottom: 2.8rem;
+    }
+
+    #tenho-interesse .container article p {
+        font-size: 2rem;
+        margin-bottom: 24px;
+    }
+
+    .c-forms-form-body {
+        margin-left: -20px;
+    }
+
+    .cognito .c-forms-heading .c-forms-form-title {
+        padding: 0 !important; 
+    }
+
+    #tenho-interesse .cognito .c-forms-form .c-forms-form-title h2 {
+        font-size: 2.8rem;
+        margin-bottom: 16px;
+    }
+
+    #tenho-interesse .cognito label[for] {
+        font-size: 2.2rem;
+    }
+
+    .cognito .c-forms-form .c-editor {
+        margin-top: 8px;
+    }
+
+    .cognito .c-forms-form input[type=text],
+    .cognito .c-forms-form input[type=email],
+    .cognito .c-forms-form input[type=tel] {
+        height: 36px;
+    }
+
+    .cognito .c-forms-form .c-button-section button:not(.c-icon-button) {
+        width: 300px;
+        height: 64px;
+        font-size: 2.6rem;
+    }
+
+    footer {
+        padding: 30px;
+    }
+    
+    footer p {
+        font-size: 1.8rem;
     }
 }
