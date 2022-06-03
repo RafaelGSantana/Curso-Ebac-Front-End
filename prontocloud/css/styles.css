@@ -140,12 +140,15 @@ ol li:last-child {
 #tenho-interesse {
     background-color: #b8c8d6;
     width: 100%;
-    padding: 20px 20px 0;
+    padding: 20px;
 }
 
 .cognito .c-forms-form {
     margin-bottom: 10px;
     background-color: #b8c8d6 !important;
+}
+#tenho-interesse .cog-form__content {
+    padding: 0 20px;
 }
 
 #tenho-interesse .cognito .c-forms-form .c-forms-form-title h2,
@@ -500,7 +503,7 @@ footer small {
     }
 
     #tenho-interesse {
-        padding: 50px;
+        padding: 20px 50px;
         height: 700px;
     }
 
