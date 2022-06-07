@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Javascript Foundation - Ebac</title>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <a href="./algoritmo.html">Exercício 1</a>
+        <a href="#">Exercício 2</a>
+      </nav>
+    </header>
+
+    <div class="title">
+      <p>Digite 3 números para calcular a média</p>
+    </div>
+
+    <div class="form-wrapper">
+      <input type="text" id="a" placeholder="Digite o primeiro valor">
+      <input type="text" id="b" placeholder="Digite o segundo valor">
+      <input type="text" id="c" placeholder="Digite o terceiro valor">
+    
+      <button id="resultado" onclick="obterMedia()">
+        Calcular média
+      </button>
+    </div>
+  </div>
+</body>
+
+<script>
+  function obterMedia() {
+    var a = parseInt(document.getElementById("a").value);
+    var b = parseInt(document.getElementById("b").value);
+    var c = parseInt(document.getElementById("c").value);
+
+    var media = (a + b + c) / 3;
+
+    document.getElementById("resultado").innerHTML = "Média: " + media;
+  }
+</script>
+</html>
