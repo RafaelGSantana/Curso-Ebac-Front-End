@@ -34,3 +34,9 @@
 - Post para redes sociais: texto + foto + url curta
 - Incluir hospedagem (servidor web) 
 - Git - histórico de evolução (commits detalhados)
+
+## URL
+Uniform Resource Locator
+
+- URL amigável para humandos e mecanismos de busca
+- Encurtador de url 

@@ -35,6 +35,84 @@ header {
     border-bottom: 1px solid #254159;
 }
 
+#banner {
+    background-image: url('../images/banner.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 60vh;
+}
+
+.legenda-container {
+  width: 35vw;
+  float: right;
+  margin: 0 5vh 0 0;
+}
+
+.legenda {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+    /* height: 15vh; */
+    margin-bottom: 3rem;
+}
+
+.legenda h4,
+.legenda h5 {
+    color: #254159;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.button-cta {
+  display: inline;
+  background-color: orangered;
+  color: #fff;
+  font-size: 1.8rem;
+  box-shadow: 1px 1px 5px #454545;
+  padding: 10px 15px;
+  width: auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 15px;
+  float: right;
+}
+
+#saiba-mais {
+  /* background-color: #eaeff3; */
+}
+
+#saiba-mais p,
+#saiba-mais img {
+  width: 45%;
+  display: block;
+  float: left;
+  padding: 20px;
+}
+
+#perguntas-frequentes {
+  background-color: #b8c8d6;
+  padding-top: 40px 0;
+}
+dl {
+  margin: 20px 0;
+}
+
+dt {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 1.6rem;
+
+}
+
+dd {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
 section {
     background-color: #fff;
     display: block;
@@ -138,7 +216,7 @@ ol li:last-child {
 }
 
 #tenho-interesse {
-    background-color: #b8c8d6;
+    /* background-color: #; */
     width: 100%;
     padding: 20px;
 }
@@ -324,8 +402,12 @@ footer small {
 
 @media (min-width: 587px) {
     section {
-        padding: 30px;
         position: relative;
+    }
+
+    
+    #nav-section-home {
+      padding: 0;
     }
 
     nav ul {
@@ -343,7 +425,7 @@ footer small {
     }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
     .main-container {
         max-width: 1024px;
     }
@@ -359,6 +441,7 @@ footer small {
     section {
         padding: 30px;
     }
+
 
     nav ul {
         top: -80px;
