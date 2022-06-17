@@ -1,186 +1,194 @@
-function calcularMedia ( notas ) {
-  let soma = 0;
-  for(c = 0; c < notas.length; c++) {
-    soma += notas[c];
-  }
+const formulario = document.getElementById('form');
+const nome = document.getElementById("nome");
+const email = document.getElementById("email");
+const telefone = document.getElementById("telefone");
+const cep = document.getElementById("cep");
+const cidade = document.getElementById("cidade");
+const uf = document.getElementById("uf");
 
-  media = soma / notas.length;
+// Validação do formulário + mensagem de sucesso / erro + reset do form
+formulario.addEventListener('submit', function(event) {
+   event.preventDefault();
 
-  return media
+   const inputGroup = formulario.querySelectorAll(".input-group");
+
+   const formIsValid = [...inputGroup].every(input => {
+      return (input.className === "input-group success");
+   });
+
+   const formIsNotValid = [...inputGroup].find(input => {
+      return (input.className === "input-group erro");
+   });
+
+   if(formIsValid) {
+      alert("Formulário enviado");
+
+      limpaCampos();
+   } else if (formIsNotValid) {
+      alert("Não foi possível fazer o cadastro. Por favor, verifique os campos destacados em vermelho!")
+   } else {
+      alert("Não foi possível fazer o cadastro.")
+   }
+});
+
+
+// Funções que efetivam a validação dos campos
+
+function checaNomeInput () {
+   const nomeValue = nome.value;
+
+   if (nomeValue === "") {
+      setError(nome, "O nome de usuário é obrigatório!");
+   } else {
+      setSuccess(nome);
+   }
 }
 
-let media;
+function checaEmailInput () {
+   const emailValue = email.value;
 
-function aprovacao (valores) {
-  let media = calcularMedia( valores);
-
-  let condicao = media >= 8 ? "aprovado" : "reprovado";
-
-  return "Média: " + media + " - Resultado: " + condicao;
+   if (emailValue === "") {
+      setError(email, "O email é obrigatório!");
+   } else if(!checaEmail(emailValue)) {
+      setError(email, "Por favor, insira um e-mail válido");
+   } else {
+      setSuccess(email);
+   }
 }
 
-/**
- *  Formulário de envio de dados para cálculo de média
- */
+function checaTelefoneInput () {
+   const telefoneValue = telefone.value;
 
-const formulario1 = document.getElementById('formulario');
+   if (telefoneValue === "") {
+      setError(telefone, "O telefone é obrigatório!")
+   } else if (telefoneValue.length >= 1 && telefoneValue.length !== 11) {
+      setError(telefone, "Por favor, insira um telefone válido");
+   } else {
+      setSuccess(telefone);
+   }
+}
 
-if (formulario1) // Os eventos abaixo só serão executados, se o formulario1 existir
+function checaCepInput () {
+   const cepValue = cep.value;
 
-  formulario1.addEventListener('submit', function(event) {
-    event.preventDefault();
-    event.stopPropagation();
+   if (cepValue === "") {
+      setError(cep, "O cep é obrigatório!")
+   } else if (!checaCep(cepValue)) {
+      setError(cep, "Por favor, insira um cep válido");
+      console.log(cepValue)
+   } else {
+      setSuccess(cep);
+   }
+}
 
-    if(this.getAttribute('class').match(/erro/)) {
-      return false;
-    }
-    
-    let dataForm = new FormData(this);
+function checaCidadeInput () {
+   const cidadeValue = cidade.value;
 
-    let valores = [];
+   if (cidadeValue === "") {
+      setError(cidade, "A cidade é obrigatória!")
+   } else {
+      setSuccess(cidade);
+   }
+}
 
-    for (let key of dataForm.keys()) {
+function checaUfInput () {
+   const ufValue = uf.value;
 
-      let numero = dataForm.get(key).match(/\d*/) ? Number(dataForm.get(key)) : 0;
+   if (ufValue === "") {
+      setError(uf, "O uf do estado é obrigatório!")
+   } else if (!checaUf(ufValue)) {
+      setError(uf, "Por favor, insira um cep válido");
+   } else {
+      setSuccess(uf);
+   }
+}
 
+// Validação no evento dos inputs
+nome.addEventListener('focusout', function(event) {
+   event.preventDefault();
 
-      // Checa se valor passado é um número, se for, inclui no array 'valores'.
-      if (!isNaN(numero)) {
-        valores.push(numero);
-      }
-    }
+   checaNomeInput();
+});
 
-    document.getElementById('resultado').innerHTML = aprovacao(valores);
-  });
+email.addEventListener('focusout', function(event) {
+   event.preventDefault();
 
-  /**
-   * Validação de campos
-   */
-  function validaCampo(elemento) {
+   checaEmailInput();
+});
 
-    elemento.addEventListener('focusout', function(event) {
+telefone.addEventListener('focusout', function(event) {
+   event.preventDefault();
 
-      event.preventDefault();
+   checaTelefoneInput();
+});
 
-      if (this.value == "") {
-        document.querySelector('.mensagem').innerHTML = "Preencha os campos destacados, corretamente.";
-        this.classList.add('erro');
-        this.parentNode.classList.add('erro');
-        return false;
-      } else {
-        document.querySelector('.mensagem').innerHTML = "";
-        this.classList.remove('erro');
-        this.parentNode.classList.remove('erro');
-      }
-    });
-  }
+cep.addEventListener('focusout', function(event) {
+   event.preventDefault();
 
-  function validaCampoNumerico(elemento) {
+   checaCepInput();
+});
 
-    elemento.addEventListener('focusout', function(event) {
+cidade.addEventListener('focusout', function(event) {
+   event.preventDefault();
 
-      event.preventDefault();
+   checaCidadeInput();
+});
 
-      let numero = this.value;
+uf.addEventListener('focusout', function(event) {
+   event.preventDefault();
 
-      if (numero.match(/[0-9]*/) && numero >= 0 && numero <=10 && numero != "") {
-        document.querySelector('.mensagem').innerHTML = "";
-        this.classList.remove('erro');
-        this.parentNode.classList.remove('erro');
-      } else {
-        document.querySelector('.mensagem').innerHTML = "Preencha os campos destacados, corretamente.";
-        this.classList.add('erro');
-        this.parentNode.classList.add('erro');
-        return false;
+   checaUfInput();
+});
 
-      }
-    });
-  }
+// Funções auxiliares
+function setError(input, message) {
+   // pega o elemento pai do input
+   const inputGroup = input.parentElement;
 
-  function validaEmail(elemento) {
-    elemento.addEventListener('focusout', function(event) {
+   // pega o elemento small
+   const small = inputGroup.querySelector("small");
 
-      event.preventDefault();
+   // Adiciona mensagem de erro na tag small
+   small.innerText = message;      
 
-      const formatoEmailValido = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z])?/i;
-      if(this.value.match(formatoEmailValido)) {
-        console.log(this.value);
-        document.querySelector('.mensagem').innerHTML = "";
-        this.classList.remove('erro');
-        this.parentNode.classList.remove('erro');
-      } else {
-        document.querySelector('.mensagem').innerHTML = "Preencha corretamente o e-mail";
-        this.classList.add('erro');
-        this.parentNode.classList.add('erro');
-        return false;
-      }
+   // Adiciona classe de erro no elemento
+   inputGroup.className = "input-group erro"
+}
 
-    })
-  }
+function setSuccess(input) {
+   // pega o elemento pai do input
+   const inputGroup = input.parentElement;
+   // Adiciona classe de sucesso no elemento
+   inputGroup.className = "input-group success"
+}
 
-  function validaCEP (elemento) {
-    elemento.addEventListener('focusout', function(event) {
+function checaEmail(email) {
+   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+     email
+   );
+}
 
-      event.preventDefault();
+function checaCep(cep){
+   return /[0-9]{5}-[0-9]{3}$|^[0-9]{8}$/.test(cep)
+}
 
-      const cepValido = this.value.match(/^[\d]{5}-[\d]{3}|^[\d]{8}/);
+function checaUf(uf){
+   return /rr|ap|am|pa|ac|ro|to|ma|pi|ce|rn|pe|pb|al|se|ba|mt|df|go|ms|mg|es|rj|sp|pr|sc|rs/.test(uf)
+}
 
-      if(this.value.match(cepValido)) {
-        document.querySelector('.mensagem').innerHTML = "";
-        this.classList.remove('erro');
-        this.parentNode.classList.remove('erro');
-      } else {
-        document.querySelector('.mensagem').innerHTML = "Preencha corretamente o cep";
-        this.classList.add('erro');
-        this.parentNode.classList.add('erro');
-        return false;
-      }
-    })
-  }
+function limpaCampos() {
+   nome.value = "";
+   email.value = "";
+   telefone.value = "";
+   cep.value = "";
+   cidade.value = "";
+   uf.value = "";
 
-  function validaUf(elemento) {
-    elemento.addEventListener('focusout', function(event) {
+   nome.parentElement.classList.remove('success');
+   email.parentElement.classList.remove('success');
+   telefone.parentElement.classList.remove('success');
+   cep.parentElement.classList.remove('success');
+   cidade.parentElement.classList.remove('success');
+   uf.parentElement.classList.remove('success');
 
-      event.preventDefault();
-
-      const formatoUfValido = /rr|ap|am|pa|ac|ro|to|ma|pi|ce|rn|pe|pb|al|se|ba|mt|df|go|ms|mg|es|rj|sp|pr|sc|rs/;
-      if(this.value.match(formatoUfValido)) {
-        document.querySelector('.mensagem').innerHTML = "";
-        this.classList.remove('erro');
-        this.parentNode.classList.remove('erro');
-      } else {
-        document.querySelector('.mensagem').innerHTML = "Preencha corretamente o uf do seu estado";
-        this.classList.add('erro');
-        this.parentNode.classList.add('erro');
-        return false;
-      }
-
-    })
-  }
-
-  let camposObrigatorios = document.querySelectorAll('input.obrigatorio');
-  let camposNumericos = document.querySelectorAll('input.numero');
-  let campoEmail = document.querySelectorAll('input.email');
-  let campoUf = document.querySelectorAll('input.uf');
-  let campoCep = document.querySelectorAll('input.cep');
-
-  for(let emFoco of camposObrigatorios) {
-    validaCampo(emFoco);
-  }
-
-  for(let emFoco of camposNumericos) {
-    validaCampoNumerico(emFoco);
-  }
-
-  for(let emFoco of campoEmail) {
-    validaEmail(emFoco);
-  }
-
-  for(let emFoco of campoUf) {
-    validaUf(emFoco);
-  }
-  
-  for(let emFoco of campoCep) {
-    validaCEP(emFoco);
-  }
-
+}

@@ -2,120 +2,144 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(250, 243, 235);
-}
-
-.erro {
-  border-color: #f00;
-}
-
-.container {
-  margin: 0 auto;
   width: 100%;
-  max-width: 640px;
   height: 100vh;
-
-  /* background-color: #fff; */
+  background: linear-gradient(90deg, rgb(250, 243, 235) 0%, #00c8ff 100%);
 }
 
-.container header {
+header {
   width: 100%;
   height: auto;
-  padding: 28px 0;
-  background-color: #fff;
+  padding: 24px 0;
+  background-color: transparent;
 
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
 }
 
-.container header h1 {
+header h1 {
   color: rgb(74, 84, 69);
   font-size: 1.5rem;
   text-align: center;
 }
 
-.container header p {
-  text-align: center;
-  margin-top: 6px;
-  color: rgb(74, 84, 69);
-  font-size: 1rem;
-}
+.container {
+   margin: 0 auto;
+   width: 100%;
+   max-width: 500px;
+   padding: 0 24px 24px;
+ }
 
-.container div.form-wrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  padding-bottom: 16px;
-  
-}
-
-.container div.form-wrapper form {
+form {
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 24px 0;
-  background-color: #fff;
+  background-color: #fafafa;
   border-radius: 6px;
-  margin-top: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
-.container div.form-wrapper form .mensagem {
-  color: #f00;
+.header-form {
+   width: 100%;
+   background-color: #eee;
+   padding: 16px;
+   margin-bottom: 20px;
 }
 
-.container div.form-wrapper form h2 {
-  color: rgb(38, 43, 35);
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 16px;
+.header-form h2 {
+   color: rgb(74, 84, 69);
+   text-align: center;
+   font-weight: 600;
 }
 
-.container div.form-wrapper form p {
-  color: rgb(38, 43, 35);
-  font-size: 0.8rem;
-  font-weight: 300;
-  margin-bottom: 20px;
+.input-group {
+   margin-bottom: 12px;
+   padding-bottom: 10px;
+   position: relative;
+   width: 80%;
 }
 
-
-
-.container div.form-wrapper input {
-  width: 300px;
-  padding: 12px 16px;
-  border-radius: 4px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.input-group label {
+   color: rgb(74, 84, 69);
+   font-weight: 500;
+   display: inline-block;
+   margin-bottom: 4px;
+   margin-left: 2px;
 }
 
-.container div.form-wrapper input#a {
-  margin-top: 32px;
+.input-group input {
+   color: rgb(49, 55, 46);
+   border: 2px solid #f0f0f0;
+   display: block;
+   border-radius: 6px;
+   font-size: 14px;
+   width: 100%;
+   padding: 10px;
 }
 
-.container div.form-wrapper input + input {
-  margin-top: 16px;
+.input-group p {
+   color: rgb(74, 84, 69);
+   font-weight: 300;
+   display: inline-block;
+   margin-top: 2px;
+   margin-left: 8px;
+   font-size: 10px;
 }
 
-.container div.form-wrapper button {
-  margin-top: 24px;
-  width: 240px;
-  height: 36px;
-  margin-left: 60px;
-  border: none;
-  border-radius: 4px;
-  background-color: rgb(246, 206, 153);
-  transition: background-color 0.3s;
+.input-group i {
+   position: absolute;
+   top: 44px;
+   right: 10px;
+   visibility: hidden;
 }
 
-.container form.form-wrapper button:hover {
-  background-color: rgb(245, 183, 102);
+.input-group small {
+   position: absolute;
+   left: 2px;
+   font-size: 12px;
+   visibility: hidden;
+}
+
+button {
+   background-color: #00c8ff;
+   border: 2px solid #00c8ff;
+   color: #fafafa;
+   font-weight: 600;
+   font-size: 16px;
+   width: 80%;
+   margin: 10px 0 20px 0;
+   border-radius: 6px;
+   padding: 10px;
+
+   cursor: pointer;
+}
+
+/* Error e success */
+.input-group.success input {
+   border-color: #2ecc71;
+}
+
+.input-group.erro input {
+   border-color: #e74c3c;
+}
+
+.input-group.success i.fa-check-circle {
+   color: #2ecc71;
+   visibility: visible;
+}
+
+.input-group.erro i.fa-exclamation-circle {
+   color: #e74c3c;
+   visibility: visible;
+}
+
+.input-group.erro small {
+   color: #e74c3c;
+   visibility: visible;
 }
