@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./styles/custom.css" rel="stylesheet">
+  </head>
+  <body>
+         <header>
+            <div class="container">
+            <div class="row g-3">
+               <div class="col-12 col-md-6">
+                  <h1>grow<span>TH</span>rough <span>TECH.</span></h1>
+               </div>
+            
+               <div class="col-12 col-md-6">
+                  <ul class="nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="#top">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#sobre">Sobre</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#servicos">Serviços</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#contato">Contato</a>
+                  </li>
+                  </ul>
+               </div>
+
+            </div>
+            </div>
+         </header>
+
+         <section id="sobre">
+            <div class="container">
+            <div class="row g-3">
+            <div class="col-md-6 col-sm-12 content">
+               <div>
+                  <h2>Sobre nós</h2>
+                  <p>
+                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam nam deleniti quaerat dolor sit culpa autem
+                     praesentium eaque, quis laudantium voluptatibus eveniet et veniam tempora maxime odit sapiente repellendus veritatis.
+                  </p>
+               </div>
+
+               <a href="#contato" class="btn btn-lg">Solicite uma cotação</a>
+
+            </div>
+
+            <div class="col-md-6 col-sm-12">
+               <img src="./images/banner.jpg" alt="banner" class="img-fluid">
+            </div>
+
+            </div>
+         </div>
+         </section>
+
+         <section id="servicos">
+            
+            <div class="container">
+               <div class="row g-3 card-wrapper">
+                  <h2>Serviços</h2>
+                  <div class="col-12 col-md-6 col-lg-4 card">
+                     <img src="./images/idea.jpg" alt="banner" class="img-fluid">
+                     <div class="card-body">
+                        <div class="text-wrapper">
+                           <h5 class="card-title">Consultoria especializada</h5>
+                           <p class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit odit</p>
+                        </div>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-1" class="btn btn-primary">Saiba mais</a>
+                     </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 col-lg-4 card">
+                     <img src="./images/code.jpg" alt="banner" class="img-fluid">
+                     <div class="card-body">
+                        <div class="text-wrapper">
+                           <h5 class="card-title">Desenvolvimento Web e Mobile</h5>
+                           <p class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit odit</p>
+                        </div>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-2" class="btn btn-primary">Saiba mais</a>
+                     </div>
+                  </div>
+                  <div class="col-12 col-md-6 col-lg-4 card">
+                     <img src="./images/design.jpg" alt="banner" class="img-fluid">
+                     <div class="card-body">
+                        <div class="text-wrapper">
+                           <h5 class="card-title">Design e UX</h5>
+                           <p class="card-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit odit</p>
+                        </div>
+                        <a data-bs-toggle="modal" data-bs-target="#modal-3" class="btn btn-primary">Saiba mais</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section id="contato">
+            <div class="container">
+               <div class="row g-3">
+                  <div class="col-12 col-md-6">
+                     <div class="form-text-wrapper">
+                        <h2>Contato</h2>
+                        <p>
+                           Ficou interessado? Preencha os campos do formulário para receber uma cotação.
+                        </p>
+                     </div>
+                     <form class="form">
+                        <div class="input-group">
+                           <input class="form-control" type="text" name="nome" placeholder="Digite seu nome">
+                        </div>
+
+                        <div class="input-group">
+                           <input class="form-control" type="text" name="email" placeholder="Digite seu e-mail">
+                        </div>
+
+                        <div class="input-group">
+                           <textarea class="form-control" name="descricao" rows="4"  placeholder="Como podemos te ajudar?"></textarea>
+                        </div>
+
+                        <div class="input-group">
+                           <button class="form-control" type="submit" class="btn btn-lg btn-success">
+                              Solicitar cotação
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+
+                  <div class="col-md-6 col-sm-12">
+                     <img src="./images/contato.jpg" alt="Duas pessoas se cumprimentando com um aperto de mão">
+                  </div>
+            </div>
+         </section>
+
+         <div class="modal fade" id="modal-1">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h4 class="modal-title">Consultoria especializada</h4>
+                     <button
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                     ></button>
+                  </div>
+
+                  <div class="modal-body">
+                     <div class="container-fluid">
+                        <div class="intro">
+                           <img src="./images/idea.jpg" alt="lâmpada acesa">
+                           <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                              nihil esse hic aut atque optio ratione doloribus perspiciatis magnam
+                              quidem qui, corrupti iste laudantiu. Adipisci nihil esse hic aut
+                              atque optio ratione doloribus perspiciatis magnam quidem qui,
+                              corrupti iste laudantiu.
+                           </p>
+                        </div>
+
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                        
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                                             
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="modal-footer">
+                     <a
+                        href="#contato"
+                        class="btn btn-lg"
+                     >
+                        <button
+                           data-bs-dismiss="modal"
+                           aria-label="Close"
+                        >
+                           Solicite uma cotação
+                        </button>
+                     </a>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+
+         <div class="modal fade" id="modal-2">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h4 class="modal-title">Desenvolvimento Web e Mobile</h4>
+                     <button
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                     ></button>
+                  </div>
+
+                  <div class="modal-body">
+                     <div class="container-fluid">
+                        <div class="intro">
+                           <img src="./images/code.jpg" alt="tela de notebook com código de programacao.">
+                           <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                              nihil esse hic aut atque optio ratione doloribus perspiciatis magnam
+                              quidem qui, corrupti iste laudantiu. Adipisci nihil esse hic aut
+                              atque optio ratione doloribus perspiciatis magnam quidem qui,
+                              corrupti iste laudantiu.
+                           </p>
+                        </div>
+
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                        
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                                             
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="modal-footer">
+                     <a
+                        href="#contato"
+                        class="btn btn-lg"
+                     >
+                        <button
+                           data-bs-dismiss="modal"
+                           aria-label="Close"
+                        >
+                           Solicite uma cotação
+                        </button>
+                     </a>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+
+         <div class="modal fade" id="modal-3">
+            <div class="modal-dialog modal-lg">
+               <div class="modal-content">
+                  <div class="modal-header">
+                     <h4 class="modal-title">Design e UX</h4>
+                     <button
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                     ></button>
+                  </div>
+
+                  <div class="modal-body">
+                     <div class="container-fluid">
+                        <div class="intro">
+                           <img src="./images/design.jpg" alt="Caderno aberto com caneta em cima e celular ao lado.">
+                           <p>
+                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                              nihil esse hic aut atque optio ratione doloribus perspiciatis magnam
+                              quidem qui, corrupti iste laudantiu. Adipisci nihil esse hic aut
+                              atque optio ratione doloribus perspiciatis magnam quidem qui,
+                              corrupti iste laudantiu.
+                           </p>
+                        </div>
+
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                        
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                                             
+                        <h6>Subtítulo</h6>
+                        <p>
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci 
+                           nihil esse hic aut atque optio ratione doloribus perspiciatis magnam.
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="modal-footer">
+                     <a
+                        href="#contato"
+                        class="btn btn-lg"
+                     >
+                        <button
+                           data-bs-dismiss="modal"
+                           aria-label="Close"
+                        >
+                           Solicite uma cotação
+                        </button>
+                     </a>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
