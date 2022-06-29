@@ -1,0 +1,141 @@
+body {
+   color: rgba(0, 0, 0, 0.7);
+   background-color: rgba(69, 51, 184, 0.1);
+}
+
+.container {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 0 2rem;
+}
+
+header {
+   border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+   padding: 20px 0;
+   height: 96px;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+header h1 {
+   font-size: 2.1rem;
+   margin-bottom: 0;
+   color: rgb(238, 238, 254);
+}
+
+header h1 span {
+   color: #a1b833;
+}
+
+header h1 span:last-child {
+   font-size: 1.1rem;
+}
+
+header div.container div div:last-child ul li a {
+   font-weight: 600;
+   color: rgb(238, 238, 254);
+   transition: color 0.3s;
+}
+
+header div.container div div:last-child ul li a:hover {
+   color: #a1b833;
+}
+
+section {
+   padding: 2rem 0;
+}
+
+section .form .form-control::placeholder {
+   color: rgba(0, 0, 0, 0.3);
+   font-weight: 500;
+}
+
+section .form .form-control:focus {
+   border-color: #a1b833;
+   border-width: 2px;
+   box-shadow: none;
+   background-color: rgb(238, 238, 254);
+}
+
+section .form textarea {
+   resize: none;
+}
+
+section .form button {
+   width: 280px;
+   background-color: #a1b833  ;
+   border: 2px solid #a1b833;
+   color: rgb(238, 238, 254);
+   font-weight: 600;
+
+   transition: background-color 0.3s;
+}
+
+section .form button:hover {
+   border: 2px solid #a1b833;
+   background-color: rgb(238, 238, 254);
+   color: #a1b833;
+}
+
+@media (max-width: 1024px) {
+   .container {
+      width: 100%;
+      max-width: 1024px;
+      padding: 0 1.5rem;
+   }
+   
+   header h1 {
+      font-size: 2rem;
+   }
+   
+   header h1 span:last-child {
+      font-size: 1rem;
+   }
+   
+}
+
+@media (max-width: 768px) {
+   .container {
+      max-width: 768px;
+      padding: 0 1.5rem;
+   }
+   
+   header .container .row div {
+      display: flex;
+      justify-content: center;
+   }
+  
+   header .container .row div:last-child {
+      display: flex;
+      justify-content: center !important;
+   }
+
+   header h1 {
+      font-size: 1.8rem;
+   }
+   
+   header .nav {
+      --bs-nav-link-padding-x: 0.5rem;
+      --bs-nav-link-padding-y: 0;
+   }
+
+   header .nav .nav-link {
+      font-size: 0.9rem;
+   }
+
+   section#cadastro form .last-div {
+      margin-top: 0 !important;
+   }
+
+   section#cadastro form .last-div .form-check,
+   section#cadastro form .last-div div:last-child  {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 8px 0;
+   }
+
+   section#cadastro form .last-div div:last-child button {
+      width: 100%;
+   }
+}
