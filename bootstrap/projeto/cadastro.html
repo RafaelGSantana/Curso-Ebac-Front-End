@@ -20,16 +20,16 @@
             <div class="col-12 col-md-6 px-0 d-flex align-items-center justify-content-end">
                <ul class="nav">
                   <li class="nav-item">
-                     <a class="nav-link" href="#top">Home</a>
+                     <a class="nav-link" href="./index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#sobre">Sobre</a>
+                     <a class="nav-link" href="./index.html#sobre">Sobre</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#servicos">Serviços</a>
+                     <a class="nav-link" href="./index.html#servicos">Serviços</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#contato">Contato</a>
+                     <a class="nav-link" href="./index.html#contato">Contato</a>
                   </li>
                </ul>
             </div>
@@ -56,7 +56,7 @@
                </div>
                <div class="col-md-6 col-sm-12">
                   <label for="email" class="col-form-label col-form-label-sm">E-mail</label>
-                  <input class="form-control" type="text" id="email" name="email" placeholder="digite seu email"
+                  <input class="form-control" type="email" id="email" name="email" placeholder="digite seu email"
                      required>
                </div>
             </div>
@@ -79,7 +79,7 @@
                </div>
                <div class="col-md-12 col-sm-12">
                   <label for="telefone" class="col-form-label col-form-label-sm">Telefone</label>
-                  <input type="text" id="telefone" class="form-control" placeholder="Digite o seu telefone" required>
+                  <input type="number" id="telefone" class="form-control" placeholder="Digite o seu telefone" required>
                </div>
             </div>
 
@@ -100,27 +100,27 @@
                </div>
                <div class="col">
                   <label for="cep" class="col-form-label col-form-label-sm">CEP</label>
-                  <input type="text" name="cep" id="cep" class="form-control" placeholder="Digite o seu CEP" required>
+                  <input type="number" name="cep" id="cep" class="form-control" placeholder="Digite o seu CEP" required>
                </div>
             </div>
 
             <div class="row">
                <div class="col">
                   <label for="info" class="col-form-label col-form-label-sm">Informações</label>
-                  <textarea class="form-control" name="informacoes" id="info" rows="5" required></textarea>
+                  <textarea class="form-control" name="info" id="info" rows="5" required></textarea>
                </div>
             </div>
 
             <div class="row mt-4 last-div">
                <div class="col-md-6 col-sm-12">
                   <div class="form-check d-flex align-items-center">
-                     <input type="checkbox" class="me-1" name="promocionais" id="promocionais" required>
+                     <input type="checkbox" class="me-1" name="promocionais" id="promo">
                      <label for="promocionais" class="form-check-label col-form-label-sm">Aceito receber
                         mensagens promocionais</label>
                   </div>
                </div>
                <div class="col-md-6 col-sm-12">
-                  <button  type="submit" class="btn btn-lg float-end">Realizar cadastro</button>
+                  <button  type="submit" id="submit" class="btn btn-lg float-end">Realizar cadastro</button>
                </div>
             </div>
 
@@ -131,6 +131,7 @@
 
    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
    <script src="https://kit.fontawesome.com/2d65c27c46.js" crossorigin="anonymous"></script>
+   <script src="./index.js"></script>
 </body>
 
 </html>
