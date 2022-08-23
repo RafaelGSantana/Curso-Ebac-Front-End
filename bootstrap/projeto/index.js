@@ -46,7 +46,9 @@ submit.addEventListener('click', () => {
 
    if (telefone.value === "") {
       telefone.setCustomValidity('Por favor, preencha este campo!');
-   } else {
+   } else if (!telefone.value.match(/^[0-9]{11}$/)) {
+      telefone.setCustomValidity('Por favor, preencha um telefone válido, apenas com números!');
+   }  else {
       telefone.setCustomValidity('');
    }
 
@@ -64,6 +66,8 @@ submit.addEventListener('click', () => {
 
    if (cep.value === "") {
       cep.setCustomValidity('Por favor, preencha este campo!');
+   } else if (!cep.value.match(/^[0-9]{8}$/)) {
+      cep.setCustomValidity('Por favor, preencha um cep válido, apenas com números!');
    } else {
       cep.setCustomValidity('');
    }
@@ -73,11 +77,4 @@ submit.addEventListener('click', () => {
    } else {
       info.setCustomValidity('');
    }
-
-   if (promo.checked) {
-      promo.setCustomValidity('Por favor, preencha este campo!');
-   } else {
-      promo.setCustomValidity('');
-   }
-   
 })
