@@ -135,7 +135,7 @@
       <div class="container">
          <div class="row g-3">
             <div class="col-12 col-md-6">
-               <div class="form-text-wrapper">
+               <div class="form-text-wrapper px-2">
                   <h2>Contato</h2>
                   <p>
                      Ficou interessado? Preencha os campos do formulário para receber uma cotação.
@@ -143,20 +143,20 @@
                </div>
                <form class="form">
                   <div class="input-group d-flex align-items-baseline px-2">
-                     <input class="form-control" type="text" name="nome" placeholder="Digite seu nome" required>
+                     <input class="form-control" type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
                   </div>
 
                   <div class="input-group d-flex align-items-baseline px-2">
-                     <input class="form-control" type="text" name="email" placeholder="Digite seu e-mail" required>
+                     <input class="form-control" type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
                   </div>
 
                   <div class="input-group d-flex align-items-baseline px-2">
-                     <textarea class="form-control" name="descricao" rows="4"
+                     <textarea class="form-control" id="descricao" name="descricao" rows="4"
                         placeholder="Como podemos te ajudar?" required></textarea>
                   </div>
 
-                  <div class="input-group">
-                     <button class="form-control" type="submit" class="btn btn-lg btn-success">
+                  <div class="input-group px-2">
+                     <button class="form-control" type="submit" id="submit" class="btn btn-lg btn-success">
                         Solicitar cotação
                      </button>
                   </div>
@@ -170,7 +170,7 @@
    </section>
 
    <section id="cadastro">
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center container">
          <p>
             Se deseja ficar por dentro dos nossos eventos e receber promoções,
             cadastre-se <a href="./cadastro.html">aqui</a>
@@ -338,6 +338,7 @@
    </div>
    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
    <script src="https://kit.fontawesome.com/2d65c27c46.js" crossorigin="anonymous"></script>
+   <script src="./index.js"></script>
 </body>
 
 </html>

@@ -152,7 +152,6 @@ section#contato .form .input-group .form-control:focus {
 
 section#contato .form textarea {
    resize: none;
-   margin-bottom: 2.6rem;
 }
 
 section#contato .form .form-control::placeholder {
