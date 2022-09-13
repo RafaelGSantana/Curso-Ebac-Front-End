@@ -1,21 +1,38 @@
+$('.owl-carousel').owlCarousel({
+   loop:true,
+   margin:10,
+   nav:true,
+   responsive:{
+       0:{
+           items:1
+       },
+       600:{
+           items:2
+       },
+       1000:{
+           items:3
+       }
+   }
+})
+
 // instancia jquery e evita conflitos
 // jQuery( function($){
-$(document).ready(function(){
+// $(document).ready(function(){
 
-    $('.owl-carousel').owlCarousel();
+//     $('.owl-carousel').owlCarousel();
 
-    let titulos = $('h4') // tag
+//     let titulos = $('h4') // tag
    
-    let itens = $('.featured-item') // class
+//     let itens = $('.featured-item') // class
     
-    let destaques = $('#featured') // id
+//     let destaques = $('#featured') // id
 
-    console.log(titulos.first());
+//     console.log(titulos.first());
     
 
     // Configuração de produtos
 
-    $('.featured-item a').addClass('btn btn-dark stretch-link');
+   //  $('.featured-item a').addClass('btn btn-dark stretch-link');
 
    //  $('.featured-item:first h4').append('<span class="badge bg-secondary">Novo</span>')
     // $('.featured-item:first h4').start('<span class="badge bg-secondary">Novo</span>') // Adc o html no início do elemento
@@ -42,22 +59,10 @@ $(document).ready(function(){
      /*
       * Manipulação de eventos
       */
-     $('.featured-item a').on('blur', function(event){
+   //   $('.featured-item a').on('blur', function(event){
 
-        event.preventDefault();
+   //      event.preventDefault();
 
-        alert('Produto esgotado');
+   //      alert('Produto esgotado');
 
-     })
-     
-     
-     
-     
-
-
-
-
-
-
-
-})
+   //   })
