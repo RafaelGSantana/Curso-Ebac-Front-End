@@ -11,7 +11,6 @@ body {
 
 .navbar {
    width: 100%;
-   height: 6rem;
    border-bottom: 1px solid #f5f5f2;
 }
 
@@ -30,12 +29,6 @@ body {
 
 .navbar .container-fluid .navbar-brand span {
    color: #0279d4;
-}
-
-.navbar .container-fluid div {
-   display: flex;
-   align-items: center;
-   justify-content: flex-end;
 }
 
 .navbar .container-fluid div .navbar-nav .nav-item .nav-link {
@@ -73,7 +66,6 @@ section.banner {
 section.banner .container-fluid {
    max-width: 1400px;
 }
-
 section.banner .container-fluid .row {
    width: 450px;
    height: 200px;
@@ -132,7 +124,6 @@ section.highlights .container-fluid .row .owl-carousel {
 }
 
 section.highlights .container-fluid .row .owl-carousel .item .card {
-   max-width: 400px;
    border-radius: 6px;
    overflow: hidden;
 }
@@ -146,7 +137,7 @@ section.highlights .container-fluid .row .owl-carousel .item .card .card-body {
 section.highlights .container-fluid .row .owl-carousel .item .card .card-body div {
    width: 100%;
    display: flex;
-   align-items: center;
+   align-items: baseline;
    justify-content: space-between;
    margin-bottom: 1rem;
 }
@@ -168,13 +159,11 @@ section.highlights .container-fluid .row .owl-carousel .item .card .card-body di
 
 section.highlights .container-fluid .row .owl-carousel .item .card .card-body .btn {
    width: 100%;
-   /* background-color: #0279d4; */
    padding: 0.5rem;
    color: #fff;
    font-weight: 600;
    font-size: 1.1rem;
    letter-spacing: 2px;
-   transition: opacity 0.3s;
 }
 
 section.highlights .container-fluid .row .owl-carousel .owl-nav {
@@ -195,7 +184,6 @@ section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-prev span {
 
 section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-prev span:hover {
    color: #0279d4;
-   font-weight: 800;
 }
 
 section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span {
@@ -208,7 +196,6 @@ section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span {
 
 section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span:hover {
    color: #0279d4;
-   font-weight: 800;
 }
 
 section.highlights .container-fluid .row .owl-carousel .owl-dots {
@@ -253,7 +240,6 @@ section.footer .container-fluid h1 span {
 }
 
 section.footer .container-fluid .row div {
-   /* width: 100%; */
    display: flex;
    align-items: center;
    justify-content: center;
@@ -341,4 +327,240 @@ section.sub-footer .container-fluid .row div .copyright-text p {
 section.sub-footer .container-fluid .row div .copyright-text p span {
    color: #0279d4;
    font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+   .navbar {
+      max-width: 1024px;
+   }
+   
+   .navbar .container-fluid .navbar-brand {
+      font-size: 2.1rem;
+      letter-spacing: 2.5px;
+   }
+   
+   section.banner {
+      max-width: 1024px;
+   }
+   
+   section.banner .container-fluid .row {
+      width: 400px;
+      height: 180px;
+   }
+   
+   section.banner .container-fluid .row .caption h2 {
+      font-size: 1.8rem;
+   }
+   
+   section.banner .container-fluid .row .caption p {
+      font-size: 1rem;
+   }
+   
+   section.highlights {
+      max-width: 1024px;
+   }
+
+   section.highlights .container-fluid h2 {
+      font-size: 2.3rem;
+   }
+
+   section.footer {
+      max-width: 1024px;
+   }
+   
+   section.footer .container-fluid h1 {
+      font-size: 2.1rem;
+      letter-spacing: 2.5px;
+   }
+
+   section.sub-footer .container-fluid .row div .copyright-text p {
+      font-size: 0.9rem;
+   }
+}
+
+@media (max-width: 768px) {
+   .navbar {
+      max-width: 768px;
+   }
+   
+   .navbar .container-fluid .navbar-brand {
+      font-size: 2rem;
+      letter-spacing: 2px;
+   }
+   
+   .navbar .container-fluid div .navbar-nav .nav-item .nav-link {
+      font-size: 0.9rem;
+   }
+   
+   section.banner {
+      max-width: 768px;
+      height: 360px;
+   }
+   
+   section.banner .container-fluid .row {
+      width: 360px;
+      height: 140px;
+   }
+   
+   section.banner .container-fluid .row .caption h2 {
+      font-size: 1.6rem;
+   }
+   
+   section.banner .container-fluid .row .caption p {
+      font-size: 0.9rem;
+   }
+   
+   section.highlights .container-fluid {
+      padding: 0.5rem 0;
+   }
+   
+   section.highlights .container-fluid h2 {
+      font-size: 2.3rem;
+   }
+
+   section.highlights .container-fluid .row .owl-carousel .item .card .card-body div {
+      margin-bottom: 0.8rem;
+   }
+
+   section.highlights .container-fluid .row .owl-carousel .item .card .card-body div h4 {
+      font-size: 1.2rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .item .card .card-body div h6 {
+      font-size: 1rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .item .card .card-body .btn {
+      font-size: 1rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-prev span {
+      font-size: 1.4rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span {
+      font-size: 1.4rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span:hover {
+      color: #0279d4;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .owl-dots .owl-dot {
+      width: 0.6rem;
+      height: 0.6rem;
+   }
+   
+   section.footer {
+      max-width: 768px;
+   }
+   
+   section.footer .container-fluid h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul {
+      gap: 0.5rem;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li a {
+      font-size: 0.9rem;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li .circulo {
+      width: 6px;
+      height: 6px;
+   }
+   
+   
+   section.footer .container-fluid .row div:nth-child(3) .social-icons ul {
+      gap: 0.5rem;
+      margin-bottom: 0;
+   }
+   
+   section.sub-footer .container-fluid .row div .copyright-text p {
+      font-size: 0.8rem;
+   }
+}
+
+
+@media (max-width: 426px) {
+   .navbar {
+      max-width: 426px;
+   }
+   
+   .navbar .container-fluid .navbar-brand {
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+   }
+   
+   .navbar .container-fluid div .navbar-nav .nav-item .nav-link {
+      font-size: 0.8rem;
+   }
+   
+   section.banner {
+      max-width: 426px;
+      height: 320px;
+      align-items: flex-end;
+      padding-bottom: 2.5rem;
+   }
+   
+   section.banner .container-fluid .row {
+      width: 300px;
+      height: 100px;
+   }
+   
+   section.banner .container-fluid .row .caption h2 {
+      font-size: 1.2rem;
+   }
+   
+   section.banner .container-fluid .row .caption p {
+      font-size: 0.8rem;
+   }
+   
+   section.highlights .container-fluid {
+      padding: 0.5rem 0;
+   }
+   
+   section.highlights .container-fluid h2 {
+      font-size: 1.8rem;
+   }
+
+   section.highlights .container-fluid .row .owl-carousel .owl-dots .owl-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+   }
+   
+   section.footer {
+      max-width: 426px;
+   }
+   
+   section.footer .container-fluid h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul {
+      flex-direction: column;
+      gap: 0.1rem;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li a {
+      font-size: 0.8rem;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li .circulo {
+      display: none;
+   }
+   
+   
+   section.footer .container-fluid .row div:nth-child(3) .social-icons ul {
+      gap: 0.5rem;
+      margin-bottom: 0;
+   }
+   
+   section.sub-footer .container-fluid .row div .copyright-text p {
+      font-size: 0.7rem;
+   }
 }
