@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
    <link rel="stylesheet" href="./vendor/owl/css/owl.css">
    <link rel="stylesheet" href="./vendor/fontawesome/fontawesome.css">
+   <link rel="stylesheet" href="./vendor/jquery-ui/jquery-ui.min.css">
    <link rel="stylesheet" href="./css/style.css">
    <title>jQuery</title>
 </head>
@@ -17,15 +18,8 @@
    <nav class="navbar navbar-light navbar-expand-sm">
       <div class="container-fluid">
          <a class="navbar-brand" href="#"><span>W</span>eb<span>S</span>tore</a>
-         <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-         >
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
          </button>
          <div class="collapse navbar-collapse" id="navbarNav">
@@ -34,13 +28,13 @@
                   <a class="nav-link" href="index.html">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#">Produtos</a>
+                  <a class="nav-link" href="#highlights">Produtos</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#">Sobre nós</a>
+                  <a class="nav-link nav-modal-open" href="#" rel="sobre">Sobre nós</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="#">Contato</a>
+                  <a class="nav-link nav-modal-open" href="#" rel="contato">Contato</a>
                </li>
             </ul>
          </div>
@@ -60,7 +54,7 @@
       </div>
    </section>
 
-   <section class="highlights">
+   <section id="highlights" class="highlights">
       <div class="container-fluid">
          <h2 class="text-center"><span>D</span>estaques</h2>
 
@@ -170,23 +164,19 @@
             <div class="col-md-12">
                <div class="footer-menu">
                   <ul>
-                     <li><a href="#">Home</a></li>
+                     <li><a href="#top">Home</a></li>
                      <li>
                         <div class="circulo"></div>
                      </li>
-                     <li><a href="#">Help</a></li>
+                     <li><a href="#highlights">Produtos</a></li>
                      <li>
                         <div class="circulo"></div>
                      </li>
-                     <li><a href="#">Privacy Policy</a></li>
+                     <li><a href="#" class="nav-modal-open" rel="sobre">Sobre</a></li>
                      <li>
                         <div class="circulo"></div>
                      </li>
-                     <li><a href="#">How It Works ?</a></li>
-                     <li>
-                        <div class="circulo"></div>
-                     </li>
-                     <li><a href="#">Contact Us</a></li>
+                     <li><a href="#" class="nav-modal-open" rel="contato">Contato</a></li>
                   </ul>
                </div>
             </div>
@@ -216,9 +206,99 @@
       </div>
    </section>
 
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Contact Form -->
+   <div id="contato" class="visually-hidden">
+      <form action="post" class="form">
+         <div class="mb-3">
+           <label for="nome" class="form-label">Nome</label>
+           <input type="text" name="nome" id="nome" class="form-control"
+            placeholder="Digite seu nome" aria-describedby="helpNome">
+           <small id="helpNome" class="text-muted">Digite um nome válido</small>
+         </div>
+
+         <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" name="email" id="email" class="form-control"
+             placeholder="Digite seu email" aria-describedby="helpEmail">
+            <small id="helpEmail" class="text-muted">Digite um e-mail válido</small>
+          </div>
+
+          <div class="mb-3">
+            <label for="date" class="form-label">Data</label>
+            <input type="text" name="date" id="date" class="form-control"
+             placeholder="Digite uma data" aria-describedby="helpDate">
+            <small id="helpDate" class="text-muted">Digite uma data válida</small>
+          </div>
+
+          <div class="mb-3">
+            <label for="time" class="form-label">Hora</label>
+            <input type="text" name="time" id="time" class="form-control"
+             placeholder="Digite a hora" aria-describedby="helpTime">
+            <small id="helpTime" class="text-muted">Digite uma hora válida</small>
+          </div>
+
+          <div class="mb-3">
+            <label for="cep" class="form-label">Cep</label>
+            <input type="text" name="cep" id="cep" class="form-control"
+             placeholder="Digite seu cep" aria-describedby="helpCep">
+            <small id="helpCep" class="text-muted">Digite uma hora válida</small>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Celular</label>
+            <input type="text" name="phone" id="phone" class="form-control"
+             placeholder="Digite o número do seu celular" aria-describedby="helpPhone">
+            <small id="helpPhone" class="text-muted">Digite um número de celular válida</small>
+          </div>
+
+          <div class="mb-3">
+            <label for="cpf" class="form-label">CPF</label>
+            <input type="text" name="cpf" id="cpf" class="form-control"
+             placeholder="Digite seu cpf" aria-describedby="helpCPF">
+            <small id="helpCPF" class="text-muted">Digite um cpf válido</small>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar</button>
+      </form>
+   </div>
+
+   <!-- Section Sobre -->
+   <div id="sobre" class="visually-hidden">
+      
+      <p>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit odio eos, delectus magnam qui ducimus
+         voluptates tempora. Eos odio harum, voluptatibus accusantium quaerat reiciendis voluptates, nam illo error
+         eius aspernatur!
+      </p>
+      <p>
+         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit odio eos, delectus magnam qui ducimus
+         voluptates tempora. Eos odio harum, voluptatibus accusantium quaerat reiciendis voluptates, nam illo error
+         eius aspernatur!
+      </p>
+   </div>
+
+   <!-- Bibliotecas -->
    <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
    <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
    <script src="./vendor/owl/js/owl.js"></script>
+   <script src="./vendor/jquery-mask/jquery.mask.min.js"></script>
+
+   <!-- Scripts customizados -->
    <script src="./js/custom.js"></script>
 </body>
 

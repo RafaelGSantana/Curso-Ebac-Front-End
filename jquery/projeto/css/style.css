@@ -564,3 +564,14 @@ section.sub-footer .container-fluid .row div .copyright-text p span {
       font-size: 0.7rem;
    }
 }
+
+/* Estilos auxiliares */
+
+/* Quando o campo do formulário for inválido */
+.invalid {
+   border-color: rgb(240, 52, 52);
+}
+
+.text-muted {
+   display: none;
+}
