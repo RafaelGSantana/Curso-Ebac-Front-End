@@ -20,99 +20,6 @@ $('.owl-carousel').owlCarousel({
    }
 })
 
-// instancia jquery e evita conflitos
-// jQuery( function($){
-// $(document).ready(function(){
-
-//     $('.owl-carousel').owlCarousel();
-
-//     let titulos = $('h4') // tag
-   
-//     let itens = $('.featured-item') // class
-    
-//     let destaques = $('#featured') // id
-
-//     console.log(titulos.first());
-    
-
-    // Configuração de produtos
-
-   //  $('.featured-item a').addClass('btn btn-dark stretch-link');
-
-   //  $('.featured-item:first h4').append('<span class="badge bg-secondary">Novo</span>')
-    // $('.featured-item:first h4').start('<span class="badge bg-secondary">Novo</span>') // Adc o html no início do elemento
-    // $('.featured-item:first h4').html('<span class="badge bg-secondary">Novo</span>')
-    // $('.featured-item:first h4').addClass('active') // Adc classe ao elemento
-    // $('.featured-item:first h4').removeClass('active') // Remove classe do elemento
-    // $('.featured-item:first h4').toggleClass('active') // adiciona ou remove a class active, baseado em algum evento
-    // $('.featured-item:first h4').hide() // Esconde o elemento (display: none)
-    // $('.featured-item:first h4').show() // Exibe o elemento
-    // $('.featured-item:first h4').fadeIn(2000) // Efeito de transição, em milissegundos, na entrada do elemento
-    // $('.featured-item:first h4').fadeOut() // Efeito de transição, em milissegundos, na saída do elemento
-    //  $('.featured-item:first h4').css('color', '#f00')
-     
-   //   $('.featured-item h4').dblclick( function(){
-
-   //      $(this).css({
-   //          'color': '#f00',
-   //          'background': '#ff0',
-   //          'font-weight': '100',
-   //      });
-
-   //   });
-
-
-/*
-   - Manipulação de eventos
-
-      $('.featured-item a').on('blur', function(event){
-
-         event.preventDefault();
-
-         alert('Produto esgotado');
-
-      })
-*/
-
-
-/*
-   - Callbacks 
-   Ações executadas após o término de outra ação.
-
-   $('.item:nth(4)')
-      .hide(2000, function() {
-         console.log($(this).find('h4').text() + ' esgotado.')
-      })
-      .show(2000, function() {
-         console.log($(this).find('h4').text() + ' em estoque.')
-      })
-*/
-
-/**
- * Animações
-
- const duracao = 1000
- $('.item:nth(4)')
-       .hide(duracao, function() {
-          console.log('hide')
-       })
-       .show(duracao, function() {
-          console.log('show')
-       })
-       .fadeOut(duracao, function() {
-          console.log('fadeOut')
-       })
-       .fadeIn(duracao, function() {
-          console.log('fadeIn')
-       })
-       .toggle(duracao, function() {
-          console.log('toggle1')
-       })
-       .toggle(duracao, function() {
-          console.log('toggle2')
-       })
- */
-
 /**
  * Ouvinte de eventos  .nav-modal-open (EventListener para abertura de modal) 
  */
@@ -144,7 +51,7 @@ $('.nav-modal-open').on('click', function(e) {
    myModal.show();
 });
 
-// função que valida se o campo está vazio
+// função dinâmica que valida se o campo está vazio
 function validate(element) {
    if(element.val() == '' ) {
       console.log('O '+ element.attr('name') + ' é obrigatório.');
@@ -160,6 +67,21 @@ function validate(element) {
    } else {
       element.parent().find('.text-muted').hide();
       element.removeClass('invalid');
+   }
+}
+
+function validateNameInput() {
+   if($('#nome').val().length > 0 && $('#nome').val().length < 2) {
+      $('#nome').addClass('invalid');
+
+      // Encontra o span.text-muted, altera o texto padrão e exibe msg de erro
+      $('#nome')
+         .parent()
+         .find('.text-muted')
+         .html('Digite ao menos 2 caracteres')
+         .show();
+      
+      return false; // não permite o envio do form
    }
 }
 
@@ -179,9 +101,15 @@ $('body').on('submit', '.modal-body .form', function(e) {
 
    const inputName = $('#nome');
    const inputEmail = $('#email');
+   const inputPhone = $('#phone');
+   const inputCpf = $('#cpf');
 
    validate(inputName);
    validate(inputEmail);
+   validate(inputPhone);
+   validate(inputCpf);
+
+   validateNameInput();
 
    // se algum dos campos estiver com a class 'invalid', não permite o submit do form,
    // retornado false, caso contrário envia o formulário ($(this).submit();)
@@ -194,37 +122,21 @@ $('body').on('submit', '.modal-body .form', function(e) {
 });
 
 /**
- * Captura evento blur(sai o foco do campo) no input, para validar o campo, antes do submit.
+ * Captura de evento blur(sai o foco do campo) no input, para validar o campo antes do submit.
  * Se eu quiser deixar a validação ocorrer após o submit, basta eu adcionar
  * a validação dentro do evento de submit, acima.
  */
 
 // Validaçao campo nome
 $('body').on('blur', '#nome', function() {
+   
    validate($(this));
+   validateNameInput();
 });
 
 // Validaçao campo email
 $('body').on('blur', '#email', function() {
    validate($(this));
-});
-
-// Validaçao campo date
-$('body').on('blur', '#date', function() {
-   validate($(this));
-   $('#date').mask('00/00/0000');
-});
-
-// Validaçao campo time
-$('body').on('blur', '#time', function() {
-   validate($(this));
-   $('#time').mask('00:00');
-});
-
-// Validaçao campo cep
-$('body').on('blur', '#cep', function() {
-   validate($(this));
-   $('#cep').mask('00000-000');
 });
 
 // Validaçao campo phone
