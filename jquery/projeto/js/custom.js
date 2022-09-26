@@ -70,6 +70,7 @@ function validate(element) {
    }
 }
 
+// Verifica se nome é válido(mínimo 2 caracteres)
 function validateNameInput() {
    if($('#nome').val().length > 0 && $('#nome').val().length < 2) {
       $('#nome').addClass('invalid');
@@ -82,9 +83,32 @@ function validateNameInput() {
          .show();
       
       return false; // não permite o envio do form
+   } else {
+      return true;
    }
 }
 
+// Verifica se e-mail é válido(deve conter a estrutura mínima de e-mail x@x.com)
+function validateEmailInput() {
+   const emailVal = $('#email').val();
+
+   let emailRegex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})/;
+
+   if(!emailRegex.test(emailVal)) {
+      $('#email').addClass('invalid');
+
+      // Encontra o span.text-muted, altera o texto padrão e exibe msg de erro
+      $('#email')
+         .parent()
+         .find('.text-muted')
+         .html('Digite um e-mail válido (Ex.: xxxx@x.com)')
+         .show();
+
+      return false;
+   }else{
+      return true;
+   }
+}
 /**
  * Ouvinte de eventos  .form (EventListener para validação de formulário) 
  */
@@ -110,6 +134,7 @@ $('body').on('submit', '.modal-body .form', function(e) {
    validate(inputCpf);
 
    validateNameInput();
+   validateEmailInput();
 
    // se algum dos campos estiver com a class 'invalid', não permite o submit do form,
    // retornado false, caso contrário envia o formulário ($(this).submit();)
@@ -137,6 +162,7 @@ $('body').on('blur', '#nome', function() {
 // Validaçao campo email
 $('body').on('blur', '#email', function() {
    validate($(this));
+   validateEmailInput();
 });
 
 // Validaçao campo phone
