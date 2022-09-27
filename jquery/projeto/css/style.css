@@ -572,14 +572,6 @@ section.sub-footer .container-fluid .row div .copyright-text p span {
    border-color: rgb(240, 52, 52);
 }
 
-.valid {
-   border-color: rgb(59, 236, 39);
-}
-
 .text-muted {
-   display: none;
-}
-
-.text-muted1 {
    display: none;
 }

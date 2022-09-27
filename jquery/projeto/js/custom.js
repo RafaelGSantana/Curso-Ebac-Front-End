@@ -72,31 +72,27 @@ function validate(element) {
 
 // Verifica se nome é válido(mínimo 2 caracteres)
 function validateNameInput() {
-   if($('#nome').val().length > 0 && $('#nome').val().length < 2) {
-      $('#nome').addClass('invalid');
-
+  if ($('#nome').val().length > 0 && $('#nome').val().length < 2) {
       // Encontra o span.text-muted, altera o texto padrão e exibe msg de erro
       $('#nome')
          .parent()
          .find('.text-muted')
          .html('Digite ao menos 2 caracteres')
          .show();
+
+      $('#nome').addClass('invalid');
       
       return false; // não permite o envio do form
    } else {
-      return true;
+      return true
    }
 }
 
 // Verifica se e-mail é válido(deve conter a estrutura mínima de e-mail x@x.com)
 function validateEmailInput() {
-   const emailVal = $('#email').val();
+   const emailRegex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})/;
 
-   let emailRegex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})/;
-
-   if(!emailRegex.test(emailVal)) {
-      $('#email').addClass('invalid');
-
+   if($('#email').val() != '' && !emailRegex.test($('#email').val())) {
       // Encontra o span.text-muted, altera o texto padrão e exibe msg de erro
       $('#email')
          .parent()
@@ -104,22 +100,55 @@ function validateEmailInput() {
          .html('Digite um e-mail válido (Ex.: xxxx@x.com)')
          .show();
 
+      $('#email').addClass('invalid');
+
       return false;
-   }else{
+   } else {
       return true;
    }
 }
-/**
- * Ouvinte de eventos  .form (EventListener para validação de formulário) 
- */
-// Quando o usuário der o submit do form, executa a função
-// Para controlar eventos e objetos dinâmicos, com jquery, devo fazer a seleção no elemento 'body',
-// observo o evento. Neste caso, estou observando qualquer submit no body, que esteja dentro de ".modal-body .form".
-// Mesmo que no .html, o form está fora do modal, ele é renderizado dentro do modal.
 
-// Como o form está dentro do modal, precisamos passar no primeiro seletor o body
-// e o soletor do form, passamos no segundo parâmetro do método on(). Isso porque,
-// o form só vai existir depois que o .modal-body entrar na tela. 
+// Verifica se cpf é válido /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/
+function validateCpfInput() {
+   const cpfRegex = /^\d{3}\.\d{3}\.\d{3}\-\d{2}$/;
+
+   if($('#cpf').val() != '' && !cpfRegex.test($('#cpf').val())) {
+      $('#cpf')
+         .parent()
+         .find('.text-muted')
+         .html('Digite um cpf válido. Ex.: 000.000.000-00')
+         .show();
+
+      $('#cpf').addClass('invalid');
+
+      return false;
+   } else {
+      return true;
+   }
+}
+
+// Verifica se celular é válido 
+function validatePhoneInput() {
+   const phoneRegex = /^9\d{4}\-\d{4}$/;
+
+   if($('#phone').val() != '' && !phoneRegex.test($('#phone').val())) {
+      $('#phone')
+         .parent()
+         .find('.text-muted')
+         .html('Digite um número de celular válido. Ex.: 90000-0000')
+         .show();
+      
+      $('#phone').addClass('invalid');
+      return false;
+   } else {
+      return true;
+   }
+}
+
+
+/**
+ * Validação dos campos no evento onSubmit 
+ */
 $('body').on('submit', '.modal-body .form', function(e) {
    e.preventDefault();
 
@@ -135,26 +164,26 @@ $('body').on('submit', '.modal-body .form', function(e) {
 
    validateNameInput();
    validateEmailInput();
+   validateCpfInput();
+   validatePhoneInput();
 
    // se algum dos campos estiver com a class 'invalid', não permite o submit do form,
    // retornado false, caso contrário envia o formulário ($(this).submit();)
-   if(inputName.hasClass('invalid') || inputEmail.hasClass('invalid')) {
-      console.log('Verifique os campos obrigatórios.')
+   if(inputName.hasClass('invalid') || inputEmail.hasClass('invalid') || inputCpf.hasClass('invalid') || inputPhone.hasClass('invalid')) {
+      console.log('formulário not ok')
       return false;
    } else {
-      $(this).submit();
+      alert('formulário enviado com sucesso')
    }
+   
 });
 
 /**
- * Captura de evento blur(sai o foco do campo) no input, para validar o campo antes do submit.
- * Se eu quiser deixar a validação ocorrer após o submit, basta eu adcionar
- * a validação dentro do evento de submit, acima.
+ * Validação dos campos no evento onBlur (Input sai de foco)
  */
 
 // Validaçao campo nome
 $('body').on('blur', '#nome', function() {
-   
    validate($(this));
    validateNameInput();
 });
@@ -168,13 +197,15 @@ $('body').on('blur', '#email', function() {
 // Validaçao campo phone
 $('body').on('blur', '#phone', function() {
    validate($(this));
-   $('#phone').mask('00000-0000');
+   $('#phone').mask('90000-0000');
+   validatePhoneInput();
 });
 
 // Validaçao campo cpf
 $('body').on('blur', '#cpf', function() {
    validate($(this));
    $('#cpf').mask('000.000.000-00');
+   validateCpfInput();
 });
 
 
