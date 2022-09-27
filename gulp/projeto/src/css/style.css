@@ -1,0 +1,577 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+   -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+   width: 100%;
+   border-bottom: 1px solid #f5f5f2;
+}
+
+.navbar .container-fluid {
+   width: 100%;
+   max-width: 1400px;
+   padding: 0 1rem;
+}
+
+.navbar .container-fluid .navbar-brand {
+   font-size: 2.2rem;
+   font-weight: 700;
+   letter-spacing: 3px;
+   color: #3d3d3d;
+}
+
+.navbar .container-fluid .navbar-brand span {
+   color: #0279d4;
+}
+
+.navbar .container-fluid div .navbar-nav .nav-item .nav-link {
+   text-decoration: none;
+   font-size: 1rem;
+   letter-spacing: 1.5px;
+   font-weight: 500;
+   color: #3d3d3d;
+
+   transition: color 0.3s;
+}
+
+.navbar .container-fluid div .navbar-nav .nav-item .nav-link:hover {
+   text-decoration: underline;
+   color: #0279d4;
+}
+
+section {
+   width: 100%;
+   margin: 0 auto;
+   padding: 1rem;
+}
+
+section.banner {
+   background-image: url(../assets/images/banner-bg.jpg);
+   height: 500px;
+   background-position: 0 24%;
+   background-repeat: no-repeat;
+   background-size: cover;
+
+   display: flex;
+   align-items: center;
+}
+
+section.banner .container-fluid {
+   max-width: 1400px;
+}
+section.banner .container-fluid .row {
+   width: 450px;
+   height: 200px;
+   border-radius: 6px;
+   background-color: rgba(245, 245, 242, 0.5);
+
+   display: flex;
+   align-items: center;
+}
+
+section.banner .container-fluid .row .caption h2 {
+   font-size: 2rem;
+   color: #3d3d3d;
+   font-weight: 600;
+}
+
+section.banner .container-fluid .row .caption h2 span {
+   color: #d6040b;
+   font-weight: 700;
+}
+
+section.banner .container-fluid .row .caption p {
+   font-size: 1.1rem;
+   font-weight: 500;
+   color: #3d3d3d;
+}
+
+section.highlights .container-fluid {
+   padding-right: 0;
+   padding-left: 0;
+   padding: 1rem 0;
+}
+
+section.highlights .container-fluid h2 {
+   font-size: 2.5rem;
+   font-weight: 600;
+   letter-spacing: 1.5px;
+   color: #3d3d3d;
+   text-decoration: underline;
+   text-decoration-color: #0279d4;
+   margin-bottom: 1.5rem;
+}
+
+section.highlights .container-fluid h2 span {
+   color: #0279d4;
+}
+
+section.highlights .container-fluid .row {
+   max-width: 1400px;
+   margin: 0 auto;
+}
+
+section.highlights .container-fluid .row .owl-carousel {
+   padding-right: 0;
+   padding-left: 0;
+}
+
+section.highlights .container-fluid .row .owl-carousel .item .card {
+   border-radius: 6px;
+   overflow: hidden;
+}
+
+section.highlights .container-fluid .row .owl-carousel .item .card .card-body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+section.highlights .container-fluid .row .owl-carousel .item .card .card-body div {
+   width: 100%;
+   display: flex;
+   align-items: baseline;
+   justify-content: space-between;
+   margin-bottom: 1rem;
+}
+
+section.highlights .container-fluid .row .owl-carousel .item .card .card-body div h4 {
+   font-size: 1.4rem;
+   font-weight: 500;
+   line-height: 130%;
+   color: #3d3d3d;
+}
+
+section.highlights .container-fluid .row .owl-carousel .item .card .card-body div h6 {
+   font-size: 1.2rem;
+   font-weight: 600;
+   line-height: 130%;
+   color: #3d3d3d;
+   text-decoration: underline;
+}
+
+section.highlights .container-fluid .row .owl-carousel .item .card .card-body .btn {
+   width: 100%;
+   padding: 0.5rem;
+   color: #fff;
+   font-weight: 600;
+   font-size: 1.1rem;
+   letter-spacing: 2px;
+}
+
+section.highlights .container-fluid .row .owl-carousel .owl-nav {
+   padding: 0.5rem 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5rem;
+}
+
+section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-prev span {
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: #3d3d3d;
+
+   transition: color 0.3s;
+}
+
+section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-prev span:hover {
+   color: #0279d4;
+}
+
+section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span {
+   font-size: 1.5rem;
+   font-weight: 700;
+   color: #3d3d3d;
+
+   transition: color 0.3s;
+}
+
+section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span:hover {
+   color: #0279d4;
+}
+
+section.highlights .container-fluid .row .owl-carousel .owl-dots {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.3rem;
+}
+
+section.highlights .container-fluid .row .owl-carousel .owl-dots .owl-dot {
+   opacity: 0.3;
+   border: 1px solid #3d3d3d;
+   width: 0.7rem;
+   height: 0.7rem;
+   border-radius: 50%;
+}
+
+section.highlights .container-fluid .row .owl-carousel .owl-dots .owl-dot:hover {
+   background-color: #0279d4;
+}
+
+section.footer .container-fluid {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+section.footer .container-fluid .row {
+   width: 100%;
+}
+
+section.footer .container-fluid h1 {
+   font-size: 2.2rem;
+   font-weight: 700;
+   letter-spacing: 3px;
+   color: #3d3d3d;
+   margin-bottom: 1rem;
+}
+
+section.footer .container-fluid h1 span {
+   color: #0279d4;
+}
+
+section.footer .container-fluid .row div {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+section.footer .container-fluid .row div:nth-child(2) .footer-menu {
+   width: 100%;
+}
+
+section.footer .container-fluid .row div:nth-child(2) .footer-menu ul {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.7rem;
+   padding-left: 0;
+}
+
+section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li {
+   list-style: none;
+}
+
+section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li a {
+   text-decoration: none;
+   font-size: 1rem;
+   letter-spacing: 1.5px;
+   font-weight: 500;
+   color: #3d3d3d;
+
+   transition: color 0.3s;
+}
+
+section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li a:hover {
+   text-decoration: underline;
+   color: #0279d4;
+}
+
+section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li .circulo {
+   width: 8px;
+   height: 8px;
+   border: 1px solid #0279d4;
+   border-radius: 50%;
+}
+
+section.footer .container-fluid .row div:nth-child(3) .social-icons {
+   width: 100%;
+}
+
+section.footer .container-fluid .row div:nth-child(3) .social-icons ul {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.7rem;
+   padding-left: 0;
+}
+
+section.footer .container-fluid .row div:nth-child(3) .social-icons ul li {
+   list-style: none;
+}
+
+section.footer .container-fluid .row div:nth-child(3) .social-icons ul li a i {
+   color: #0279d4;
+   transition: opacity 0.3s;
+}
+
+section.footer .container-fluid .row div:nth-child(3) .social-icons ul li a i:hover {
+   opacity: 0.6;
+}
+
+section.sub-footer .container-fluid .row div .copyright-text {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+section.sub-footer .container-fluid .row div .copyright-text p {
+   font-size: 1rem;
+   font-weight: 500;
+   line-height: 150%;
+   margin-bottom: 0;
+   color: #3d3d3d;
+}
+
+section.sub-footer .container-fluid .row div .copyright-text p span {
+   color: #0279d4;
+   font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+   .navbar {
+      max-width: 1024px;
+   }
+   
+   .navbar .container-fluid .navbar-brand {
+      font-size: 2.1rem;
+      letter-spacing: 2.5px;
+   }
+   
+   section.banner {
+      max-width: 1024px;
+   }
+   
+   section.banner .container-fluid .row {
+      width: 400px;
+      height: 180px;
+   }
+   
+   section.banner .container-fluid .row .caption h2 {
+      font-size: 1.8rem;
+   }
+   
+   section.banner .container-fluid .row .caption p {
+      font-size: 1rem;
+   }
+   
+   section.highlights {
+      max-width: 1024px;
+   }
+
+   section.highlights .container-fluid h2 {
+      font-size: 2.3rem;
+   }
+
+   section.footer {
+      max-width: 1024px;
+   }
+   
+   section.footer .container-fluid h1 {
+      font-size: 2.1rem;
+      letter-spacing: 2.5px;
+   }
+
+   section.sub-footer .container-fluid .row div .copyright-text p {
+      font-size: 0.9rem;
+   }
+}
+
+@media (max-width: 768px) {
+   .navbar {
+      max-width: 768px;
+   }
+   
+   .navbar .container-fluid .navbar-brand {
+      font-size: 2rem;
+      letter-spacing: 2px;
+   }
+   
+   .navbar .container-fluid div .navbar-nav .nav-item .nav-link {
+      font-size: 0.9rem;
+   }
+   
+   section.banner {
+      max-width: 768px;
+      height: 360px;
+   }
+   
+   section.banner .container-fluid .row {
+      width: 360px;
+      height: 140px;
+   }
+   
+   section.banner .container-fluid .row .caption h2 {
+      font-size: 1.6rem;
+   }
+   
+   section.banner .container-fluid .row .caption p {
+      font-size: 0.9rem;
+   }
+   
+   section.highlights .container-fluid {
+      padding: 0.5rem 0;
+   }
+   
+   section.highlights .container-fluid h2 {
+      font-size: 2.3rem;
+   }
+
+   section.highlights .container-fluid .row .owl-carousel .item .card .card-body div {
+      margin-bottom: 0.8rem;
+   }
+
+   section.highlights .container-fluid .row .owl-carousel .item .card .card-body div h4 {
+      font-size: 1.2rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .item .card .card-body div h6 {
+      font-size: 1rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .item .card .card-body .btn {
+      font-size: 1rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-prev span {
+      font-size: 1.4rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span {
+      font-size: 1.4rem;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .owl-nav .owl-next span:hover {
+      color: #0279d4;
+   }
+   
+   section.highlights .container-fluid .row .owl-carousel .owl-dots .owl-dot {
+      width: 0.6rem;
+      height: 0.6rem;
+   }
+   
+   section.footer {
+      max-width: 768px;
+   }
+   
+   section.footer .container-fluid h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul {
+      gap: 0.5rem;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li a {
+      font-size: 0.9rem;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li .circulo {
+      width: 6px;
+      height: 6px;
+   }
+   
+   
+   section.footer .container-fluid .row div:nth-child(3) .social-icons ul {
+      gap: 0.5rem;
+      margin-bottom: 0;
+   }
+   
+   section.sub-footer .container-fluid .row div .copyright-text p {
+      font-size: 0.8rem;
+   }
+}
+
+
+@media (max-width: 426px) {
+   .navbar {
+      max-width: 426px;
+   }
+   
+   .navbar .container-fluid .navbar-brand {
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+   }
+   
+   .navbar .container-fluid div .navbar-nav .nav-item .nav-link {
+      font-size: 0.8rem;
+   }
+   
+   section.banner {
+      max-width: 426px;
+      height: 320px;
+      align-items: flex-end;
+      padding-bottom: 2.5rem;
+   }
+   
+   section.banner .container-fluid .row {
+      width: 300px;
+      height: 100px;
+   }
+   
+   section.banner .container-fluid .row .caption h2 {
+      font-size: 1.2rem;
+   }
+   
+   section.banner .container-fluid .row .caption p {
+      font-size: 0.8rem;
+   }
+   
+   section.highlights .container-fluid {
+      padding: 0.5rem 0;
+   }
+   
+   section.highlights .container-fluid h2 {
+      font-size: 1.8rem;
+   }
+
+   section.highlights .container-fluid .row .owl-carousel .owl-dots .owl-dot {
+      width: 0.5rem;
+      height: 0.5rem;
+   }
+   
+   section.footer {
+      max-width: 426px;
+   }
+   
+   section.footer .container-fluid h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1.5px;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul {
+      flex-direction: column;
+      gap: 0.1rem;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li a {
+      font-size: 0.8rem;
+   }
+   
+   section.footer .container-fluid .row div:nth-child(2) .footer-menu ul li .circulo {
+      display: none;
+   }
+   
+   
+   section.footer .container-fluid .row div:nth-child(3) .social-icons ul {
+      gap: 0.5rem;
+      margin-bottom: 0;
+   }
+   
+   section.sub-footer .container-fluid .row div .copyright-text p {
+      font-size: 0.7rem;
+   }
+}
+
+/* Estilos auxiliares */
+
+/* Quando o campo do formulário for inválido */
+.invalid {
+   border-color: rgb(240, 52, 52);
+}
+
+.text-muted {
+   display: none;
+}
