@@ -53,7 +53,7 @@ section {
 }
 
 section.banner {
-   background-image: url(../assets/images/banner-bg.jpg);
+   background-image: url(../images/banner-bg.jpg);
    height: 500px;
    background-position: 0 24%;
    background-repeat: no-repeat;
