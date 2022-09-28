@@ -1,8 +1,9 @@
-const gulp = require('gulp');
-const concat = require('gulp-concat');
-const cssmin = require('gulp-cssmin');
-const rename = require('gulp-rename');
-const uglify = require('gulp-uglify');
+import gulp from 'gulp';
+import concat from 'gulp-concat';
+import cssmin from 'gulp-cssmin';
+import rename from 'gulp-rename';
+import uglify from 'gulp-uglify';
+import image from 'gulp-image';
 
 function tarefasCSS(cb) {
    return gulp.src('./vendor/**/*.css')
@@ -12,7 +13,7 @@ function tarefasCSS(cb) {
       .pipe(gulp.dest('./dist/css'));
 }
 
-function tarefasJS(cb) {
+function tarefasJS() {
    return gulp.src('./vendor/**/*.js')
       .pipe(concat('libs.js')) // une os arquivos .js das bibliotecas utilizadas
       .pipe(uglify()) // minifica o arquivo libs.js
@@ -20,5 +21,22 @@ function tarefasJS(cb) {
       .pipe(gulp.dest('./dist/js')); // Cria o arquivo lib.min.js no diretório dist/js
 }
 
-exports.styles = tarefasCSS;
-exports.scripts = tarefasJS;
+function tarefasImagem() {
+   return gulp.src('./src/images/*')
+      .pipe(image({
+         pngquant: true,
+         optipng: false,
+         zopflipng: true,
+         jpegRecompress: false,
+         mozjpeg: true,
+         gifsicle: true,
+         svgo: true,
+         concurrent: 10,
+         quiet: true
+      }))
+      .pipe(gulp.dest('./dist/images'))
+}
+
+export {tarefasCSS as styles}
+export {tarefasJS as scripts}
+export {tarefasImagem as images}
