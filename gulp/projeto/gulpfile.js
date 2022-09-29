@@ -6,6 +6,7 @@ const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const image = require('gulp-image');
 const htmlmin = require('gulp-htmlmin');
+const babel = require('gulp-babel');
 
 function tarefasCSS(cb) {
    gulp.src([
@@ -30,9 +31,13 @@ function tarefasJS(cb) {
       './vendor/jquery-mask/jquery.mask.js',
       './src/js/custom.js'
    ])
+      .pipe(babel({
+         comments: false,
+         presets: ['@babel/env']
+      })) // Compila o código javascript com o babel.
       .pipe(concat('scripts.js')) // une todos os arquivos .js da aplicação, sejam das bibliotecas utilizadas como o que eu criei
-      .pipe(uglify()) // minifica o arquivo libs.js
-      .pipe(rename({ suffix: '.min' })) // libs.min.js
+      // .pipe(uglify()) // minifica o arquivo libs.js
+      .pipe(rename({ suffix: '.min' })) // scripts.min.js
       .pipe(gulp.dest('./dist/js')); // Cria o arquivo lib.min.js no diretório dist/js
 
    return cb();
