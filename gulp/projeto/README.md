@@ -48,9 +48,29 @@ Todo o processo é executado a partir node.js e gulp-cli (linha de comando)
 - Mesclagem e Minificação de CSS e JS
 - Diminuição do tamanho (bytes) de imagens
 
-## Rodar o projeto
-- Executar o comando:
+## Para rodar o projeto você deve:
+
+- Instalar as dependências
 
 ```
 npm install
+```
+
+- Executar tarefas do Gulp para execução do projeto
+
+- Tarefa de estilos
+```
+gulp styles
+```
+
+
+- Tarefa de script javascript
+```
+gulp scripts
+```
+
+
+- Tarefa de imagens
+```
+gulp images
 ```
