@@ -1,4 +1,4 @@
-const { parallel } = require('gulp');
+const { series } = require('gulp');
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const cssmin = require('gulp-cssmin');
@@ -7,6 +7,9 @@ const uglify = require('gulp-uglify');
 const image = require('gulp-image');
 const htmlmin = require('gulp-htmlmin');
 const babel = require('gulp-babel');
+const browserSync = require('browser-sync').create();
+
+const reload = browserSync.reload;
 
 function tarefasCSS(cb) {
    gulp.src([
@@ -69,4 +72,20 @@ function tarefasHTML(cb) {
    return cb();
 }
 
-exports.default = parallel(tarefasHTML, tarefasCSS, tarefasJS, tarefasImagem)
+gulp.task('serve', function() {
+   // Configuração do servidor gulp
+   browserSync.init({
+      server: {
+         baseDir: './dist'
+      }
+   });
+   // Sempre que hover alteração no diretório src, executa o process
+   gulp.watch('./src/**/*').on('change', process);
+   // Sempre que houver alteração no diretório dist (após a execução de process), faz o reload do servidor
+   gulp.watch('./dist/**/*').on('change', reload);
+});
+
+// Sempre que for executado, executa as tarefas do gulp, alterando o diretório dist
+const process = series(tarefasHTML, tarefasCSS, tarefasJS, tarefasImagem); 
+
+exports.default = process;
