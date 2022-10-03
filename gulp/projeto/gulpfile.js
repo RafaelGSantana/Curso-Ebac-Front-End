@@ -85,7 +85,11 @@ gulp.task('serve', function() {
    gulp.watch('./dist/**/*').on('change', reload);
 });
 
+function end(cb) {
+   console.log("tarefas concluídas");
+   return cb()
+}
 // Sempre que for executado, executa as tarefas do gulp, alterando o diretório dist
-const process = series(tarefasHTML, tarefasCSS, tarefasJS, tarefasImagem); 
+const process = series(tarefasHTML, tarefasCSS, tarefasJS, tarefasImagem, end); 
 
 exports.default = process;
