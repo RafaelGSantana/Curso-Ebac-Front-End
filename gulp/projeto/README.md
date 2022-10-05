@@ -56,8 +56,13 @@ Todo o processo é executado a partir node.js e gulp-cli (linha de comando)
 npm install
 ```
 
-- Executar tarefas do gulp e iniciar o servidor gulp
+- Executar tarefas do gulp
 
+```
+ gulp
+```
+
+- Iniciar servidor gulp
 ```
 gulp serve
 ```
