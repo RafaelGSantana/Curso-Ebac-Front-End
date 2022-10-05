@@ -62,6 +62,7 @@ npm install
  gulp
 ```
 
+- Iniciar servidor gulp
 ```
 gulp serve
 ```
