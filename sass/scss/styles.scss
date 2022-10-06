@@ -1,0 +1,133 @@
+@import "vars";
+@import "reset";
+
+header {
+   background: $bg-header-footer;
+   width: 100%;
+   border-bottom: 1px solid #dc020a;
+   
+   .container {
+      max-width: 120rem;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      h1 {
+         font-size: 2.8rem;
+         color: $color-header-footer;
+      }
+   }
+}
+
+.banner {
+   background: $bg-section;
+   width: 100%;
+   .container {
+      max-width: 120rem;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      h2 {
+         font-size: 2.6rem;
+         color: #dc020a;
+         margin-bottom: 2rem;
+         text-align: center;
+         letter-spacing: 1.5px;
+      }
+
+      img {
+         width: 100%;
+         object-fit: cover;
+      }
+
+      p {
+         font-size: 1.6rem;
+         color: $color-dark;
+         margin-top: 2rem;
+         text-align: center;
+      }
+   }
+}
+
+.destack {
+   background: $bg-section;
+   width: 100%;
+
+   .container {
+      max-width: 120rem;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+
+      h2 {
+         font-size: 2.6rem;
+         font-weight: 700;
+         color: $color-blue;
+         margin-bottom: 1.6rem;
+         text-align: center;
+         letter-spacing: 0.2rem;
+         text-decoration: underline;
+         text-decoration-color: #dc020a;
+         text-decoration-thickness: 1.5px;
+      }
+
+      ul {
+         width: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 1.6rem;
+
+         li {
+            list-style: none;
+            width: 100%;
+            max-width: 40rem;
+
+            .img-container {
+               width: 100%;
+               
+               height: 25rem;
+
+               img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+            }
+
+            button {
+               width: 100%;
+               height: 4rem;
+               border: none;
+               border-radius: 0.6rem;
+               background-color: $color-blue;
+               margin-top: 1.6rem;
+               transition: opacity 0.5s;
+               cursor: pointer;
+               color: $color-light;
+               font-weight: 500;
+               font-size: 1.8rem;
+               letter-spacing: 1px;
+               text-decoration: none;
+            }
+
+            button:hover {
+               opacity: 0.9;
+            }
+         }
+      }
+      
+   }
+}
+
+footer {
+   background: $bg-header-footer;
+   width: 100%;
+   
+   .container {
+      max-width: 120rem;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      p {
+         font-size: 1.2rem;
+         color: $color-header-footer;
+         text-align: center;
+      }
+   }
+}

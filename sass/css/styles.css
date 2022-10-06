@@ -1,0 +1,133 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+
+header {
+  background: #363636;
+  width: 100%;
+  border-bottom: 1px solid #dc020a;
+}
+header .container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+header .container h1 {
+  font-size: 2.8rem;
+  color: #fcfcfc;
+}
+
+.banner {
+  background: #E9F0F7;
+  width: 100%;
+}
+.banner .container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.banner .container h2 {
+  font-size: 2.6rem;
+  color: #dc020a;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+.banner .container img {
+  width: 100%;
+  object-fit: cover;
+}
+.banner .container p {
+  font-size: 1.6rem;
+  color: #202020;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.destack {
+  background: #E9F0F7;
+  width: 100%;
+}
+.destack .container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.destack .container h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #124167;
+  margin-bottom: 1.6rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  text-decoration: underline;
+  text-decoration-color: #dc020a;
+  text-decoration-thickness: 1.5px;
+}
+.destack .container ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+.destack .container ul li {
+  list-style: none;
+  width: 100%;
+  max-width: 40rem;
+}
+.destack .container ul li .img-container {
+  width: 100%;
+  height: 25rem;
+}
+.destack .container ul li .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.destack .container ul li button {
+  width: 100%;
+  height: 4rem;
+  border: none;
+  border-radius: 0.6rem;
+  background-color: #124167;
+  margin-top: 1.6rem;
+  transition: opacity 0.5s;
+  cursor: pointer;
+  color: #fbfbfb;
+  font-weight: 500;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+.destack .container ul li button:hover {
+  opacity: 0.9;
+}
+
+footer {
+  background: #363636;
+  width: 100%;
+}
+footer .container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+footer .container p {
+  font-size: 1.2rem;
+  color: #fcfcfc;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
