@@ -144,8 +144,8 @@ footer p {
 }
 .destack h2 {
   font-size: 2.6rem;
-  font-weight: 700;
   color: #124167;
+  font-weight: 700;
   margin-bottom: 1.6rem;
   text-align: center;
   letter-spacing: 0.2rem;
@@ -175,6 +175,8 @@ footer p {
   object-fit: cover;
 }
 .destack ul li button {
+  font-size: 1.8rem;
+  color: #fbfbfb;
   width: 100%;
   height: 4rem;
   border: none;
@@ -183,9 +185,7 @@ footer p {
   margin-top: 1.6rem;
   transition: opacity 0.5s;
   cursor: pointer;
-  color: #fbfbfb;
   font-weight: 500;
-  font-size: 1.8rem;
   letter-spacing: 1px;
   text-decoration: none;
 }

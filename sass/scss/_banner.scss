@@ -1,7 +1,6 @@
 .banner {
    h2 {
-      font-size: 2.6rem;
-      color: #dc020a;
+      @include fonts(2.6rem, $color-red);
       margin-bottom: 2rem;
       text-align: center;
       letter-spacing: 1.5px;
@@ -13,8 +12,7 @@
    }
 
    p {
-      font-size: 1.6rem;
-      color: $color-dark;
+      @include fonts(1.6rem, $color-dark);
       margin-top: 2rem;
       text-align: center;
    }

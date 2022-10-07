@@ -1,13 +1,12 @@
 .destack {
    h2 {
-      font-size: 2.6rem;
+      @include fonts(2.6rem, $color-blue);
       font-weight: 700;
-      color: $color-blue;
       margin-bottom: 1.6rem;
       text-align: center;
       letter-spacing: 0.2rem;
       text-decoration: underline;
-      text-decoration-color: #dc020a;
+      text-decoration-color: $color-red;
       text-decoration-thickness: 1.5px;
    }
 
@@ -25,7 +24,6 @@
 
          .img-container {
             width: 100%;
-            
             height: 25rem;
 
             img {
@@ -36,6 +34,7 @@
          }
 
          button {
+            @include fonts(1.8rem, $color-light);
             width: 100%;
             height: 4rem;
             border: none;
@@ -44,9 +43,7 @@
             margin-top: 1.6rem;
             transition: opacity 0.5s;
             cursor: pointer;
-            color: $color-light;
             font-weight: 500;
-            font-size: 1.8rem;
             letter-spacing: 1px;
             text-decoration: none;
          }

@@ -1,0 +1,9 @@
+@mixin container($bg, $width) {
+   background: $bg;
+   width: $width;
+}
+
+@mixin fonts($size, $color) {
+   font-size: $size;
+   color: $color;
+}

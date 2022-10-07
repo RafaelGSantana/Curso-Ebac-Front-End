@@ -1,11 +1,11 @@
 * {
-    border: 0;
-    margin: 0;
-    padding: 0;
+   border: 0;
+   margin: 0;
+   padding: 0;
 }
 
 html {
-    font-size: 62.5%;
+   font-size: 62.5%;
 }
 
 body {
@@ -14,19 +14,16 @@ body {
 }
 
 header {
-   background: $bg-header-footer;
-   width: 100%;
-   border-bottom: 1px solid #dc020a;
+   @include container($bg-header-footer, 100%);
+   border-bottom: 1px solid $color-red;
 
    h1 {
-      font-size: 2.8rem;
-      color: $color-header-footer;
+      @include fonts(2.8rem, $color-header-footer)
    }
 }
 
 section {
-   background: $bg-section;
-   width: 100%;
+   @include container($bg-section, 100%);
 }
 
 .container {
@@ -36,12 +33,10 @@ section {
 }
 
 footer {
-   background: $bg-header-footer;
-   width: 100%;
-   
+   @include container($bg-header-footer, 100%);
+
    p {
-      font-size: 1.2rem;
-      color: $color-header-footer;
+      @include fonts(1.2rem, $color-header-footer);
       text-align: center;
    }
 }
@@ -55,7 +50,7 @@ footer {
 
    .container {
       max-width: 98rem;
-         padding: 1.8rem 1rem;
+      padding: 1.8rem 1rem;
    }
 }
 
@@ -68,7 +63,7 @@ footer {
 
    .container {
       max-width: 70rem;
-         padding: 1.6rem 1rem;
+      padding: 1.6rem 1rem;
    }
 }
 
@@ -81,7 +76,7 @@ footer {
 
    .container {
       max-width: 68rem;
-         padding: 1.4rem 1rem;
+      padding: 1.4rem 1rem;
    }
 }
 
@@ -91,9 +86,9 @@ footer {
          font-size: 2rem;
       }
    }
-   
+
    .container {
       max-width: 40rem;
-         padding: 1.2rem 1rem;
+      padding: 1.2rem 1rem;
    }
 }
