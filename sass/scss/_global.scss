@@ -1,0 +1,99 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+   font-family: 'Roboto', sans-serif;
+   font-size: 1.6rem;
+}
+
+header {
+   background: $bg-header-footer;
+   width: 100%;
+   border-bottom: 1px solid #dc020a;
+
+   h1 {
+      font-size: 2.8rem;
+      color: $color-header-footer;
+   }
+}
+
+section {
+   background: $bg-section;
+   width: 100%;
+}
+
+.container {
+   max-width: 120rem;
+   margin: 0 auto;
+   padding: 2rem 1rem;
+}
+
+footer {
+   background: $bg-header-footer;
+   width: 100%;
+   
+   p {
+      font-size: 1.2rem;
+      color: $color-header-footer;
+      text-align: center;
+   }
+}
+
+@media (max-width: 1024px) {
+   header {
+      h1 {
+         font-size: 2.6rem;
+      }
+   }
+
+   .container {
+      max-width: 98rem;
+         padding: 1.8rem 1rem;
+   }
+}
+
+@media (max-width: 768px) {
+   header {
+      h1 {
+         font-size: 2.4rem;
+      }
+   }
+
+   .container {
+      max-width: 70rem;
+         padding: 1.6rem 1rem;
+   }
+}
+
+@media (max-width: 650px) {
+   header {
+      h1 {
+         font-size: 2.2rem;
+      }
+   }
+
+   .container {
+      max-width: 68rem;
+         padding: 1.4rem 1rem;
+   }
+}
+
+@media (max-width: 426px) {
+   header {
+      h1 {
+         font-size: 2rem;
+      }
+   }
+   
+   .container {
+      max-width: 40rem;
+         padding: 1.2rem 1rem;
+   }
+}
