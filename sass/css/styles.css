@@ -130,4 +130,202 @@ footer .container p {
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  header .container {
+    max-width: 98rem;
+    padding: 1.8rem 1rem;
+  }
+  header .container h1 {
+    font-size: 2.6rem;
+  }
+  .banner .container {
+    max-width: 98rem;
+    padding: 1.8rem 0.8rem;
+  }
+  .banner .container h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.8rem;
+    letter-spacing: 1.3px;
+  }
+  .banner .container p {
+    font-size: 1.5rem;
+    margin-top: 1.8rem;
+  }
+  .destack .container {
+    max-width: 98rem;
+    padding: 1.8rem 0.8rem;
+  }
+  .destack .container h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.15rem;
+  }
+  .destack .container ul li {
+    max-width: 40rem;
+  }
+  .destack .container ul li .img-container {
+    height: 20rem;
+  }
+  .destack .container ul li button {
+    height: 3.2rem;
+    border-radius: 0.4rem;
+    margin-top: 1.4rem;
+    font-size: 1.7rem;
+  }
+  footer .container {
+    max-width: 98rem;
+    padding: 1.8rem 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  header .container {
+    max-width: 70rem;
+    padding: 1.6rem 1rem;
+  }
+  header .container h1 {
+    font-size: 2.4rem;
+  }
+  .banner .container {
+    max-width: 70rem;
+    padding: 1.6rem 1rem;
+  }
+  .banner .container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.8rem;
+    letter-spacing: 1.3px;
+  }
+  .banner .container p {
+    font-size: 1.4rem;
+    margin-top: 1.6rem;
+  }
+  .destack .container {
+    max-width: 70rem;
+    padding: 1.6rem 1rem;
+  }
+  .destack .container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .destack .container ul {
+    gap: 1.2rem;
+  }
+  .destack .container ul li {
+    max-width: 28rem;
+  }
+  .destack .container ul li .img-container {
+    height: 20rem;
+  }
+  .destack .container ul li button {
+    height: 3.2rem;
+    border-radius: 0.4rem;
+    margin-top: 1.4rem;
+    font-size: 1.6rem;
+  }
+  footer .container {
+    max-width: 70rem;
+    padding: 1.6rem 1rem;
+  }
+}
+@media (max-width: 650px) {
+  header .container {
+    max-width: 68rem;
+    padding: 1.4rem 1rem;
+  }
+  header .container h1 {
+    font-size: 2.2rem;
+  }
+  .banner .container {
+    max-width: 68rem;
+    padding: 1.4rem 1rem;
+  }
+  .banner .container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.4rem;
+    letter-spacing: 1.2px;
+  }
+  .banner .container p {
+    font-size: 1.4rem;
+    margin-top: 1.4rem;
+  }
+  .destack .container {
+    max-width: 68rem;
+    padding: 1.4rem 1rem;
+  }
+  .destack .container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  .destack .container ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+  .destack .container ul li {
+    max-width: 32rem;
+  }
+  .destack .container ul li .img-container {
+    height: 22rem;
+  }
+  .destack .container ul li button {
+    height: 3.6rem;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+  }
+  footer .container {
+    max-width: 68rem;
+    padding: 1.4rem 1rem;
+  }
+}
+@media (max-width: 426px) {
+  header .container {
+    max-width: 40rem;
+    padding: 1.2rem 1rem;
+  }
+  header .container h1 {
+    font-size: 2rem;
+  }
+  .banner .container {
+    max-width: 40rem;
+    padding: 1.2rem 1rem;
+  }
+  .banner .container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1.1px;
+  }
+  .banner .container p {
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+  }
+  .destack .container {
+    max-width: 40rem;
+    padding: 1.2rem 1rem;
+  }
+  .destack .container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .destack .container ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .destack .container ul li {
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+  .destack .container ul li .img-container {
+    height: 20rem;
+  }
+  .destack .container ul li button {
+    height: 3.8rem;
+    border-radius: 0.6rem;
+    font-size: 1.8rem;
+  }
+  footer .container {
+    max-width: 40rem;
+    padding: 1.2rem 1rem;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
