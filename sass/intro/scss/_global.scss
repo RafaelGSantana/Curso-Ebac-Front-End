@@ -14,7 +14,7 @@ body {
 }
 
 header {
-   @include container($bg-header-footer, 100%);
+   @include containerHF($bg-header-footer, 100%);
    border-bottom: 1px solid $color-red;
 
    h1 {
@@ -23,17 +23,16 @@ header {
 }
 
 section {
-   @include container($bg-section, 100%);
+   @include containerHF($bg-section, 100%);
 }
 
 .container {
-   max-width: 120rem;
+   @include containerSection(120rem, 2rem 1rem);
    margin: 0 auto;
-   padding: 2rem 1rem;
 }
 
 footer {
-   @include container($bg-header-footer, 100%);
+   @include containerHF($bg-header-footer, 100%);
 
    p {
       @include fonts(1.2rem, $color-header-footer);
@@ -49,8 +48,7 @@ footer {
    }
 
    .container {
-      max-width: 98rem;
-      padding: 1.8rem 1rem;
+      @include containerSection(98rem, 1.8rem 1rem);
    }
 }
 
@@ -62,8 +60,7 @@ footer {
    }
 
    .container {
-      max-width: 70rem;
-      padding: 1.6rem 1rem;
+      @include containerSection(70rem, 1.6rem 1rem);
    }
 }
 
@@ -75,8 +72,7 @@ footer {
    }
 
    .container {
-      max-width: 68rem;
-      padding: 1.4rem 1rem;
+      @include containerSection(60rem, 1.4rem 1rem);
    }
 }
 
@@ -88,7 +84,6 @@ footer {
    }
 
    .container {
-      max-width: 40rem;
-      padding: 1.2rem 1rem;
+      @include containerSection(40rem, 1.6rem 1rem);
    }
 }
