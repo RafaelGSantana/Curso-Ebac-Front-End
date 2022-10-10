@@ -8,6 +8,7 @@ const image = require('gulp-image');
 const htmlmin = require('gulp-htmlmin');
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
+const sass = require('gulp-sass')(require('node-sass'));
 
 const reload = browserSync.reload;
 
@@ -16,14 +17,21 @@ function tarefasCSS(cb) {
       './node_modules/bootstrap/dist/css/bootstrap.css',
       './vendor/fontawesome/fontawesome.css',
       './vendor/owl/css/owl.css',
-      './src/css/style.css'
    ])
-      .pipe(concat('styles.css'))
-      .pipe(cssmin())
-      .pipe(rename({ suffix: '.min' })) // styles.min.css
-      .pipe(gulp.dest('./dist/css'));
+      .pipe(concat('css-libs.css'))       // mescla os arquivos css das libs
+      .pipe(cssmin())                     // minifica o css das libs
+      .pipe(rename({ suffix: '.min' }))   // css-libs.min.css
+      .pipe(gulp.dest('./dist/css'));     // cria arquivo "css-libs.min.css" em novo diretório
 
       return cb();
+}
+
+function tarefasSASS(cb) {
+   gulp.src('./src/scss/**/*.scss') // busca todos os arquivos sass, que estão dentro do diretório informado
+   .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))  // transforma o sass em css comprimido & exibe erro caso ocorra 
+   .pipe(gulp.dest('./dist/css'))   // cria o arquivo em novo diretório da pasta dist
+
+   cb();
 }
 
 function tarefasJS(cb) {
@@ -90,6 +98,7 @@ function end(cb) {
    return cb()
 }
 // Sempre que for executado, executa as tarefas do gulp, alterando o diretório dist
-const process = series(tarefasHTML, tarefasCSS, tarefasJS, tarefasImagem, end); 
+const process = series(tarefasHTML, tarefasCSS, tarefasSASS, tarefasJS, tarefasImagem, end); 
 
 exports.default = process;
+
