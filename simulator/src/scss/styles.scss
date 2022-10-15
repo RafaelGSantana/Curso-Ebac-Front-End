@@ -7,6 +7,8 @@ body {
     background-size: cover;
     font-family: $font-default;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -19,10 +21,63 @@ h1 {
     display: block;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem;
     
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+%boxContainer {
+   padding: 2rem;
+   margin-top: 5rem;
+   background-color: rgba(255, 255, 255, 0.3);
+   border: 2px solid#fff;
+   border-radius: 4px;
+}
+
+%boxItem {
+   width: 10rem;
+   height: 10rem;
+   border-radius: 4px;
+   border: 2px solid #333;
+   background: rgba(0, 0, 0, 0.3);
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   color: $color-font;
+   letter-spacing: 2px;
+   font-size: 1.2rem;
+ }
+
+.box__container {
+   @extend %boxContainer;
+   display: flex;
+   gap: 1rem;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+
+   .box {
+      @extend %boxItem;
+    }
+
+}
+
+.box__container1 {
+   @extend %boxContainer;
+   display: flex;
+   gap: 1rem;
+   align-items: flex-start;
+   flex-direction: row-reverse;
+   justify-content: center;
+   flex-wrap: wrap;
+
+   .box {
+      @extend %boxItem;
     }
 
 }
