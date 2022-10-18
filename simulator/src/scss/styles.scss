@@ -119,7 +119,22 @@ h1 {
 
    .box {
       @extend %boxItem;
+      position: relative;
+      animation-name: slideIn;
+      animation-duration: 4s;
+      animation-iteration-count: 2;
+      animation-direction: alternate;
     }
 
+    @keyframes slideIn {
+      from {
+         left: -999px;
+         opacity: 0.1;
+      }
+      to {
+         left: 0;
+         opacity: 1;
+      }
+    }
 }
 
