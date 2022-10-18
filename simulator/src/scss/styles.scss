@@ -26,8 +26,8 @@ h1 {
     padding: 1rem;
     
     img {
-        width: 100%;
-        height: auto;
+      //   width: 100%;
+      //   height: auto;
     }
 }
 
@@ -114,7 +114,28 @@ h1 {
    &--columns-fr {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 400px 200px 300px;
+      grid-template-rows: 200px 100px 150px;
+   }
+
+   &--image {
+      .box {
+         max-width: 40rem;
+         overflow: hidden;
+
+         img {
+            width: 10rem;
+            height: 10rem;
+            object-fit: cover;
+            // object-position: ;
+         }
+      }
+
+      #dog {
+         img {
+            object-fit: contain;
+            object-position: 50% 0%;
+         }
+      }
    }
 
    .box {
