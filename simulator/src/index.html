@@ -1,31 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Framework Simulator</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Framework Simulator</title>
 </head>
+
 <body>
-    <div id="root">
-        <h1>Flexbox</h1>
+   <div id="root">
+      <h1>Flexbox</h1>
 
-        <div class="box__container">
-         <div class="box">Box 1</div>
-         <div class="box">Box 2</div>
-         <div class="box">Box 3</div>
-         <div class="box">Box 4</div>
-         <div class="box">Box 5</div>
-        </div>
+      <div>
+         <div class="box__description ">
+               <p>justify-content: center;</p>
+         </div>
 
-        <div class="box__container1">
-         <div class="box">Box 1</div>
-         <div class="box">Box 2</div>
-         <div class="box">Box 3</div>
-         <div class="box">Box 4</div>
-         <div class="box">Box 5</div>
-        </div>
+         <div class="box__container box__container--center">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+         </div>
+      </div>
 
-    </div>
+      <div>
+         <div class="box__description">
+            <p>justify-content: row-reverse;</p>
+         </div>
+         <div class="box__container box__container--between">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+         </div>
+      </div>
+
+      <div>
+         <div class="box__description">
+            <p>justify-content: space-around;</p>
+         </div>
+         <div class="box__container box__container--around">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+         </div>
+      </div>
+
+      <div>
+         <div class="box__description">
+            <p>justify-content: space-evenly;</p>
+         </div>
+         <div class="box__container box__container--evenly">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+         </div>
+      </div>
+
+      <h1>Grid</h1>
+
+      <div>
+         <div class="box__description">
+            <p>grid-template-columns: 450px 200px;</p>
+            <p>grid-template-rows: auto;</p>
+         </div>
+         <div class="box__container box__container--grid box__container--columns-px">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+         </div>
+      </div>
+
+      <div>
+         <div class="box__description">
+            <p>grid-template-columns: 1fr 1fr 1fr;</p>
+            <p>grid-template-rows: 400px 200px 300px;</p>
+         </div>
+         <div class="box__container box__container--grid box__container--columns-fr">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 1</div>
+         </div>
+      </div>
+
+      
+
+   </div>
 </body>
+
 </html>

@@ -15,6 +15,8 @@ h1 {
     color: $color-font;
     text-align: center;
     width: 100%;
+    text-decoration: underline;
+   text-decoration-thickness: 3px;
 }
 
 .container {
@@ -31,7 +33,7 @@ h1 {
 
 %boxContainer {
    padding: 2rem;
-   margin-top: 5rem;
+   margin: 1rem 0 4rem;
    background-color: rgba(255, 255, 255, 0.3);
    border: 2px solid#fff;
    border-radius: 4px;
@@ -53,13 +55,67 @@ h1 {
    font-size: 1.2rem;
  }
 
+ .box__description {
+   @extend %boxContainer;
+
+   width: auto;
+   padding: 0.5rem 1.5rem;
+   margin: 0 0 1rem;
+   display: inline-block;
+
+   p {
+      letter-spacing: 1.5px;
+      color: $color-font;
+      line-height: 130%;
+      text-transform: capitalize;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+   }
+ }
+
 .box__container {
    @extend %boxContainer;
    display: flex;
    gap: 1rem;
    align-items: center;
-   justify-content: center;
+   
    flex-wrap: wrap;
+
+   &--center {
+      justify-content: center;
+   }
+
+   &--between {
+      justify-content: space-between;
+   }
+
+   &--around {
+      justify-content: space-around;
+   }
+
+   &--evenly {
+      justify-content: space-evenly;
+   }
+
+   &--grid {
+      display: grid;
+      .box {
+         width: 100%;
+         height: 100%;
+       }
+   }
+
+   &--columns-px {
+      display: grid;
+      grid-template-columns: 450px 200px;
+      grid-template-rows: auto;
+   }
+
+   &--columns-fr {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 400px 200px 300px;
+   }
 
    .box {
       @extend %boxItem;
@@ -67,17 +123,3 @@ h1 {
 
 }
 
-.box__container1 {
-   @extend %boxContainer;
-   display: flex;
-   gap: 1rem;
-   align-items: flex-start;
-   flex-direction: row-reverse;
-   justify-content: center;
-   flex-wrap: wrap;
-
-   .box {
-      @extend %boxItem;
-    }
-
-}
