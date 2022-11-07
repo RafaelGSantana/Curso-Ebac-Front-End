@@ -1,24 +1,16 @@
 {
-  "name": "webpack",
+  "name": "gt-tech",
   "version": "1.0.0",
-  "description": "Webpack: Empacotador de módulos JS",
+  "description": "Exercise-module26-eng.front-end",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js --mode production ",
     "dev": "webpack serve --stats-children --live-reload --open --mode development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cavalcantemmarcelo/webpack.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cavalcantemmarcelo/webpack/issues"
-  },
-  "homepage": "https://github.com/cavalcantemmarcelo/webpack#readme",
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",

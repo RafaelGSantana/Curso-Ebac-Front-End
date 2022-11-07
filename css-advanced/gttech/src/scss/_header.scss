@@ -1,0 +1,31 @@
+.header {
+   background-color: $color-primary;
+
+   .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+         height: 8.8rem;
+      }
+
+      .nav {
+         display: flex;
+         align-items: center;
+         gap: 1.6rem;
+
+         &__item {
+            font-size: 1.6rem;
+            color: $font-color-secondary;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 1s;
+
+            &:hover {
+               color: $color-button;
+            }
+         }
+      }
+   }
+}

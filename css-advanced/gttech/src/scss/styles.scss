@@ -16,21 +16,32 @@ $font-size-nav: 1.8rem;
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+input,
+button,
+textarea,
+a {
+   font-family: 'Poppins', sans-serif;
 }
 
 body {
     background-color: $color-secondary;
     font-family: $font-default;
-    margin: 0;
-    width: 100vw;
-
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
 }
 
-section {
-   border: 1px solid #000;
+header,
+section,
+footer {
+   width: 100%;
+}
+
+.container {
+   margin: 0 auto;
+   width: 90vw;
+   max-width: 140rem;
+   padding: 1rem 0;
 }
 
 @import 'animations';
