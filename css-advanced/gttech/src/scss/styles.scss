@@ -2,8 +2,8 @@ $color-primary: #b71bfa;
 $color-secondary: #faf8f8;
 $color-button: #45f7b6;
 $font-color-primary: #454545;
-$font-color-secondary: #ffffff;
-$font-default: Arial, Helvetica, sans-serif;
+$color-white: #ffffff;
+$font-default: 'Poppins', sans-serif;
 $font-size-default: 1.6rem;
 $font-size-nav: 1.8rem;
 
@@ -16,7 +16,6 @@ $font-size-nav: 1.8rem;
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
 }
 
 input,
@@ -24,11 +23,15 @@ button,
 textarea,
 a {
    font-family: 'Poppins', sans-serif;
+   color: #454545;
+   font-size: 500;
+   
 }
 
 body {
     background-color: $color-secondary;
     font-family: $font-default;
+    color: $font-color-primary;
 }
 
 header,
@@ -40,12 +43,13 @@ footer {
 .container {
    margin: 0 auto;
    width: 90vw;
-   max-width: 140rem;
-   padding: 1rem 0;
+   max-width: 120rem;
+   padding: 1.6rem 0;
 }
 
 @import 'animations';
 @import 'header';
 @import 'sobre';
 @import 'servicos';
+@import 'contato';
 @import 'footer';

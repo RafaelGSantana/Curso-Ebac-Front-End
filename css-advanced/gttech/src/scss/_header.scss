@@ -17,13 +17,15 @@
 
          &__item {
             font-size: 1.6rem;
-            color: $font-color-secondary;
+            color: $color-white;
             text-decoration: none;
             font-weight: 600;
-            transition: color 1s;
+            transition: color 1s, text-shadow 0.5s;
+            
 
             &:hover {
                color: $color-button;
+               text-shadow: 1px 1px 8px $color-white;
             }
          }
       }

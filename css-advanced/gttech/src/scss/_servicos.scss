@@ -1,3 +1,82 @@
-#servicos {
 
+
+.servicos {
+   width: 100%;
+   .container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+
+      h2 {
+         font-size: 2.2rem;
+         margin: 3rem 0;
+         text-align: center;
+         width: 100%;
+      }
+   }
+
+   &__items {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+   }
+
+   &__item {
+      width: 35.9rem;
+      border: 1px solid #cfcfcf;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+
+      &:hover{
+         animation: toTop;
+         animation-duration: 0.8s;
+         box-shadow: 0 10px 10px #cfcfcf;
+      }
+
+      &__img {
+         width: 36rem;
+         height: 28rem;
+         object-fit: cover;
+      }
+
+      &__body {
+         background-color: $color-white;
+         padding: 1rem;
+         display: flex;
+         flex-direction: column;
+
+         &__text-wrapper {
+            text-align: left;
+
+            h5 {
+               font-size: 1.6rem;
+               margin-bottom: 0.6rem;
+            }
+
+            p {
+               font-size: 1.2rem;
+               margin-bottom: 1rem;
+            }
+         }
+
+         &__button {
+            align-self: flex-end;
+            border: none;
+            border-radius: 4px;
+            padding: 0.5rem 0.8rem;
+            color: $color-white;
+            background-color: $color-primary;
+            cursor: pointer;
+            transition: opacity 0.5s, box-shadow 0.5s;
+
+            &:hover {
+               opacity: 0.8;
+               box-shadow: 1px 1px 6px $color-primary;
+            }
+         }
+      }
+   }
 }
