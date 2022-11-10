@@ -3,6 +3,7 @@ $color-secondary: #faf8f8;
 $color-button: #45f7b6;
 $font-color-primary: #454545;
 $color-white: #ffffff;
+$color-error: #f63b3b;
 $font-default: 'Poppins', sans-serif;
 $font-size-default: 1.6rem;
 $font-size-nav: 1.8rem;
@@ -46,6 +47,8 @@ footer {
    max-width: 120rem;
    padding: 1.6rem 0;
 }
+
+
 
 @import 'animations';
 @import 'header';
