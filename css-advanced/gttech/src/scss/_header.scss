@@ -16,7 +16,7 @@
          align-items: center;
          gap: 2rem;
 
-         &__item {
+         .nav-item {
             font-size: 1.6rem;
             color: $color-white;
             text-decoration: none;
@@ -43,7 +43,7 @@
          .nav {
             gap: 1.8rem;
    
-            &__item {
+            .nav-item {
                font-size: 1.5rem;
             }
          }
@@ -61,7 +61,7 @@
          .nav {
             gap: 1.8rem;
    
-            &__item {
+            .nav-item {
                font-size: 1.5rem;
             }
          }
@@ -79,7 +79,7 @@
          .nav {
             gap: 1.6rem;
    
-            &__item {
+            .nav-item {
                font-size: 1.4rem;
             }
          }
