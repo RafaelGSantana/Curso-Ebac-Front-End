@@ -15,7 +15,11 @@
 <body>
    <header class="header">
       <div class="container">
-         <img src="./assets/images/logo.svg" class="logo" alt="Growth throught tech">
+         <picture>
+            <source media="(max-width:650px)" srcset="./assets/images/logo-sm.svg">
+            <img src="./assets/images/logo.svg" class="logo" alt="Growth throught tech">
+          </picture>
+         
          <nav class="nav">
             <a class="nav__item" href="#sobre">Sobre</a>
             <a class="nav__item" href="#produtos">Serviços</a>
@@ -34,7 +38,7 @@
                   aliquam veritatis, numquam sit a in enim asperiores ullam est ut facere officia perspiciatis?</p>
          </article>
          <aside>
-            <img src="./assets/images/img-banner.png" alt="árvore tecnológica">
+            <img src="./assets/images/img-banner.svg" alt="árvore tecnológica">
          </aside>
       </div>
    </section>
@@ -90,7 +94,7 @@
                <div class="mensagem"></div>
                <input class="input required" type="text" placeholder="Digite seu nome">
                <input class="input required" type="email" placeholder="Digite seu e-mail. Ex.: email@email.com">
-               <textarea class="description" name=""cols="30" rows="10" placeholder="Como podemos te ajudar?"></textarea>
+               <textarea class="description" name=""cols="30" rows="5" placeholder="Como podemos te ajudar?"></textarea>
                <button type="submit" class="button">Enviar</button>
             </form>
          </div>

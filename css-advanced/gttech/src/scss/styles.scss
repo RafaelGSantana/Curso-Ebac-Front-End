@@ -8,6 +8,13 @@ $font-default: 'Poppins', sans-serif;
 $font-size-default: 1.6rem;
 $font-size-nav: 1.8rem;
 
+@import 'animations';
+@import 'header';
+@import 'sobre';
+@import 'servicos';
+@import 'contato';
+@import 'footer';
+
 * {
    margin: 0;
    padding: 0;
@@ -48,11 +55,14 @@ footer {
    padding: 1.6rem 0;
 }
 
+@media(max-width: 1024px) {
+   .container {
+      width: 92vw;
+   }
+}
 
-
-@import 'animations';
-@import 'header';
-@import 'sobre';
-@import 'servicos';
-@import 'contato';
-@import 'footer';
+@media(max-width: 850px) {
+   .container {
+      width: 96vw;
+   }
+}

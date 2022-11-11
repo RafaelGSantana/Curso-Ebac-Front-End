@@ -17,9 +17,7 @@
       }
 
       .form {
-         
-         width: 36vw;
-         height: 30rem;
+         width: 48%;
          display: flex;
          flex-direction: column;
          align-items: flex-start;
@@ -86,6 +84,95 @@
 
             &:focus {
                outline: 1px solid $color-primary;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 1024px) {
+   .contact  {
+      .container {
+         .content {
+            img {
+               height: 28rem;
+               object-position: 0px 0%;
+            }
+         }
+   
+         .form {
+            width: 47%;
+   
+            .mensagem {
+               font-size: 1.2rem;
+            }
+   
+            input {
+               height: 3.4rem;
+            }
+   
+            button {
+               height: 4.4rem;
+               letter-spacing: 0.8px;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 850px) {
+   .contact  {
+      .container {
+         h2 {
+            margin: 2.4rem 0;
+         }
+   
+         .content {
+            img {
+               height: 24rem;
+            }
+         }
+   
+         .form {
+            width: 48%;
+   
+            .mensagem {
+               font-size: 1.1rem;
+            }
+   
+            input {
+               height: 3.2rem;
+            }
+   
+            button {
+               height: 4rem;
+            }
+         }
+      }
+   }
+}
+
+@media(max-width: 650px) {
+   .contact  {
+      .container {
+         h2 {
+            margin: 2.4rem 0 2rem;
+         }
+   
+         .content {
+            flex-direction: column;
+   
+            img {
+               display: none;
+            }
+         }
+   
+         .form {
+            width: 96%;
+            height: 28rem;
+   
+            input {
+               height: 3.2rem;
             }
          }
       }

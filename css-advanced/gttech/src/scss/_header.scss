@@ -32,3 +32,57 @@
       }
    }
 }
+
+@media(max-width: 1024px) {
+   .header {
+      .container {
+         .logo {
+            height: 8.4rem;
+         }
+   
+         .nav {
+            gap: 1.8rem;
+   
+            &__item {
+               font-size: 1.5rem;
+            }
+         }
+      }
+   }  
+}
+
+@media(max-width: 768px) {
+   .header {
+      .container {
+         .logo {
+            height: 8rem;
+         }
+   
+         .nav {
+            gap: 1.8rem;
+   
+            &__item {
+               font-size: 1.5rem;
+            }
+         }
+      }
+   }  
+}
+
+@media(max-width: 650px) {
+   .header {
+      .container {
+         .logo {
+            height: 7rem;
+         }
+   
+         .nav {
+            gap: 1.6rem;
+   
+            &__item {
+               font-size: 1.4rem;
+            }
+         }
+      }
+   }  
+}

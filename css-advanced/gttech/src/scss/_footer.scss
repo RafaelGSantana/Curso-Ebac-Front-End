@@ -14,3 +14,12 @@
       }
    }
 }
+
+@media(max-width: 850px) {
+   .footer {
+      margin-top: 0rem;
+      p {
+         font-size: 1.1rem;
+      }
+   }
+}  
