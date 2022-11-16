@@ -9,6 +9,7 @@
 
       .logo {
          height: 8.8rem;
+         object-position: -2px;
       }
 
       .nav {
@@ -51,6 +52,14 @@
    }  
 }
 
+@media(max-width: 850px) {
+   .header {
+      .container {
+         padding: 1rem 2rem;
+      }
+   }  
+}
+
 @media(max-width: 768px) {
    .header {
       .container {
@@ -74,6 +83,7 @@
       .container {
          .logo {
             height: 7rem;
+            object-position: 0px;
          }
    
          .nav {

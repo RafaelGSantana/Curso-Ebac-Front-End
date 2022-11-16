@@ -26,10 +26,9 @@
             overflow: hidden;
             position: relative;
             background-color: $color-white;
-      
+            transition: transform 0.4s, box-shadow 0.4s;
             &:hover{
-               animation: toTop;
-               animation-duration: 0.8s;
+               transform: translateY(-1rem);
                box-shadow: 0 10px 10px #cfcfcf;
             }
       
@@ -56,6 +55,7 @@
                   .item-description {
                      font-size: 1.2rem;
                      margin-bottom: 1rem;
+                     max-height: 4.6rem;
                   }
                }
       
@@ -155,27 +155,29 @@
 
 @media(max-width: 650px) {
    .servicos {
-      .items {
-         display: flex;
-         flex-direction: column;
-         gap: 1.8rem;
-         padding-left: 0rem;
-         justify-content: center;
-         align-items: center;
-         width: 100%;
+      .container{
+         .items {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            padding-left: 0rem;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
 
-         .item {
-            flex-direction: row;
-            max-width: none;
-            width: 90%;
-      
-            .item-img {
-               width: 35%;
-               height: 16rem;
-            }
-      
-            .item-body {
-               width: 65%;
+            .item {
+               flex-direction: row;
+               max-width: none;
+               width: 90%;
+         
+               .item-img {
+                  width: 35%;
+                  height: 16rem;
+               }
+         
+               .item-body {
+                  width: 65%;
+               }
             }
          }
       }
