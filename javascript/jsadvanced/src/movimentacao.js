@@ -18,13 +18,30 @@ class Registro {
       movimentacoes.forEach(lancamento => this.movimentacoes.push(lancamento))
    }
 
-   resumo() {
+   // Mesma funcionalidade do méotod resumo, porém remove o valor dos impostos
+   faturamento() {
       let valorAtualizado = 0;
+      let nomeLancamento = '';
       this.movimentacoes.forEach(lancamento => {
-         valorAtualizado += lancamento.saldo
+
+         if (!lancamento.nome.match(/imposto/)) {
+            valorAtualizado += lancamento.saldo;
+            nomeLancamento += lancamento.nome + ' | '
+         }
       })
 
-      return valorAtualizado;
+      return nomeLancamento + valorAtualizado;
+   }
+
+   resumo() {
+      let valorAtualizado = 0;
+      let nomeLancamento = '';
+      this.movimentacoes.forEach(lancamento => {
+         valorAtualizado += lancamento.saldo;
+         nomeLancamento += lancamento.nome + ' | '
+      })
+
+      return nomeLancamento + valorAtualizado;
    }
 }
 
@@ -34,4 +51,5 @@ const m03 = new Movimentacao('Bank X', 'imposto', -5000);
 
 const r01 = new Registro(17, 11, 2022);
 r01.novaMovimentacao(m01, m02, m03);
-console.log('Saldo do dia: ' + r01.resumo() + ' reais')
+console.log('Tipo registros + Saldo do dia: ' + r01.resumo())
+console.log('Tipo registros + Faturamento: ' + r01.faturamento())
