@@ -23,3 +23,6 @@
 
 ## Arrow Functions
 
+- Multiplos parâmetros: (p1, p2, ..., pN) => { expressao }
+- Expressão / Algoritmo simples: (p1, p2) => expressao
+- Único parâmetro: p1 => { expressao }
