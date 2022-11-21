@@ -1,5 +1,4 @@
 class Animal {
-
    constructor(especie){
        this.especie = especie
    }
@@ -18,12 +17,12 @@ class Animal {
 
 }
 
-const animal = new Animal('animal')
-animal.falar();
-animal.comer();
-animal.dormir();
+// const animal = new Animal('animal')
+// animal.falar();
+// animal.comer();
+// animal.dormir();
 
-class Cachorro extends Animal{
+export default class Cachorro extends Animal{
    falar(){
        console.log(this.especie + ' fala au au au')
    }
@@ -32,8 +31,3 @@ class Cachorro extends Animal{
        console.log(this.especie + ' come ração ')
    }
 }
-
-const cachorro1 = new Cachorro('cachorro')
-cachorro1.falar();
-cachorro1.comer();
-cachorro1.dormir();
