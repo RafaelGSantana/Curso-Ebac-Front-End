@@ -9,6 +9,6 @@ title: [1,'oi'];
 enum Colors {
    white = '#fff',
    red = '#f00',
-   blue = '#00f',
+   blue = '#00f', 
    black = '#000'
 }

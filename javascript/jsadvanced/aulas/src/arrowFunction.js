@@ -1,9 +1,9 @@
 function Pessoa() {
-   this.age = 0;
+  this.age = 0;
 
-   setInterval(() => {
-      console.log(this.age++);
-   }, 2000)
+  setInterval(() => {
+    console.log(this.age++);
+  }, 2000);
 }
 
-const p01 = new Pessoa()
+const p01 = new Pessoa();

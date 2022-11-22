@@ -9,7 +9,7 @@ user02.name = "Felipe";
 user02.age = 29;
 
 const user03 = new Object();
-user03.id = 03;
+user03.id = 03; 
 user03.name = "Júlia";
 user03.age = 33;
 

@@ -1,20 +1,19 @@
 class Animal {
-   constructor(especie){
-       this.especie = especie
-   }
+  constructor(especie) {
+    this.especie = especie;
+  }
 
-   falar(){
-       console.log(this.especie + ' fala ')
-   }
+  falar() {
+    console.log(`${this.especie} fala `);
+  }
 
-   comer(){
-       console.log(this.especie + ' come ')
-   }
+  comer() {
+    console.log(`${this.especie} come `);
+  }
 
-   dormir(){
-       console.log(this.especie + ' dorme ')
-   }
-
+  dormir() {
+    console.log(`${this.especie} dorme `);
+  }
 }
 
 // const animal = new Animal('animal')
@@ -22,12 +21,12 @@ class Animal {
 // animal.comer();
 // animal.dormir();
 
-export default class Cachorro extends Animal{
-   falar(){
-       console.log(this.especie + ' fala au au au')
-   }
+export default class Cachorro extends Animal {
+  falar() {
+    console.log(`${this.especie} fala au au au`);
+  }
 
-   comer(){
-       console.log(this.especie + ' come ração ')
-   }
+  comer() {
+    console.log(`${this.especie} come ração `);
+  }
 }
