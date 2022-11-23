@@ -52,7 +52,8 @@ export const CartIconButton = styled.div``;
 
 export const Main = styled.div`
    width: 100%;
-   height: calc(100vh - 140px);
+   height: auto;
+   min-height: calc(100vh - 140px);
    border-bottom: 1px solid #e93d45;
 `;
 
@@ -66,16 +67,21 @@ export const MainContainer = styled.div`
 
 
 export const CarItems = styled.div`
-
+   display: flex;
+   gap: 1.5rem;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
 `;
 
 export const CarItem = styled.div`
    width: 260px;
-   height: 400px;
+   height: 380px;
    overflow: hidden;
    background-color: #fff;
    color: black;
    border-radius: 6px;
+   padding-bottom: 8px;
    transition: transform 0.4s;
 
    &:hover {
