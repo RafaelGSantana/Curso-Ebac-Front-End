@@ -54,7 +54,7 @@ export const Main = styled.div`
    width: 100%;
    height: auto;
    min-height: calc(100vh - 140px);
-   border-bottom: 1px solid #e93d45;
+   border-bottom: 1px solid #000;
 `;
 
 export const MainContainer = styled.div`
@@ -63,8 +63,34 @@ export const MainContainer = styled.div`
    padding: 2rem 0;
    max-width: 91.15%;
    margin: 0 auto;
+   margin-top: -88px;
 `;
 
+export const FilterContainer = styled.div`
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 2rem;
+   margin-bottom: 3rem;
+`;
+
+export const FilterCars = styled.button`
+   padding: 0.5rem 2rem;
+   border: none;
+   border-radius: 4px;
+   background-color: #fff;
+   box-shadow: 0 0 8px 0 #1a1918;
+
+   font-size: 1rem;
+   font-weight: 500;
+
+   transition: box-shadow 0.3s, transform 0.3s;
+   &:hover {
+      box-shadow: 0 0 12px 0 #000;
+      transform: scale(1.05);
+   }
+`;
 
 export const CarItems = styled.div`
    display: flex;
@@ -82,11 +108,6 @@ export const CarItem = styled.div`
    color: black;
    border-radius: 6px;
    padding-bottom: 8px;
-   transition: transform 0.4s;
-
-   &:hover {
-      transform: translateY(-4px);
-   }
 
    img {
       width: 100%;
@@ -153,10 +174,11 @@ export const CarItemButton = styled.button`
    font-size: 1.2rem;
    letter-spacing: 1px;
 
-   transition: background-color 0.2s;
+   transition: background-color 0.2s, transform 0.2s;
 
    &:hover {
       background-color: #f00;
+      transform: scale(1.03);
    }
 `;
 export const Footer = styled.div`
