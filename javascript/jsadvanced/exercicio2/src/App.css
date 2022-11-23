@@ -1,0 +1,30 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-size: 62.5%;
+}
+
+.header, main, footer {
+   width: 100%;
+}
+
+.container {
+   width: 100%;
+   max-width: 91.15%;
+   margin: 0 auto;
+}
+
+.header {
+   
+}
+.header .container {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 2rem;
+}
+
