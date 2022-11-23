@@ -8,7 +8,7 @@ export default createGlobalStyle`
    }
 
       body {
-      background: #1d1b1f;
+      background: #919191;
       color: #fff;
       -webkit-font-smoothing: antialiased;
    }
@@ -24,15 +24,5 @@ export default createGlobalStyle`
 
    button {
       cursor: pointer;
-   }
-
-   .header, main, footer {
-      width: 100%;
-   }
-
-   .container {
-      width: 100%;
-      max-width: 91.15%;
-      margin: 0 auto;
    }
 `;
