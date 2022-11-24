@@ -20,14 +20,43 @@ import {
 } from './styles';
 
 import { cars } from '../cars.js';
+import { useEffect, useState } from 'react';
 
 export function Home() {
+   // State that contains the list of cars that will be rendered
+   const [carsList, setCarsList] = useState([]);
+
+   // Hook to list all cars when home page is rendered
+   useEffect(() => {
+      setCarsList(cars)
+   }, []);
+
+   // Function to list only the cars 0km
+   function filterNewCars() {
+      setCarsList([]);
+      const response = cars.filter(items => items.new === true);
+
+      setCarsList(response)
+   }
+
+   // Function to list only the cars semi-new
+   function filterSemiNewCars() {
+      setCarsList([]);
+      const response = cars.filter(items => items.new === false);
+
+      setCarsList(response)
+   }
+
+   // Function to list all cars
+   function listAllCars() {
+      setCarsList(cars);
+   }
 
    return (
       <Container>
          <Header>
             <HeaderContainer>
-               <LogoWrapper>
+               <LogoWrapper onClick={listAllCars}>
                   <div>R</div>
                   <h1>motors</h1>
                </LogoWrapper>
@@ -40,12 +69,12 @@ export function Home() {
          <Main>
             <MainContainer>
                <FilterContainer>
-                  <FilterCars>Novos</FilterCars>
-                  <FilterCars>Semi-Novos</FilterCars>
+                  <FilterCars onClick={filterNewCars}>Novos</FilterCars>
+                  <FilterCars onClick={filterSemiNewCars}>Semi-Novos</FilterCars>
                </FilterContainer>
                <CarItems>
                   {
-                     cars.map(car => (
+                     carsList.map(car => (
                         <CarItem key={car.id}>
                            <img src={require(`../assets/${car.img}`)} alt="foto de um carro" />
                            <CarDescriptions>

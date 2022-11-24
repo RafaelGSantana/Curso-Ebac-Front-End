@@ -27,6 +27,10 @@ export const LogoWrapper = styled.div`
    align-items: center;
    gap: 6px;
 
+   &:hover {
+      cursor: pointer;
+   }
+
    div {
       width: 40px;
       height: 40px;
