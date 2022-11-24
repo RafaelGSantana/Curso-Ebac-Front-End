@@ -19,12 +19,14 @@ import {
    FooterContainer
 } from './styles';
 
-import { cars } from '../cars.js';
+import { cars } from '../../cars';
 import { useEffect, useState } from 'react';
 
 export function Home() {
    // State that contains the list of cars that will be rendered
    const [carsList, setCarsList] = useState([]);
+   // State that contains the object car to add in cart
+   const [cart, setCart] = useState({});
 
    // Hook to list all cars when home page is rendered
    useEffect(() => {
@@ -52,6 +54,15 @@ export function Home() {
       setCarsList(cars);
    }
 
+   // Function to add car in cartItems
+   function addCarToCart(id) {
+      const carToAddInCart = cars.filter(item => item.id === id);
+
+      setCart(carToAddInCart);
+   }
+
+   console.log(cart)
+
    return (
       <Container>
          <Header>
@@ -76,7 +87,7 @@ export function Home() {
                   {
                      carsList.map(car => (
                         <CarItem key={car.id}>
-                           <img src={require(`../assets/${car.img}`)} alt="foto de um carro" />
+                           <img src={require(`../../assets/${car.img}`)} alt="foto de um carro" />
                            <CarDescriptions>
                               <CarInfo>
                                  <div>
@@ -85,7 +96,7 @@ export function Home() {
                                  </div>
                                  <p className="price">{car.price}</p>
                               </CarInfo>
-                              <CarItemButton>
+                              <CarItemButton onClick={() => addCarToCart(car.id)}>
                                  Comprar
                               </CarItemButton>
                            </CarDescriptions>
