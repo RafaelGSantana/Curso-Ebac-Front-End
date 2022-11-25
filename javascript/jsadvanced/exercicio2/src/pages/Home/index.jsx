@@ -21,12 +21,13 @@ import {
 
 import { cars } from '../../cars';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Home() {
    // State that contains the list of cars that will be rendered
    const [carsList, setCarsList] = useState([]);
-   // State that contains the object car to add in cart
-   const [cart, setCart] = useState({});
+
+   const navigate = useNavigate();
 
    // Hook to list all cars when home page is rendered
    useEffect(() => {
@@ -58,10 +59,10 @@ export function Home() {
    function addCarToCart(id) {
       const carToAddInCart = cars.filter(item => item.id === id);
 
-      setCart(carToAddInCart);
+      localStorage.setItem('@loja-de-carros', JSON.stringify(carToAddInCart))
+      
+      navigate('/cart');
    }
-
-   console.log(cart)
 
    return (
       <Container>

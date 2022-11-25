@@ -15,8 +15,19 @@ import {
    Footer,
    FooterContainer
 } from './styles';
+import { useEffect, useState } from 'react';
 
 export function Cart() {
+   const [car, setCar] = useState([]);
+
+   useEffect(() => {
+      const carSaved = localStorage.getItem('@loja-de-carros');
+      const response = JSON.parse(carSaved)
+      
+      setCar(response);
+   }, []);
+
+   console.log(car);
 
    return (
       <Container>
@@ -42,18 +53,18 @@ export function Cart() {
                   <PurchaseInfo>
                         <div>
                            <p>Nome</p>
-                           <p>VOLVO S90</p>
+                           <p>{car[0].name}</p>
                         </div>
                         <div>
                            <p>Valor do produto:</p>
-                           <p>R$ 289.900</p>
+                           <p>{car[0].price}</p>
                         </div>
                         <div>
                            <p>Valor do frete:</p>
                            <p>R$ 900</p>
                         </div>
                         <div>
-                           <p>total da compra:</p>
+                           <p>Valor total da compra:</p>
                            <p>R$ 290.800</p>
                         </div>
                      <button>Confirmar compra</button>
