@@ -52,8 +52,6 @@ export const LogoWrapper = styled.div`
    }
 `;
 
-export const CartIconButton = styled.div``;
-
 export const Main = styled.div`
    width: 100%;
    height: auto;
@@ -154,12 +152,33 @@ export const CarInfo = styled.div`
       }
    }
 
-   p:last-child {
+   div:nth-child(2) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      > div {
+         border: 1px solid #1aff1a;
+         width: auto;
+         border-radius: 4px;
+         background-color: #ccffcc;
+         text-align: center;
+         font-weight: 500;
+         color: #008000;
+         font-size: 9px;
+         padding: 2px 4px;
+      }
+         margin-top: 4px;
+
+      p {
       font-size: 0.9rem;
       color: #000;
       text-align: end;
       margin-right: 8px;
    }
+   }
+
+   
 `;
 
 export const CarItemButton = styled.button`

@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { BiArrowBack } from 'react-icons/bi';
 
 import {
@@ -27,7 +26,6 @@ export function Cart() {
       setCar(response);
    }, []);
 
-   console.log(car);
 
    return (
       <Container>
@@ -57,15 +55,18 @@ export function Cart() {
                         </div>
                         <div>
                            <p>Valor do produto:</p>
-                           <p>{car[0].price}</p>
+                           <p>{car[0].price && car[0].price.toLocaleString('pt-BR', {
+                              style: 'currency',
+                              currency: 'BRL'
+                           })}</p>
                         </div>
                         <div>
                            <p>Valor do frete:</p>
-                           <p>R$ 900</p>
+                           <p>{car[0].shipping ? 'R$ 900,00' : 'Grátis'}</p>
                         </div>
                         <div>
                            <p>Valor total da compra:</p>
-                           <p>R$ 290.800</p>
+                           <p>{car[0].total}</p>
                         </div>
                      <button>Confirmar compra</button>
                   </PurchaseInfo>

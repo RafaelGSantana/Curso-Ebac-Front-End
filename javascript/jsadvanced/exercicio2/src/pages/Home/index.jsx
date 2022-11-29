@@ -1,11 +1,8 @@
-import { AiOutlineShoppingCart } from 'react-icons/ai';
-
 import {
    Container,
    Header,
    HeaderContainer,
    LogoWrapper,
-   CartIconButton,
    Main,
    MainContainer,
    FilterContainer,
@@ -57,10 +54,10 @@ export function Home() {
 
    // Function to add car in cartItems
    function addCarToCart(id) {
-      const carToAddInCart = cars.filter(item => item.id === id);
+      const selectedCar = cars.filter(item => item.id === id);
 
-      localStorage.setItem('@loja-de-carros', JSON.stringify(carToAddInCart))
-      
+      localStorage.setItem('@loja-de-carros', JSON.stringify(selectedCar))
+
       navigate('/cart');
    }
 
@@ -72,9 +69,6 @@ export function Home() {
                   <div>R</div>
                   <h1>motors</h1>
                </LogoWrapper>
-               <CartIconButton>
-                  <AiOutlineShoppingCart size={26} />                     
-               </CartIconButton>
             </HeaderContainer>
          </Header>
 
@@ -95,7 +89,17 @@ export function Home() {
                                     <p className="name">{car.name}</p>
                                     <p className="description">{car.description}</p>
                                  </div>
-                                 <p className="price">{car.price}</p>
+                                 <div>
+                                    {
+                                       car.shipping ? '' : <div>FRETE GRÁTIS</div>
+                                    }
+                                    <p className="price">
+                                       {car.price.toLocaleString('pt-BR', {
+                                          style: 'currency',
+                                          currency: 'BRL'
+                                       })}
+                                    </p>
+                                 </div>
                               </CarInfo>
                               <CarItemButton onClick={() => addCarToCart(car.id)}>
                                  Comprar
@@ -104,7 +108,7 @@ export function Home() {
                         </CarItem>
                      ))
                   }
-                  
+
                </CarItems>
             </MainContainer>
          </Main>
