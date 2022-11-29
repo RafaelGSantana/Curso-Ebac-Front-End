@@ -17,7 +17,7 @@ import {
 import { useEffect, useState } from 'react';
 
 export function Cart() {
-   const [car, setCar] = useState([]);
+   const [car, setCar] = useState([{}]);
 
    useEffect(() => {
       const carSaved = localStorage.getItem('@loja-de-carros');
@@ -25,7 +25,7 @@ export function Cart() {
       
       setCar(response);
    }, []);
-
+console.log(car)
 
    return (
       <Container>
@@ -51,7 +51,7 @@ export function Cart() {
                   <PurchaseInfo>
                         <div>
                            <p>Nome</p>
-                           <p>{car[0].name}</p>
+                           <p>{car[0].name && car[0].name}</p>
                         </div>
                         <div>
                            <p>Valor do produto:</p>
