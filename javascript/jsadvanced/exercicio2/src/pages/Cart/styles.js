@@ -115,6 +115,7 @@ export const CartCard = styled.div`
 
    img {
       width: 40%;
+      height: 190px;
       object-fit: contain;
    }
 `;

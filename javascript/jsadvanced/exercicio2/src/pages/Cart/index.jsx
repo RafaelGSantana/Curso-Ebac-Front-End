@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 
 import {
@@ -14,18 +15,20 @@ import {
    Footer,
    FooterContainer
 } from './styles';
-import { useEffect, useState } from 'react';
+
 
 export function Cart() {
-   const [car, setCar] = useState([{}]);
+   const [product, setProduct] = useState([{}]);
 
    useEffect(() => {
-      const carSaved = localStorage.getItem('@loja-de-carros');
-      const response = JSON.parse(carSaved)
+      const productSaved = localStorage.getItem('@loja-de-suplementos');
+      console.log(productSaved)
+      const response = JSON.parse(productSaved)
+      console.log(response)
       
-      setCar(response);
+      setProduct(response);
    }, []);
-console.log(car)
+// console.log(car)
 
    return (
       <Container>
@@ -47,26 +50,26 @@ console.log(car)
          <Main>
             <CartContainer>
                <CartCard>
-                  <img src={require('../../assets/volvo.jpg')} alt='' />
+                  <img src={product[0].img && require(`../../assets/${product[0].img}`)} alt="foto de um suplemento fitness" />
                   <PurchaseInfo>
                         <div>
                            <p>Nome</p>
-                           <p>{car[0].name && car[0].name}</p>
+                           <p>{product[0].name && product[0].name}</p>
                         </div>
                         <div>
                            <p>Valor do produto:</p>
-                           <p>{car[0].price && car[0].price.toLocaleString('pt-BR', {
+                           <p>{product[0].price && product[0].price.toLocaleString('pt-BR', {
                               style: 'currency',
                               currency: 'BRL'
                            })}</p>
                         </div>
                         <div>
                            <p>Valor do frete:</p>
-                           <p>{car[0].shipping ? 'R$ 900,00' : 'Grátis'}</p>
+                           <p>{product[0].shipping ? 'R$ 900,00' : 'Grátis'}</p>
                         </div>
                         <div>
                            <p>Valor total da compra:</p>
-                           <p>{car[0].total}</p>
+                           <p>{product[0].total}</p>
                         </div>
                      <button>Confirmar compra</button>
                   </PurchaseInfo>

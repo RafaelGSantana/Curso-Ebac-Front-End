@@ -6,7 +6,7 @@ import {
    Main,
    MainContainer,
    FilterContainer,
-   FilterCars,
+   FilterProduct,
    CarItems,
    CarItem,
    CarDescriptions,
@@ -16,47 +16,55 @@ import {
    FooterContainer
 } from './styles';
 
-import { cars } from '../../cars';
+import { products } from '../../products';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export function Home() {
    // State that contains the list of cars that will be rendered
-   const [carsList, setCarsList] = useState([]);
+   const [productsList, setProductsList] = useState([]);
 
    const navigate = useNavigate();
 
    // Hook to list all cars when home page is rendered
    useEffect(() => {
-      setCarsList(cars)
+      setProductsList(products)
    }, []);
 
-   // Function to list only the cars 0km
-   function filterNewCars() {
-      setCarsList([]);
-      const response = cars.filter(items => items.new === true);
+   // Function to list only the creatine
+   function filterCreatine() {
+      setProductsList([]);
+      const response = products.filter(items => items.category === 'creatina');
 
-      setCarsList(response)
+      setProductsList(response)
    }
 
-   // Function to list only the cars semi-new
-   function filterSemiNewCars() {
-      setCarsList([]);
-      const response = cars.filter(items => items.new === false);
+   // Function to list only the whey
+   function filterWhey() {
+      setProductsList([]);
+      const response = products.filter(items => items.category === 'whey');
 
-      setCarsList(response)
+      setProductsList(response)
+   }
+
+   // Function to list only the bcaa
+   function filterBcaa() {
+      setProductsList([]);
+      const response = products.filter(items => items.category === 'bcaa');
+
+      setProductsList(response)
    }
 
    // Function to list all cars
    function listAllCars() {
-      setCarsList(cars);
+      setProductsList(products);
    }
 
    // Function to add car in cartItems
    function addCarToCart(id) {
-      const selectedCar = cars.filter(item => item.id === id);
+      const selectedSuplement =  products.filter(item => item.id === id);
 
-      localStorage.setItem('@loja-de-carros', JSON.stringify(selectedCar))
+      localStorage.setItem('@loja-de-suplementos', JSON.stringify(selectedSuplement))
 
       navigate('/cart');
    }
@@ -67,7 +75,7 @@ export function Home() {
             <HeaderContainer>
                <LogoWrapper onClick={listAllCars}>
                   <div>R</div>
-                  <h1>motors</h1>
+                  <h1>nutrition</h1>
                </LogoWrapper>
             </HeaderContainer>
          </Header>
@@ -75,33 +83,36 @@ export function Home() {
          <Main>
             <MainContainer>
                <FilterContainer>
-                  <FilterCars onClick={filterNewCars}>Novos</FilterCars>
-                  <FilterCars onClick={filterSemiNewCars}>Semi-Novos</FilterCars>
+                  <FilterProduct onClick={filterWhey}>Whey</FilterProduct>
+                  <FilterProduct onClick={filterCreatine}>Creatina</FilterProduct>
+                  <FilterProduct onClick={filterBcaa}>BCAA</FilterProduct>
                </FilterContainer>
                <CarItems>
                   {
-                     carsList.map(car => (
-                        <CarItem key={car.id}>
-                           <img src={require(`../../assets/${car.img}`)} alt="foto de um carro" />
+                     productsList.map(product => (
+                        <CarItem key={product.id}>
+                           <div>
+                              <img src={require(`../../assets/${product.img}`)} alt="foto de um suplemento fitness" />
+                           </div>
                            <CarDescriptions>
                               <CarInfo>
                                  <div>
-                                    <p className="name">{car.name}</p>
-                                    <p className="description">{car.description}</p>
+                                    <p className="name">{product.name}</p>
+                                    <p className="description">{product.description}</p>
                                  </div>
                                  <div>
                                     {
-                                       car.shipping ? '' : <div>FRETE GRÁTIS</div>
+                                       product.shipping ? '' : <div>FRETE GRÁTIS</div>
                                     }
                                     <p className="price">
-                                       {car.price.toLocaleString('pt-BR', {
+                                       {product.price.toLocaleString('pt-BR', {
                                           style: 'currency',
                                           currency: 'BRL'
                                        })}
                                     </p>
                                  </div>
                               </CarInfo>
-                              <CarItemButton onClick={() => addCarToCart(car.id)}>
+                              <CarItemButton onClick={() => addCarToCart(product.id)}>
                                  Comprar
                               </CarItemButton>
                            </CarDescriptions>

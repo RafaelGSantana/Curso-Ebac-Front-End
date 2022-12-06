@@ -77,7 +77,7 @@ export const FilterContainer = styled.div`
    margin-bottom: 3rem;
 `;
 
-export const FilterCars = styled.button`
+export const FilterProduct = styled.button`
    padding: 0.5rem 2rem;
    border: none;
    border-radius: 4px;
@@ -109,20 +109,27 @@ export const CarItem = styled.div`
    background-color: #fff;
    color: black;
    border-radius: 6px;
-   padding-bottom: 8px;
+   padding: 8px 4px;
 
-   img {
+   > div:first-child {
       width: 100%;
-      height: 60%;
-      object-fit: cover;
+      height: 50%;
+      padding: 8px 0;
+      border-bottom: 1px solid #919191;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+         
+      }
    }
 `;
 
 export const CarDescriptions = styled.div`
-   height: 40%;
+   height: 50%;
    margin-top: -2px;
    margin-left: -1px;
-   padding: 8px;
+   padding: 8px 8px 0 8px;
 
    display: flex;
    flex-direction: column;
@@ -133,8 +140,7 @@ export const CarInfo = styled.div`
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   height: 100%;
-   padding-bottom: 8px;
+   height: calc(100% - 40px);
 
    > div {
       p:first-child {
@@ -149,6 +155,7 @@ export const CarInfo = styled.div`
          text-align: left;
          font-size: 0.8rem;
          color: #919191;
+         margin-bottom: 5px;
       }
    }
 
@@ -157,11 +164,13 @@ export const CarInfo = styled.div`
       align-items: center;
       justify-content: flex-end;
       gap: 6px;
+      margin-bottom: 6px;
+      
       > div {
          border: 1px solid #1aff1a;
          width: auto;
          border-radius: 4px;
-         background-color: #ccffcc;
+         background-color: #f0f5f5;
          text-align: center;
          font-weight: 500;
          color: #008000;
@@ -175,6 +184,8 @@ export const CarInfo = styled.div`
       color: #000;
       text-align: end;
       margin-right: 8px;
+      margin-bottom: 0;
+      letter-spacing: 0px;
    }
    }
 
@@ -182,7 +193,7 @@ export const CarInfo = styled.div`
 `;
 
 export const CarItemButton = styled.button`
-   width: 90%;
+   width: 100%;
    height: 36px;
    background-color: #e93d45;
    margin: 0 auto;
