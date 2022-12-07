@@ -55,7 +55,7 @@ export const LogoWrapper = styled.div`
 export const Main = styled.div`
    width: 100%;
    height: auto;
-   min-height: calc(100vh - 140px);
+   min-height: calc(100vh - 52px);
    border-bottom: 1px solid #000;
 `;
 

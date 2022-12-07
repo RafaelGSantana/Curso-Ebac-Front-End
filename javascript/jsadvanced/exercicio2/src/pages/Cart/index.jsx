@@ -31,7 +31,12 @@ export function Cart() {
       
       setProduct(response);
    }, []);
-// console.log(car)
+
+   function purchaseConfirmation() {
+      alert('Compra realizada com sucesso!')
+      navigate('/')
+   }
+   
 
    return (
       <Container>
@@ -70,13 +75,29 @@ export function Cart() {
                         </div>
                         <div>
                            <p>Valor do frete:</p>
-                           <p>{product[0].shipping ? 'R$ 900,00' : 'Grátis'}</p>
+                           <p>
+                              {
+                                 product[0].shipping 
+                                    ? product[0].shipping.toLocaleString('pt-BR', {
+                                       style: 'currency',
+                                       currency: 'BRL'
+                                    })
+                                    : 'Grátis' 
+                              }
+                           </p>
                         </div>
                         <div>
                            <p>Valor total da compra:</p>
-                           <p>{product[0].total}</p>
+                           <p>
+                              {
+                                 (product[0].price + product[0].shipping).toLocaleString('pt-BR', {
+                                    style: 'currency',
+                                    currency: 'BRL'
+                                 })
+                              }
+                           </p>
                         </div>
-                     <button>Confirmar compra</button>
+                     <button onClick={() => purchaseConfirmation()}>Confirmar compra</button>
                   </PurchaseInfo>
                </CartCard>
             </CartContainer>

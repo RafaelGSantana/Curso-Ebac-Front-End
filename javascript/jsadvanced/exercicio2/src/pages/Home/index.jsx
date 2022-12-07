@@ -108,7 +108,7 @@ export function Home() {
                                  </div>
                                  <div>
                                     {
-                                       product.shipping ? '' : <div>FRETE GRÁTIS</div>
+                                       !!product.shipping ? '' : <div>FRETE GRÁTIS</div>
                                     }
                                     <p className="price">
                                        {product.price.toLocaleString('pt-BR', {
