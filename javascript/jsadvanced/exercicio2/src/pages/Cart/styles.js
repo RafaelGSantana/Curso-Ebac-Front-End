@@ -113,10 +113,15 @@ export const CartCard = styled.div`
 
    display: flex;
 
-   img {
+   > div:first-child {
       width: 40%;
       height: 190px;
-      object-fit: contain;
+      padding: 16px;
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
    }
 `;
 

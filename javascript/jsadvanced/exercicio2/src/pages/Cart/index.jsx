@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
+import { useNavigate } from 'react-router-dom';
 
 import {
    Container,
@@ -20,6 +21,8 @@ import {
 export function Cart() {
    const [product, setProduct] = useState([{}]);
 
+   const navigate = useNavigate();
+
    useEffect(() => {
       const productSaved = localStorage.getItem('@loja-de-suplementos');
       console.log(productSaved)
@@ -34,9 +37,9 @@ export function Cart() {
       <Container>
          <Header>
             <HeaderContainer>
-               <LogoWrapper onClick={() => {}}>
+               <LogoWrapper onClick={() => navigate('/')}>
                   <div>R</div>
-                  <h1>motors</h1>
+                  <h1>nutrition</h1>
                </LogoWrapper>
                <CartIconButton>
                   <StyledLink  to={'/'}>
@@ -50,7 +53,9 @@ export function Cart() {
          <Main>
             <CartContainer>
                <CartCard>
-                  <img src={product[0].img && require(`../../assets/${product[0].img}`)} alt="foto de um suplemento fitness" />
+                  <div>
+                     <img src={product[0].img && require(`../../assets/${product[0].img}`)} alt="foto de um suplemento fitness" />
+                  </div>
                   <PurchaseInfo>
                         <div>
                            <p>Nome</p>

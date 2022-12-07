@@ -28,7 +28,13 @@ export function Home() {
 
    // Hook to list all cars when home page is rendered
    useEffect(() => {
-      setProductsList(products)
+      let productsListed = []
+
+      products.forEach(product => {
+         productsListed.push(product)
+      })
+
+      setProductsList(productsListed)
    }, []);
 
    // Function to list only the creatine
