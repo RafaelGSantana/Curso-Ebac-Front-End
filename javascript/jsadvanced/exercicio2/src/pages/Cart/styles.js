@@ -101,6 +101,8 @@ export const CartContainer = styled.div`
    display: flex;
    align-items: center;
    justify-content: center;
+   flex-direction: column;
+   gap: 2rem;
 `;
 
 export const CartCard = styled.div`
@@ -166,6 +168,21 @@ export const PurchaseInfo = styled.div`
       }
    }
 `;
+
+export const PurchaseInfoItem = styled.div`
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border-bottom: 1px solid #919191;
+   margin-bottom: 0.3rem;
+
+   p {
+      font-size:.8rem;
+      color: #000;
+      margin-bottom: 0.2rem;
+   }
+`;
+
 
 export const FooterContainer = styled.div`
    width: 100%;

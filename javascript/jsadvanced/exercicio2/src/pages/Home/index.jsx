@@ -19,10 +19,12 @@ import {
 import { products } from '../../products';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { BiCartAlt } from 'react-icons/bi';
 
 export function Home() {
    // State that contains the list of cars that will be rendered
    const [productsList, setProductsList] = useState([]);
+   const [cart, setCart] = useState([]);
 
    const navigate = useNavigate();
 
@@ -33,9 +35,9 @@ export function Home() {
       products.forEach(product => {
          productsListed.push(product)
       })
-
       setProductsList(productsListed)
    }, []);
+
 
    // Function to list only the creatine
    function filterCreatine() {
@@ -68,12 +70,16 @@ export function Home() {
 
    // Function to add car in cartItems
    function addCarToCart(id) {
-      const selectedSuplement =  products.filter(item => item.id === id);
+      const selectedSuplement =  products.filter(item => item.id === id)[0];
+      setCart([...cart, selectedSuplement]);
 
-      localStorage.setItem('@loja-de-suplementos', JSON.stringify(selectedSuplement))
+      localStorage.setItem('@loja-de-suplementos', JSON.stringify([...cart, selectedSuplement]))
 
       navigate('/cart');
    }
+
+   console.log(cart)
+
 
    return (
       <Container>
@@ -83,6 +89,7 @@ export function Home() {
                   <div>R</div>
                   <h1>nutrition</h1>
                </LogoWrapper>
+               <BiCartAlt size={28} />
             </HeaderContainer>
          </Header>
 

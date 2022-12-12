@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
+
 import { useNavigate } from 'react-router-dom';
 
 import {
@@ -13,30 +14,32 @@ import {
    CartContainer,
    CartCard,
    PurchaseInfo,
+   PurchaseInfoItem,
    Footer,
    FooterContainer
 } from './styles';
 
 
 export function Cart() {
-   const [product, setProduct] = useState([{}]);
+   const [products, setProducts] = useState([{}]);
 
    const navigate = useNavigate();
 
    useEffect(() => {
       const productSaved = localStorage.getItem('@loja-de-suplementos');
-      console.log(productSaved)
       const response = JSON.parse(productSaved)
       console.log(response)
-      
-      setProduct(response);
+
+      setProducts(response);
    }, []);
 
    function purchaseConfirmation() {
       alert('Compra realizada com sucesso!')
       navigate('/')
    }
-   
+
+   console.log(products)
+
 
    return (
       <Container>
@@ -47,7 +50,7 @@ export function Cart() {
                   <h1>nutrition</h1>
                </LogoWrapper>
                <CartIconButton>
-                  <StyledLink  to={'/'}>
+                  <StyledLink to={'/'}>
                      <p>Voltar</p>
                      <BiArrowBack size={32} />
                   </StyledLink>
@@ -57,49 +60,58 @@ export function Cart() {
 
          <Main>
             <CartContainer>
-               <CartCard>
-                  <div>
-                     <img src={product[0].img && require(`../../assets/${product[0].img}`)} alt="foto de um suplemento fitness" />
-                  </div>
-                  <PurchaseInfo>
+               {
+                  products && products.map(product => (
+                     <CartCard key={product.id}>
                         <div>
-                           <p>Nome</p>
-                           <p>{product[0].name && product[0].name}</p>
+                           <img src={product.img && require(`../../assets/${product.img}`)} alt="foto de um suplemento fitness" />
                         </div>
-                        <div>
-                           <p>Valor do produto:</p>
-                           <p>{product[0].price && product[0].price.toLocaleString('pt-BR', {
-                              style: 'currency',
-                              currency: 'BRL'
-                           })}</p>
-                        </div>
-                        <div>
-                           <p>Valor do frete:</p>
-                           <p>
-                              {
-                                 product[0].shipping 
-                                    ? product[0].shipping.toLocaleString('pt-BR', {
+                        <PurchaseInfo>
+                           <PurchaseInfoItem>
+                              <p>Nome</p>
+                              <p>{product.name && product.name}</p>
+                           </PurchaseInfoItem>
+
+                           <PurchaseInfoItem>
+                              <p>Valor do produto:</p>
+                              <p>{product.price && product.price.toLocaleString('pt-BR', {
+                                 style: 'currency',
+                                 currency: 'BRL'
+                              })}</p>
+                           </PurchaseInfoItem>
+
+                           <PurchaseInfoItem>
+                              <p>Valor do frete:</p>
+                              <p>
+                                 {
+                                    product.shipping
+                                       ? product.shipping.toLocaleString('pt-BR', {
+                                          style: 'currency',
+                                          currency: 'BRL'
+                                       })
+                                       : 'Grátis'
+                                 }
+                              </p>
+                           </PurchaseInfoItem>
+
+                           <PurchaseInfoItem>
+                              <p>Valor total da compra:</p>
+                              <p>
+                                 {
+                                    (product.price + product.shipping).toLocaleString('pt-BR', {
                                        style: 'currency',
                                        currency: 'BRL'
                                     })
-                                    : 'Grátis' 
-                              }
-                           </p>
-                        </div>
-                        <div>
-                           <p>Valor total da compra:</p>
-                           <p>
-                              {
-                                 (product[0].price + product[0].shipping).toLocaleString('pt-BR', {
-                                    style: 'currency',
-                                    currency: 'BRL'
-                                 })
-                              }
-                           </p>
-                        </div>
-                     <button onClick={() => purchaseConfirmation()}>Confirmar compra</button>
-                  </PurchaseInfo>
-               </CartCard>
+                                 }
+                              </p>
+                           </PurchaseInfoItem>
+
+                           <button onClick={() => purchaseConfirmation()}>Confirmar compra</button>
+                        </PurchaseInfo>
+                     </CartCard>
+                  ))
+               }
+
             </CartContainer>
          </Main>
 
