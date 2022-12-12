@@ -21,10 +21,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BiCartAlt } from 'react-icons/bi';
 
-export function Home() {
+export function Home({ handleAddToCart }) {
    // State that contains the list of cars that will be rendered
    const [productsList, setProductsList] = useState([]);
-   const [cart, setCart] = useState([]);
 
    const navigate = useNavigate();
 
@@ -70,16 +69,9 @@ export function Home() {
 
    // Function to add car in cartItems
    function addCarToCart(id) {
-      const selectedSuplement =  products.filter(item => item.id === id)[0];
-      setCart([...cart, selectedSuplement]);
-
-      localStorage.setItem('@loja-de-suplementos', JSON.stringify([...cart, selectedSuplement]))
-
+      handleAddToCart(id)
       navigate('/cart');
    }
-
-   console.log(cart)
-
 
    return (
       <Container>

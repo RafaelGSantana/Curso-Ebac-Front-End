@@ -20,18 +20,14 @@ import {
 } from './styles';
 
 
-export function Cart() {
+export function Cart({ cart }) {
    const [products, setProducts] = useState([{}]);
 
    const navigate = useNavigate();
 
    useEffect(() => {
-      const productSaved = localStorage.getItem('@loja-de-suplementos');
-      const response = JSON.parse(productSaved)
-      console.log(response)
-
-      setProducts(response);
-   }, []);
+      setProducts(cart);
+   }, [setProducts, cart]);
 
    function purchaseConfirmation() {
       alert('Compra realizada com sucesso!')
