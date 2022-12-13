@@ -11,6 +11,7 @@ import {
    CartIconButton,
    StyledLink,
    Main,
+   Summary,
    CartContainer,
    CartCard,
    PurchaseInfo,
@@ -55,9 +56,22 @@ export function Cart({ cart }) {
          </Header>
 
          <Main>
+            <Summary>
+               <div>
+                  <p>Valor total da compra:</p>
+                  <span>R$ 1,00</span>
+               </div>
+               <button onClick={() => purchaseConfirmation()}>Confirmar compra</button>
+               
+            </Summary>
+
             <CartContainer>
                {
-                  products && products.map(product => (
+                  products.length === 0
+                  ?
+                  <h1>Você ainda não possui itens no carrinho.</h1>
+                  :
+                   products.map(product => (
                      <CartCard key={product.id}>
                         <div>
                            <img src={product.img && require(`../../assets/${product.img}`)} alt="foto de um suplemento fitness" />
@@ -90,7 +104,7 @@ export function Cart({ cart }) {
                               </p>
                            </PurchaseInfoItem>
 
-                           <PurchaseInfoItem>
+                           {/* <PurchaseInfoItem>
                               <p>Valor total da compra:</p>
                               <p>
                                  {
@@ -100,14 +114,11 @@ export function Cart({ cart }) {
                                     })
                                  }
                               </p>
-                           </PurchaseInfoItem>
-
-                           <button onClick={() => purchaseConfirmation()}>Confirmar compra</button>
+                           </PurchaseInfoItem> */}
                         </PurchaseInfo>
                      </CartCard>
                   ))
                }
-
             </CartContainer>
          </Main>
 

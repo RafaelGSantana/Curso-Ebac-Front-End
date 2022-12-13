@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
    width: 100%;
-   position: relative;
    height: 100vh;
 `;
 
@@ -78,80 +77,54 @@ export const StyledLink = styled(Link)`
    text-decoration: none;
 `;
 
-export const Footer = styled.div`
-   width: 100%;
-   height: 60px;
-   position: absolute;
-   bottom: 0;
-   border-top: 1px solid #000;
-`;
+
 
 export const Main = styled.div`
    width: 100%;
-   height: calc(100vh - 140px);
-`;
-
-export const CartContainer = styled.div`
-   width: 100%;
-   height: 100%;
-   padding: 2rem 0;
-   max-width: 91.15%;
-   margin: 0 auto;
+   min-height: calc(100vh - 140px);
+   padding: 2rem;
 
    display: flex;
-   align-items: center;
-   justify-content: center;
    flex-direction: column;
-   gap: 2rem;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 1.5rem;
 `;
 
-export const CartCard = styled.div`
-   width: 700px;
-   margin: 0 auto;
+export const Summary = styled.div`
+   width: 100%;
+   max-width: 700px;
+   height: auto;
+   padding: 1.5rem 2rem;
    background-color: #fff;
-   border-radius: 8px;
-   overflow: hidden;
    box-shadow: 0 0 10px #555;
+   border-radius: 8px;
 
    display: flex;
+   flex-direction: column;
+   gap: 1rem;
 
-   > div:first-child {
-      width: 40%;
-      height: 190px;
-      padding: 16px;
-      img {
-         width: 100%;
-         height: 100%;
-         object-fit: contain;
-      }
-   }
-`;
-
-export const PurchaseInfo = styled.div`
-   width: 100%;
-   padding: 1rem 2rem;
-   position: relative;
-
-   div {
+   > div {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #919191;
-      margin-bottom: 0.3rem;
-
       p {
-         font-size:.8rem;
          color: #000;
-         margin-bottom: 0.2rem;
+         font-weight: 500;
+         font-size: 1rem;
+      }
+
+      span {
+         color: #000;
+         font-weight: 500;
+         font-size: 1rem;
       }
    }
 
    button {
+      width: 200px;
+      align-self: flex-end;
       padding: 0.5rem 1rem;
-      position: absolute;
-      bottom: 1.5rem;
-      right: 2rem;
-
       border: none;
       border-radius: 4px;
       background-color: #e93d45;
@@ -169,6 +142,69 @@ export const PurchaseInfo = styled.div`
    }
 `;
 
+
+export const CartContainer = styled.div`
+   width: 100%;
+   max-width: 700px;
+   height: auto;
+   padding: 1.5rem 0;
+   background-color: #fff;
+   box-shadow: 0 0 10px #555;
+   border-radius: 8px;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   gap: 1rem;
+
+   h1 {
+      color: #555;
+   }
+`;
+
+export const CartCard = styled.div`
+   width: calc(100% - 2rem);
+   background-color: #fff;
+   display: flex;
+
+   & + div {
+      border-top: 1px solid #555;
+   }
+
+   > div:first-child {
+      width: 40%;
+      padding: 0.5rem 0;
+
+      img {
+         width: 100%;
+         height: 88px;
+         object-fit: contain;
+      }
+   }
+`;
+
+export const PurchaseInfo = styled.div`
+   width: 100%;
+   padding: 1rem;
+
+   div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #919191;
+      margin-bottom: 0.3rem;
+
+      p {
+         font-size:.8rem;
+         color: #000;
+         margin-bottom: 0.2rem;
+      }
+   }
+
+   
+`;
+
 export const PurchaseInfoItem = styled.div`
    display: flex;
    align-items: center;
@@ -183,6 +219,11 @@ export const PurchaseInfoItem = styled.div`
    }
 `;
 
+export const Footer = styled.div`
+   width: 100%;
+   height: 60px;
+   border-top: 1px solid #000;
+`;
 
 export const FooterContainer = styled.div`
    width: 100%;
