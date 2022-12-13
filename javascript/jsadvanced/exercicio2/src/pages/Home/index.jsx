@@ -81,7 +81,7 @@ export function Home({ handleAddToCart }) {
                   <div>R</div>
                   <h1>nutrition</h1>
                </LogoWrapper>
-               <BiCartAlt size={28} />
+               <BiCartAlt size={28} onClick={() => navigate('/cart')} />
             </HeaderContainer>
          </Header>
 

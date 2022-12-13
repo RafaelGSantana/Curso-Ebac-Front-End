@@ -21,7 +21,7 @@ import {
 } from './styles';
 
 
-export function Cart({ cart }) {
+export function Cart({ cart, setCart }) {
    const [products, setProducts] = useState([{}]);
 
    const navigate = useNavigate();
@@ -31,12 +31,20 @@ export function Cart({ cart }) {
    }, [setProducts, cart]);
 
    function purchaseConfirmation() {
-      alert('Compra realizada com sucesso!')
+      alert('Compra realizada com sucesso!');
+      setProducts([])
       navigate('/')
    }
 
-   console.log(products)
+   const totalProductsPrice = products.reduce((acc, item) => {
+      return acc + item.price;
+   }, 0);
 
+   const totalProductsShipping = products.reduce((acc, item) => {
+      return acc + item.shipping;
+   }, 0);
+
+   const total = (totalProductsPrice + totalProductsShipping);
 
    return (
       <Container>
@@ -59,7 +67,12 @@ export function Cart({ cart }) {
             <Summary>
                <div>
                   <p>Valor total da compra:</p>
-                  <span>R$ 1,00</span>
+                  <span>
+                     {total.toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                     })}
+                  </span>
                </div>
                <button onClick={() => purchaseConfirmation()}>Confirmar compra</button>
                
