@@ -21,7 +21,7 @@ import {
 } from './styles';
 
 
-export function Cart({ cart, setCart }) {
+export function Cart({ cart, cleanCart }) {
    const [products, setProducts] = useState([{}]);
 
    const navigate = useNavigate();
@@ -32,7 +32,7 @@ export function Cart({ cart, setCart }) {
 
    function purchaseConfirmation() {
       alert('Compra realizada com sucesso!');
-      setProducts([])
+      cleanCart()
       navigate('/')
    }
 
@@ -84,8 +84,8 @@ export function Cart({ cart, setCart }) {
                   ?
                   <h1>Você ainda não possui itens no carrinho.</h1>
                   :
-                   products.map(product => (
-                     <CartCard key={product.id}>
+                   products.map((product, index) => (
+                     <CartCard key={index}>
                         <div>
                            <img src={product.img && require(`../../assets/${product.img}`)} alt="foto de um suplemento fitness" />
                         </div>

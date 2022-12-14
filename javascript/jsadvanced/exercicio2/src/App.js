@@ -13,10 +13,14 @@ function App() {
       setCart([...cart, selectedSuplement]);
    }
 
+   function cleanCart() {
+      setCart([]);
+   }
+
    return (
       <BrowserRouter>
          <GlobalStyle />
-         <Router handleAddToCart={handleAddToCart} cart={cart} />
+         <Router handleAddToCart={handleAddToCart} cart={cart} cleanCart={cleanCart} />
       </BrowserRouter>
    );
 }
