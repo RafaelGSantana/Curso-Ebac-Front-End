@@ -63,6 +63,7 @@ export const Main = styled.div`
    border-bottom: 1px solid #000;
 `;
 
+
 export const MainContainer = styled.div`
    width: 100%;
    height: 100%;
@@ -70,6 +71,11 @@ export const MainContainer = styled.div`
    max-width: 91.15%;
    margin: 0 auto;
    margin-top: -88px;
+
+   @media (max-width: 800px) {
+      margin-top: 0;
+   }
+
 `;
 
 export const FilterContainer = styled.div`
@@ -79,6 +85,11 @@ export const FilterContainer = styled.div`
    justify-content: center;
    gap: 2rem;
    margin-bottom: 3rem;
+
+   @media (max-width: 450px) {
+      gap: 1rem;
+      margin-bottom: 2rem;
+   }
 `;
 
 export const FilterProduct = styled.button`
@@ -95,6 +106,10 @@ export const FilterProduct = styled.button`
    &:hover {
       box-shadow: 0 0 12px 0 #000;
       transform: scale(1.05);
+   }
+
+   @media (max-width: 450px) {
+      padding: 0.5rem 1rem;
    }
 `;
 
@@ -124,7 +139,6 @@ export const CarItem = styled.div`
          width: 100%;
          height: 100%;
          object-fit: contain;
-         
       }
    }
 `;
@@ -184,13 +198,13 @@ export const CarInfo = styled.div`
          margin-top: 4px;
 
       p {
-      font-size: 0.9rem;
-      color: #000;
-      text-align: end;
-      margin-right: 8px;
-      margin-bottom: 0;
-      letter-spacing: 0px;
-   }
+         font-size: 0.9rem;
+         color: #000;
+         text-align: end;
+         margin-right: 8px;
+         margin-bottom: 0;
+         letter-spacing: 0px;
+      }
    }
 
    
@@ -219,6 +233,7 @@ export const CarItemButton = styled.button`
       transform: scale(1.03);
    }
 `;
+
 export const Footer = styled.div`
    width: 100%;
    height: 60px;
@@ -247,5 +262,10 @@ export const FooterContainer = styled.div`
       &:hover {
          color: #000;
       }
+   }
+
+   @media (max-width: 450px) {
+      font-size: 0.7rem;
+      font-weight: 500;
    }
 `;

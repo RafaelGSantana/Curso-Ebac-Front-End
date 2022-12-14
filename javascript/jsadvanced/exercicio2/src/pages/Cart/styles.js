@@ -160,6 +160,7 @@ export const CartContainer = styled.div`
 
    h1 {
       color: #555;
+      text-align: center;
    }
 `;
 
@@ -182,6 +183,11 @@ export const CartCard = styled.div`
          object-fit: contain;
       }
    }
+
+   @media (max-width: 450px) {
+      gap: 1rem;
+      align-items: center;
+   }
 `;
 
 export const PurchaseInfo = styled.div`
@@ -194,15 +200,11 @@ export const PurchaseInfo = styled.div`
       justify-content: space-between;
       border-bottom: 1px solid #919191;
       margin-bottom: 0.3rem;
-
-      p {
-         font-size:.8rem;
-         color: #000;
-         margin-bottom: 0.2rem;
-      }
    }
 
-   
+   @media (max-width: 450px) {
+      padding: 0;
+   }
 `;
 
 export const PurchaseInfoItem = styled.div`
@@ -216,6 +218,13 @@ export const PurchaseInfoItem = styled.div`
       font-size:.8rem;
       color: #000;
       margin-bottom: 0.2rem;
+   }
+   
+   @media (max-width: 450px) {
+      P {
+         font-size: .7rem;
+         font-weight: 500;
+      }
    }
 `;
 
@@ -248,5 +257,10 @@ export const FooterContainer = styled.div`
       &:hover {
          color: #000;
       }
+   }
+
+   @media (max-width: 450px) {
+      font-size: 0.7rem;
+      font-weight: 500;
    }
 `;
