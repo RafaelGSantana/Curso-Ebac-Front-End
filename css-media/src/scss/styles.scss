@@ -8,7 +8,6 @@ header {
 
    .container {
       h1 {
-         font-family: 'Righteous', sans-serif;
          font-size: 60px;
          margin: 2rem 0;
          padding-left: 3.5rem;
@@ -60,6 +59,17 @@ header {
       stroke-dashoffset: 150;
       stroke: #fff;
       stroke-width: 3px;
+   }
+}
+
+footer {
+   border-top: 2px solid rgb(255, 255, 255);
+   .container {
+      p {
+         font-family: 'Roboto Mono', monospace;
+         font-size: 0.8rem;
+         color: rgb(92, 91, 91);
+      }
    }
 }
 

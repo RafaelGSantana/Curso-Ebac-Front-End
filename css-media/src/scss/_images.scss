@@ -1,9 +1,24 @@
 #imagens {
    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      max-width: 100%;
+      width: 100%;
+      margin:  auto;
+
+      h2 {
+         font-family: 'Roboto Mono', monospace;
+         font-size: 32px;
+         color: rgb(238, 247, 251);
+         margin-bottom: 2rem;
+
+         letter-spacing: 9px;
+         height: 43px;
+         -webkit-text-stroke: transparent 5px;
+         //  text-transform:  uppercase;
+         background: rgb(92, 91, 91);
+         background-size: 15px;
+         text-shadow: 0 4px 16px #000;
+         -webkit-background-clip: text;
+         background-clip: text;
+      }
 
       img {
          height: 200px;
