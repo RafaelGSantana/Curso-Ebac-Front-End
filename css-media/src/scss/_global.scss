@@ -5,13 +5,15 @@
 }
 
 body {
-   font-family: 'Righteous' sans-serif;
+   font-family: 'Righteous', sans-serif;
    font-weight: 400;
    text-align: center;
 }
 
-header, section {
+header, section, footer {
    width: 100%;
+   background-color: rgb(238, 247, 251);
+   padding: 2rem 0;
 }
 
 .container {
