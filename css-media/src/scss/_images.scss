@@ -1,7 +1,7 @@
 #imagens {
    .container {
       width: 100%;
-      margin:  auto;
+      margin: auto;
 
       h2 {
          font-family: 'Roboto Mono', monospace;
@@ -20,19 +20,38 @@
          background-clip: text;
       }
 
-      img {
-         height: 200px;
-         width: auto;
-         margin: 5px;
-         object-fit: fill;
-         object-position: bottom;
-         border: 1px solid #333;
+      .images-container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 1rem;
+         padding: 2rem 1rem;
 
-         &:hover {
-            opacity: 75%;
-            border-color: #33f;
+         .img-box {
+
+            height: 200px;
+            width: 300px;
+            border: 5px solid #fff;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
+            cursor: pointer;
+            overflow: hidden;
+
+            img {
+
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
+               transition: 0.2s linear;
+
+               &:hover {
+                  transform: scale(1.05);
+                  cursor: pointer;
+               }
+            }
          }
-      }
 
+      }
    }
 }
