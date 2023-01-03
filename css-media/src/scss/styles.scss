@@ -64,11 +64,21 @@ header {
 
 footer {
    border-top: 2px solid rgb(255, 255, 255);
+
    .container {
       p {
          font-family: 'Roboto Mono', monospace;
          font-size: 0.8rem;
          color: rgb(92, 91, 91);
+
+         a {
+            color: rgb(92, 91, 91);
+            transition: color 0.2s;
+
+            &:hover {
+               color: rgb(2, 19, 171);
+            }
+         }
       }
    }
 }

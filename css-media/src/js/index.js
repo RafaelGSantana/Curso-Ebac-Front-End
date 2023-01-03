@@ -1,37 +1,38 @@
-import '../scss/styles.scss'
+import '../scss/styles.scss';
 
-const elemRoot = document.getElementById('root')
+/**
+ * function to select the video and display its enlarged format
+ */
+document.querySelectorAll('.video-container video').forEach(item => {
+   item.onclick = () => {
+      document.querySelector('.enlarged-video').style.display = 'block';
+      document.querySelector('.enlarged-video video').src = item.getAttribute('src');
+   }
+});
 
-const video = document.querySelector('#video')
-const button = document.querySelector('#btn-play')
-
-document.querySelector('.fa-pause').style.display = 'none'
-
-const play = (event) => {
-    if(video.paused) {
-        document.querySelector('.fa-play').style.display = 'none'
-        document.querySelector('.fa-pause').style.display = 'block'
-        video.play()
-    } else {
-        document.querySelector('.fa-play').style.display = 'block'
-        document.querySelector('.fa-pause').style.display = 'none'
-        video.pause()
-    }
+/**
+ * function to stop displaying the enlarged video
+ */
+document.querySelector('.enlarged-video span').onclick = () => {
+   document.querySelector('.enlarged-video').style.display = 'none';
 }
 
-button.addEventListener('click', (event) => {
-    play(event)
-})
 
-video.addEventListener('click', (event) => {
-    play(event)
-})
+/**
+ * function to select the image and display its enlarged format
+ */
 
-video.addEventListener('timeupdate', () => {
-    let current = (video.currentTime / video.duration) * 100
-    if(video.ended) {
-        document.querySelector('.fa-play').style.display = 'block'
-        document.querySelector('.fa-pause').style.display = 'none'
-    }
-    document.querySelector('.inner').style.width = `${current}%`
-})
+document.querySelectorAll('.images-container img').forEach(item => {
+   item.onclick = () => {
+      document.querySelector('.enlarged-image').style.display = 'block';
+      document.querySelector('.enlarged-image img').src = item.getAttribute('src');
+   }
+});
+
+/**
+ * function to stop displaying the enlarged image
+ */
+document.querySelector('.enlarged-image span').onclick = () => {
+   document.querySelector('.enlarged-image').style.display = 'none';
+}
+
