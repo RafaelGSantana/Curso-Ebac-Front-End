@@ -1,8 +1,5 @@
 #imagens {
    .container {
-      width: 100%;
-      margin: auto;
-
       h2 {
          font-family: 'Roboto Mono', monospace;
          font-size: 32px;
@@ -12,7 +9,6 @@
          letter-spacing: 9px;
          height: 43px;
          -webkit-text-stroke: transparent 5px;
-         //  text-transform:  uppercase;
          background: rgb(92, 91, 91);
          background-size: 15px;
          text-shadow: 0 4px 16px #000;
@@ -85,6 +81,77 @@
             border-radius: 5px;
             border: 3px solid #fff;
             object-fit: cover;
+         }
+      }
+   }
+}
+
+@media (max-width: 1200px) {
+   #imagens {
+      .container {
+         h2 {
+            font-size: 28px;
+            margin-bottom: 1rem;
+         }
+      }
+   }
+}
+
+@media (max-width: 1000px) {
+   #imagens {
+      .container {
+         h2 {
+            font-size: 26px;
+            margin-bottom: 0;
+         }
+      }
+
+      .enlarged-image {
+         span {
+            font-size: 32px;
+         }
+
+         img {
+            width: 680px;
+         }
+      }
+   }
+}
+
+@media (max-width: 800px) {
+   #imagens {
+      .container {
+         h2 {
+            font-size: 24px;
+            letter-spacing: 7px;
+         }
+      }
+
+      .enlarged-image {
+         span {
+            right: 10px;
+            font-size: 28px;
+         }
+
+         img {
+            width: 600px;
+         }
+      }
+   }
+}
+
+@media (max-width: 650px) {
+   #imagens {
+      .container {
+         h2 {
+            font-size: 22px;
+            letter-spacing: 6px;
+         }
+      }
+
+      .enlarged-image {
+         img {
+            width: 95%;
          }
       }
    }
