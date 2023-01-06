@@ -1,38 +1,34 @@
 import '../scss/styles.scss';
 
-/**
- * function to select the video and display its enlarged format
- */
-document.querySelectorAll('.video-container video').forEach(item => {
-   item.onclick = () => {
-      document.querySelector('.enlarged-video').style.display = 'block';
-      document.querySelector('.enlarged-video video').src = item.getAttribute('src');
-   }
-});
+const main = document.getElementById('main');
+const userInput = document.getElementById('username');
+const usersContainer = document.getElementById('users-container')
 
-/**
- * function to stop displaying the enlarged video
- */
-document.querySelector('.enlarged-video span').onclick = () => {
-   document.querySelector('.enlarged-video').style.display = 'none';
+const baseURL = 'https://api.github.com/users';
+let user = '';
+
+function getUser(user) {
+   fetch(`${baseURL}/${user}`, {
+      method: 'GET',
+      headers: {
+         'Content-Type': 'application/json; charset=UTF-8'
+      }
+   })
+      .then((response) => response.json())
+      .then(data => {
+         user += `
+            <div class="user">
+               <img src="${data.avatar_url}" alt="Foto do usuário" class="user-avatar">
+               <p class="user-name">${data.login}</p>
+               <p class="user-company">${data.company}</p>
+               <p class="user-bio">${data.bio}</p>
+               <a href="https://github.com/RafaelGSantana">Ver perfil</a>
+            </div>
+         `
+         usersContainer.innerHTML = user;
+      }).catch((error) => console.error('Erro: ', error.message || error))
 }
 
-
-/**
- * function to select the image and display its enlarged format
- */
-
-document.querySelectorAll('.images-container img').forEach(item => {
-   item.onclick = () => {
-      document.querySelector('.enlarged-image').style.display = 'block';
-      document.querySelector('.enlarged-image img').src = item.getAttribute('src');
-   }
-});
-
-/**
- * function to stop displaying the enlarged image
- */
-document.querySelector('.enlarged-image span').onclick = () => {
-   document.querySelector('.enlarged-image').style.display = 'none';
-}
-
+userInput.addEventListener('focusout', function (event) {
+   getUser(event.target.value);
+})
