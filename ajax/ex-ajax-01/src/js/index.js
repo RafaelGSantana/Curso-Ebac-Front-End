@@ -25,9 +25,11 @@ button.addEventListener('click', function (event) {
          users += `
             <div class="user">
                <img src="${data.avatar_url}" alt="Foto do usuário" class="user-avatar">
-               <p class="user-name">${data.login}</p>
-               <p class="user-company">${data.company}</p>
-               <p class="user-bio">${data.bio}</p>
+               <div class="user-info">
+                  <p class="user-name">${data.login}</p>
+                  <p class="user-company" maxlenght="50">${data.company}</p>
+                  <p class="user-bio">${data.bio}</p>
+               </div>
                <a href="${data.html_url}" target="_blank">Ver perfil</a>
             </div>
          `
