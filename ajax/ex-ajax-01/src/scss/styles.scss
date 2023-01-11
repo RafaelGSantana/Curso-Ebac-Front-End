@@ -13,7 +13,34 @@ body {
 
 #main {
    width: 100%;
-   padding: 3rem 0;
+
+   header {
+      width: 100%;
+      text-align: center;
+      padding: 2rem 0;
+      border-bottom: 1px solid #999;
+
+      h1 {
+         color: #2a2a2b;
+         text-shadow: 0 0 10px #999;
+         font-size: 1.5rem;
+      }
+
+      @media (max-width: 800px) {
+         padding: 1.5rem 0;
+
+         h1 {
+            font-size: 1.2rem;
+         }
+      }
+      @media (max-width: 400px) {
+         padding: 1.5rem 0;
+
+         h1 {
+            font-size: 1.1rem;
+         }
+      }
+   }
 
    .container {
       width: 95%;
@@ -25,8 +52,8 @@ body {
          align-items: center;
          justify-content: center;
          gap: 1rem;
-         padding-bottom: 1rem;
-         border-bottom: 1px solid #999;
+         padding: 2rem 0 1rem;
+         
 
          input {
             width: 400px;
