@@ -115,6 +115,7 @@ body {
          gap: 1rem;
 
          .user {
+            position: relative;
             padding: 2rem 1rem 1rem;
             width: 250px;
             height: 300px;
@@ -175,6 +176,8 @@ body {
 
 
             a {
+               position: absolute;
+               bottom: 0;
                width: 90%;
                padding: 0.5rem 1rem;
                margin: 1rem 0;
