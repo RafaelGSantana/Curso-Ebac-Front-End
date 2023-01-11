@@ -22,17 +22,21 @@ button.addEventListener('click', function (event) {
    })
       .then((response) => response.json())
       .then(data => {
-         users += `
-            <div class="user">
-               <img src="${data.avatar_url}" alt="Foto do usuário" class="user-avatar">
-               <div class="user-info">
-                  <p class="user-name">${data.login}</p>
-                  <p class="user-company" maxlenght="50">${data.company}</p>
-                  <p class="user-bio">${data.bio}</p>
+         if (data.message === 'Not Found') {
+            alert("Usuário não encontrado.")
+         } else {
+            users += `
+               <div class="user">
+                  <img src="${data.avatar_url}" alt="Foto do usuário" class="user-avatar">
+                  <div class="user-info">
+                     <p class="user-name">${data.login}</p>
+                     <p class="user-company" maxlenght="50">${data.company}</p>
+                     <p class="user-bio">${data.bio}</p>
+                  </div>
+                  <a href="${data.html_url}" target="_blank">Ver perfil</a>
                </div>
-               <a href="${data.html_url}" target="_blank">Ver perfil</a>
-            </div>
-         `
+            `
+         }
          usersContainer.innerHTML = users;
          console.log(data)
       }).catch((error) => console.error('Erro: ', error.message || error))
