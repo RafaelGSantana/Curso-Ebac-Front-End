@@ -31,9 +31,9 @@ function checkIfCepIsValid(element) {
    } else {
       return ''
    }
-
 }
 
+// Função para preencher dados do endereço a partir dos dados retornados da api viacep.
 function updateAddress(data) {
    if (!('erro' in data)) {
       rua.value = (data.logradouro);
@@ -42,14 +42,14 @@ function updateAddress(data) {
       uf.value = (data.uf);
       mensagem.innerHTML = '';
    } else {
-      `Cep não encontrado`
+      mensagem.innerHTML = 'Cep inválido';
    }
 }
+let msg = [];
+let markUp = '';
+
 form.addEventListener('submit', function (event) {
    event.preventDefault();
-
-   let msg = [];
-   let markUp = '';
 
    Array.from(inputsRequired).forEach(field => {
       let fieldState = isEmpty(field);
@@ -59,12 +59,31 @@ form.addEventListener('submit', function (event) {
       }
    });
 
-   const isEmailValid = checkIfEmailIsValid(email);
-   if (isEmailValid) {
-      msg.push(isEmailValid);
-   }
+   // Verifica se o retorno das funções checkIfEmailIsValid e checkIfCepIsValid
+   // tem algum retorno. Se tiver, significa que o campo é inválido, então joga
+   // a mensagem de retorno no array msg.
+   checkIfEmailIsValid(email) && msg.push(checkIfEmailIsValid(email));
+   checkIfCepIsValid(cep) && msg.push(checkIfCepIsValid(cep));
 
+   console.log(msg)
+
+   msg.forEach(item => {
+      markUp += `<p>${item}</p>`
+   })
+
+   // console.log(msg)
+   mensagem.innerHTML = markUp;
+
+   // if (msg.length == 0) {
+   //    form.submit();
+   // }
+});
+
+// Valida cep e preenche endereço no evento focusout
+cep.addEventListener('focusout', function () {
    const isCepValid = checkIfCepIsValid(cep);
+   // Se isCepValid existir (não for falsy), significa que teve mensagem de erro,
+   //  ou seja o cep é inválido, então joga o retorno de isCepValid no array msg
    if (isCepValid) {
       msg.push(isCepValid);
    } else {
@@ -73,14 +92,7 @@ form.addEventListener('submit', function (event) {
       document.body.appendChild(script);
    }
 
-
-
-   msg.forEach(item => {
-      markUp += `<p>${item}</p>`
-   })
-   mensagem.innerHTML = markUp;
-
-   // if (msg.length == 0) {
-   //    form.submit();
-   // }
+   // msg.forEach(item => {
+   //    markUp += `<p>${item}</p>`
+   // })
 })
