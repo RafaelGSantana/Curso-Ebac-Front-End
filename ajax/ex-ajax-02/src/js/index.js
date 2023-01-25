@@ -1,98 +1,253 @@
-const form = document.querySelector('#form');
-const name = document.querySelector('#name');
-const email = document.querySelector('#email');
-const cpf = document.querySelector('#cpf');
-const cep = document.querySelector('#cep');
-const rua = document.querySelector('#rua');
-const bairro = document.querySelector('#bairro');
-const cidade = document.querySelector('#cidade');
-const uf = document.querySelector('#uf');
-const mensagem = document.querySelector('#message');
-const inputsRequired = document.getElementsByClassName('required');
+import '../styles.scss';
 
+const formulario = document.getElementById('form');
+const nome = document.getElementById("nome");
+const email = document.getElementById("email");
+const cpf = document.getElementById("cpf");
+const cep = document.getElementById("cep");
+const rua = document.getElementById("rua");
+const bairro = document.getElementById("bairro");
+const cidade = document.getElementById("cidade");
+const uf = document.getElementById("uf");
 
-function isEmpty(element) {
-   return element.value.length < 1
-      ?
-      `O campo <strong>${element.name}</strong> é obrigatório para o cadastro.`
-      :
-      '';
-}
+// Validação do formulário + mensagem de sucesso / erro + reset do form
+formulario.addEventListener('submit', function (event) {
+   event.preventDefault();
 
-function checkIfEmailIsValid(element) {
-   return element.value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
-      ? ''
-      : `Digite um <strong>e-mail</strong> válido`;
-}
+   const inputGroup = formulario.querySelectorAll(".input-group");
 
-function checkIfCepIsValid(element) {
-   if (!element.value.match(/^[0-9]{8}$/)) {
-      return `Digite um cep válido`;
+   const formIsValid = [...inputGroup].every(input => {
+      return (input.className === "input-group success");
+   });
+
+   const formIsNotValid = [...inputGroup].find(input => {
+      return (input.className === "input-group erro");
+   });
+
+   if (formIsValid) {
+      alert("Formulário enviado");
+
+      limpaCampos();
+   } else if (formIsNotValid) {
+      alert("Não foi possível fazer o cadastro. Por favor, verifique os campos destacados em vermelho!")
    } else {
-      return ''
+      alert("Não foi possível fazer o cadastro.")
    }
-}
+});
 
-// Função para preencher dados do endereço a partir dos dados retornados da api viacep.
 function updateAddress(data) {
    if (!('erro' in data)) {
       rua.value = (data.logradouro);
       bairro.value = (data.bairro);
       cidade.value = (data.localidade);
       uf.value = (data.uf);
-      mensagem.innerHTML = '';
-   } else {
-      mensagem.innerHTML = 'Cep inválido';
+
+      console.log(data)
    }
 }
-let msg = [];
-let markUp = '';
 
-form.addEventListener('submit', function (event) {
+// Funções que efetivam a validação dos campos
+function checaNomeInput() {
+   const nomeValue = nome.value;
+
+   if (nomeValue === "") {
+      setError(nome, "O nome de usuário é obrigatório!");
+   } else {
+      setSuccess(nome);
+   }
+}
+
+function checaEmailInput() {
+   const emailValue = email.value;
+
+   if (emailValue === "") {
+      setError(email, "O email é obrigatório!");
+   } else if (!checaEmail(emailValue)) {
+      setError(email, "Por favor, insira um e-mail válido");
+   } else {
+      setSuccess(email);
+   }
+}
+
+function checaCepInput() {
+   const cepValue = cep.value;
+
+   if (cepValue === "") {
+      setError(cep, "O cep é obrigatório!")
+   } else if (!checaCep(cepValue)) {
+      setError(cep, "Por favor, insira um cep válido");
+      console.log(cepValue)
+   } else {
+      console.log('oi')
+      setSuccess(cep);
+      const script = document.createElement('script');
+      script.src = 'https://viacep.com.br/ws/' + cep.value + '/json?callback=updateAddress';
+      document.body.appendChild(script);
+   }
+}
+
+function checaRuaInput () {
+   const ruaValue = rua.value;
+
+   if (ruaValue === "") {
+      setError(rua, "A rua é obrigatória!")
+   } else {
+      setSuccess(rua);
+   }
+}
+
+function checaBairroInput () {
+   const bairroValue = bairro.value;
+
+   if (bairroValue === "") {
+      setError(bairro, "O bairro é obrigatória!")
+   } else {
+      setSuccess(bairro);
+   }
+}
+
+function checaCidadeInput() {
+   const cidadeValue = cidade.value;
+
+   if (cidadeValue === "") {
+      setError(cidade, "A cidade é obrigatória!")
+   } else {
+      setSuccess(cidade);
+   }
+}
+
+function checaUfInput() {
+   const ufValue = uf.value;
+
+   if (ufValue === "") {
+      setError(uf, "O uf do estado é obrigatório!")
+   } else if (!checaUf(ufValue)) {
+      setError(uf, "Por favor, insira um uf válido");
+   } else {
+      setSuccess(uf);
+   }
+}
+
+// Validação no evento dos inputs
+nome.addEventListener('focusout', function (event) {
    event.preventDefault();
 
-   Array.from(inputsRequired).forEach(field => {
-      let fieldState = isEmpty(field);
-
-      if (fieldState) {
-         msg.push(isEmpty(field))
-      }
-   });
-
-   // Verifica se o retorno das funções checkIfEmailIsValid e checkIfCepIsValid
-   // tem algum retorno. Se tiver, significa que o campo é inválido, então joga
-   // a mensagem de retorno no array msg.
-   checkIfEmailIsValid(email) && msg.push(checkIfEmailIsValid(email));
-   checkIfCepIsValid(cep) && msg.push(checkIfCepIsValid(cep));
-
-   console.log(msg)
-
-   msg.forEach(item => {
-      markUp += `<p>${item}</p>`
-   })
-
-   // console.log(msg)
-   mensagem.innerHTML = markUp;
-
-   // if (msg.length == 0) {
-   //    form.submit();
-   // }
+   checaNomeInput();
 });
 
-// Valida cep e preenche endereço no evento focusout
-cep.addEventListener('focusout', function () {
-   const isCepValid = checkIfCepIsValid(cep);
-   // Se isCepValid existir (não for falsy), significa que teve mensagem de erro,
-   //  ou seja o cep é inválido, então joga o retorno de isCepValid no array msg
-   if (isCepValid) {
-      msg.push(isCepValid);
+email.addEventListener('focusout', function (event) {
+   event.preventDefault();
+
+   checaEmailInput();
+});
+
+cpf.addEventListener('focusout', function (event) {
+   event.preventDefault();
+
+   checaCpfInput();
+});
+
+
+cep.addEventListener('focusout', function (event) {
+   event.preventDefault();
+
+   const cepValue = cep.value;
+
+   if (cepValue === "") {
+      console.log('1')
+      setError(cep, "O cep é obrigatório!")
+   } else if (!checaCep(cepValue)) {
+      setError(cep, "Por favor, insira um cep válido");
+      console.log('2')
    } else {
+      console.log('3')
+      setSuccess(cep);
       const script = document.createElement('script');
       script.src = 'https://viacep.com.br/ws/' + cep.value + '/json?callback=updateAddress';
       document.body.appendChild(script);
    }
 
-   // msg.forEach(item => {
-   //    markUp += `<p>${item}</p>`
-   // })
-})
+   checaCepInput();
+});
+
+rua.addEventListener('focusout', function(event) {
+   event.preventDefault();
+
+   checaRuaInput();
+});
+
+bairro.addEventListener('focusout', function(event) {
+   event.preventDefault();
+
+   checaBairroInput();
+});
+
+cidade.addEventListener('focusout', function (event) {
+   event.preventDefault();
+
+   checaCidadeInput();
+});
+
+uf.addEventListener('focusout', function (event) {
+   event.preventDefault();
+
+   checaUfInput();
+});
+
+// Funções auxiliares
+function setError(input, message) {
+   // pega o elemento pai do input
+   const inputGroup = input.parentElement;
+
+   // pega o elemento small
+   const small = inputGroup.querySelector("small");
+
+   // Adiciona mensagem de erro na tag small
+   small.innerText = message;
+
+   // Adiciona classe de erro no elemento
+   inputGroup.className = "input-group erro"
+}
+
+function setSuccess(input) {
+   // pega o elemento pai do input
+   const inputGroup = input.parentElement;
+   // Adiciona classe de sucesso no elemento
+   inputGroup.className = "input-group success"
+}
+
+function checaEmail(email) {
+   return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+   );
+}
+
+function checaCpf(cpf) {
+   return /[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$|^[0-9]{11}$/.test(cpf)
+}
+
+function checaCep(cep) {
+   return /[0-9]{5}-[0-9]{3}$|^[0-9]{8}$/.test(cep)
+}
+
+function checaUf(uf) {
+   return /rr|ap|am|pa|ac|ro|to|ma|pi|ce|rn|pe|pb|al|se|ba|mt|df|go|ms|mg|es|rj|sp|pr|sc|rs/.test(uf)
+}
+
+function limpaCampos() {
+   nome.value = "";
+   email.value = "";
+   cpf.value = "";
+   cep.value = "";
+   cidade.value = "";
+   uf.value = "";
+
+   nome.parentElement.classList.remove('success');
+   email.parentElement.classList.remove('success');
+   cpf.parentElement.classList.remove('success');
+   cep.parentElement.classList.remove('success');
+   cidade.parentElement.classList.remove('success');
+   uf.parentElement.classList.remove('success');
+
+}
+

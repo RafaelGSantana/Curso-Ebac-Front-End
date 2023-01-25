@@ -33,7 +33,6 @@ formulario.addEventListener('submit', function(event) {
 
 
 // Funções que efetivam a validação dos campos
-
 function checaNomeInput () {
    const nomeValue = nome.value;
 
@@ -81,6 +80,8 @@ function checaCepInput () {
    }
 }
 
+
+
 function checaCidadeInput () {
    const cidadeValue = cidade.value;
 
@@ -97,7 +98,7 @@ function checaUfInput () {
    if (ufValue === "") {
       setError(uf, "O uf do estado é obrigatório!")
    } else if (!checaUf(ufValue)) {
-      setError(uf, "Por favor, insira um cep válido");
+      setError(uf, "Por favor, insira um Uf válido");
    } else {
       setSuccess(uf);
    }
