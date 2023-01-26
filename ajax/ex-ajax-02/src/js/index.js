@@ -75,6 +75,17 @@ function checaEmailInput() {
    }
 }
 
+function checaCpfInput() {
+   const cpfValue = cpf.value;
+   if (cpfValue === "") {
+      setError(cpf, "O cpf é obrigatório!");
+   } else if (!checaCpf(cpfValue)) {
+      setError(cpf, "Por favor, insira um cpf válido");
+   } else {
+      setSuccess(cpf);
+   }
+}
+
 function checaCepInput() {
    const cepValue = cep.value;
 
@@ -164,7 +175,7 @@ email.addEventListener('focusout', function (event) {
 cpf.addEventListener('focusout', function (event) {
    event.preventDefault();
 
-   // checaCpfInput();
+   checaCpfInput();
 });
 
 
