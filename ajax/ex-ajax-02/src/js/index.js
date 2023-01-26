@@ -24,23 +24,30 @@ formulario.addEventListener('submit', function (event) {
       return (input.className === "input-group erro");
    });
 
-   // const emptyFields = [...inputGroup].filter(input => {
-   //    return (
-   //       input.className !== "input-group success" &&
-   //       input.className !== "input-group erro" &&
-   //       input.className === "input-group" &&
-         
-   //    )
-   //    })
+   const emptyFields = [...inputGroup].filter(input => {
+      return (
+         input.className !== "input-group success" &&
+         input.className !== "input-group erro"
+      )
+   })
 
    if (formIsValid) {
       alert("Formulário enviado");
 
       limpaCampos();
    } else if (formIsNotValid) {
+      emptyFields.forEach(field => {
+         const childrenOfInputGroup = field.children;
+         const input = childrenOfInputGroup.item(1)
+         setError(input, `O campo ${input.id} é obrigatório.`)
+      })
       alert("Não foi possível fazer o cadastro. Por favor, verifique os campos destacados em vermelho!")
    } else {
-      console.log(emptyFields)
+      emptyFields.forEach(field => {
+         const childrenOfInputGroup = field.children;
+         const input = childrenOfInputGroup.item(1)
+         setError(input, `O campo ${input.id} é obrigatório.`)
+      })
       alert("Não foi possível fazer o cadastro.")
    }
 });
@@ -88,6 +95,10 @@ function checaCepInput() {
                cidade.value = (data.localidade);
                uf.value = (data.uf);
                setSuccess(cep);
+               setSuccess(rua);
+               setSuccess(bairro);
+               setSuccess(cidade);
+               setSuccess(uf);
             }
 
          })
