@@ -24,6 +24,15 @@ formulario.addEventListener('submit', function (event) {
       return (input.className === "input-group erro");
    });
 
+   // const emptyFields = [...inputGroup].filter(input => {
+   //    return (
+   //       input.className !== "input-group success" &&
+   //       input.className !== "input-group erro" &&
+   //       input.className === "input-group" &&
+         
+   //    )
+   //    })
+
    if (formIsValid) {
       alert("Formulário enviado");
 
@@ -31,20 +40,10 @@ formulario.addEventListener('submit', function (event) {
    } else if (formIsNotValid) {
       alert("Não foi possível fazer o cadastro. Por favor, verifique os campos destacados em vermelho!")
    } else {
+      console.log(emptyFields)
       alert("Não foi possível fazer o cadastro.")
    }
 });
-
-function updateAddress(data) {
-   if (!('erro' in data)) {
-      rua.value = (data.logradouro);
-      bairro.value = (data.bairro);
-      cidade.value = (data.localidade);
-      uf.value = (data.uf);
-
-      console.log(data)
-   }
-}
 
 // Funções que efetivam a validação dos campos
 function checaNomeInput() {
@@ -76,17 +75,27 @@ function checaCepInput() {
       setError(cep, "O cep é obrigatório!")
    } else if (!checaCep(cepValue)) {
       setError(cep, "Por favor, insira um cep válido");
-      console.log(cepValue)
    } else {
-      console.log('oi')
-      setSuccess(cep);
-      const script = document.createElement('script');
-      script.src = 'https://viacep.com.br/ws/' + cep.value + '/json?callback=updateAddress';
-      document.body.appendChild(script);
+      let url = `https://viacep.com.br/ws/${cepValue}/json/`
+
+      fetch(url).then(function (response) {
+         response.json().then(function (data) {
+            if (data.erro) {
+               setError(cep, 'Cep não encontrado, por favor verifique o cep digitado.')
+            } else {
+               rua.value = (data.logradouro);
+               bairro.value = (data.bairro);
+               cidade.value = (data.localidade);
+               uf.value = (data.uf);
+               setSuccess(cep);
+            }
+
+         })
+      })
    }
 }
 
-function checaRuaInput () {
+function checaRuaInput() {
    const ruaValue = rua.value;
 
    if (ruaValue === "") {
@@ -96,7 +105,7 @@ function checaRuaInput () {
    }
 }
 
-function checaBairroInput () {
+function checaBairroInput() {
    const bairroValue = bairro.value;
 
    if (bairroValue === "") {
@@ -144,39 +153,23 @@ email.addEventListener('focusout', function (event) {
 cpf.addEventListener('focusout', function (event) {
    event.preventDefault();
 
-   checaCpfInput();
+   // checaCpfInput();
 });
 
 
 cep.addEventListener('focusout', function (event) {
    event.preventDefault();
 
-   const cepValue = cep.value;
-
-   if (cepValue === "") {
-      console.log('1')
-      setError(cep, "O cep é obrigatório!")
-   } else if (!checaCep(cepValue)) {
-      setError(cep, "Por favor, insira um cep válido");
-      console.log('2')
-   } else {
-      console.log('3')
-      setSuccess(cep);
-      const script = document.createElement('script');
-      script.src = 'https://viacep.com.br/ws/' + cep.value + '/json?callback=updateAddress';
-      document.body.appendChild(script);
-   }
-
    checaCepInput();
 });
 
-rua.addEventListener('focusout', function(event) {
+rua.addEventListener('focusout', function (event) {
    event.preventDefault();
 
    checaRuaInput();
 });
 
-bairro.addEventListener('focusout', function(event) {
+bairro.addEventListener('focusout', function (event) {
    event.preventDefault();
 
    checaBairroInput();
@@ -231,7 +224,7 @@ function checaCep(cep) {
 }
 
 function checaUf(uf) {
-   return /rr|ap|am|pa|ac|ro|to|ma|pi|ce|rn|pe|pb|al|se|ba|mt|df|go|ms|mg|es|rj|sp|pr|sc|rs/.test(uf)
+   return /rr|ap|am|pa|ac|ro|to|ma|pi|ce|rn|pe|pb|al|se|ba|mt|df|go|ms|mg|es|rj|sp|pr|sc|rs/i.test(uf)
 }
 
 function limpaCampos() {
